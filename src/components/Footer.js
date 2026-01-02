@@ -7,6 +7,8 @@ import {
 } from "react-icons/ai";
 import { FaLinkedinIn } from "react-icons/fa";
 
+import { USERS } from "../Constants";
+
 function Footer() {
   let date = new Date();
   let year = date.getFullYear();
@@ -14,53 +16,61 @@ function Footer() {
     <Container fluid className="footer">
       <Row>
         <Col md="4" className="footer-copywright">
-          <h3>Designed and Developed by Soumyajit Behera</h3>
+          <h3>Designed and Developed by {USERS.copyrightName}</h3>
         </Col>
         <Col md="4" className="footer-copywright">
-          <h3>Copyright © {year} SB</h3>
+          <h3>Copyright © {year} {USERS.copyrightName}</h3>
         </Col>
         <Col md="4" className="footer-body">
           <ul className="footer-icons">
-            <li className="social-icons">
-              <a
-                href="https://github.com/soumyajit4419"
-                style={{ color: "white" }}
-                target="_blank" 
-                rel="noopener noreferrer"
-              >
-                <AiFillGithub />
-              </a>
-            </li>
-            <li className="social-icons">
-              <a
-                href="https://twitter.com/Soumyajit4419"
-                style={{ color: "white" }}
-                target="_blank" 
-                rel="noopener noreferrer"
-              >
-                <AiOutlineTwitter />
-              </a>
-            </li>
-            <li className="social-icons">
-              <a
-                href="https://www.linkedin.com/in/soumyajit4419/"
-                style={{ color: "white" }}
-                target="_blank" 
-                rel="noopener noreferrer"
-              >
-                <FaLinkedinIn />
-              </a>
-            </li>
-            <li className="social-icons">
-              <a
-                href="https://www.instagram.com/soumyajit4419"
-                style={{ color: "white" }}
-                target="_blank" 
-                rel="noopener noreferrer"
-              >
-                <AiFillInstagram />
-              </a>
-            </li>
+            {USERS.social.github && (
+              <li className="social-icons">
+                <a
+                  href={USERS.social.github}
+                  style={{ color: "white" }}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <AiFillGithub />
+                </a>
+              </li>
+            )}
+            {USERS.social.twitter && (
+              <li className="social-icons">
+                <a
+                  href={USERS.social.twitter}
+                  style={{ color: "white" }}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <AiOutlineTwitter />
+                </a>
+              </li>
+            )}
+            {USERS.social.linkedin && (
+              <li className="social-icons">
+                <a
+                  href={USERS.social.linkedin}
+                  style={{ color: "white" }}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <FaLinkedinIn />
+                </a>
+              </li>
+            )}
+            {USERS.social.instagram && (
+              <li className="social-icons">
+                <a
+                  href={USERS.social.instagram}
+                  style={{ color: "white" }}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <AiFillInstagram />
+                </a>
+              </li>
+            )}
           </ul>
         </Col>
       </Row>

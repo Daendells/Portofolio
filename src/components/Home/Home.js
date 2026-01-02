@@ -6,6 +6,7 @@ import Home2 from "./Home2";
 import Type from "./Type";
 import Techstack from "../About/Techstack";
 import Github from "../About/Github";
+import { USERS } from "../../Constants";
 import {
   AiFillGithub,
   AiOutlineTwitter,
@@ -30,7 +31,7 @@ function Home() {
 
               <h1 className="heading-name">
                 I'M
-                <strong className="main-name"> SOUMYAJIT BEHERA</strong>
+                <strong className="main-name"> {USERS.name}</strong>
               </h1>
 
               <div style={{ padding: 50, textAlign: "left" }}>
@@ -59,46 +60,54 @@ function Home() {
               Feel free to <span className="purple">connect </span>with me
             </p>
             <ul className="home-about-social-links">
-              <li className="social-icons">
-                <a
-                  href="https://github.com/soumyajit4419"
-                  target="_blank"
-                  rel="noreferrer"
-                  className="icon-colour  home-social-icons"
-                >
-                  <AiFillGithub />
-                </a>
-              </li>
-              <li className="social-icons">
-                <a
-                  href="https://twitter.com/Soumyajit4419"
-                  target="_blank"
-                  rel="noreferrer"
-                  className="icon-colour  home-social-icons"
-                >
-                  <AiOutlineTwitter />
-                </a>
-              </li>
-              <li className="social-icons">
-                <a
-                  href="https://www.linkedin.com/in/soumyajit4419/"
-                  target="_blank"
-                  rel="noreferrer"
-                  className="icon-colour  home-social-icons"
-                >
-                  <FaLinkedinIn />
-                </a>
-              </li>
-              <li className="social-icons">
-                <a
-                  href="https://www.instagram.com/soumyajit4419"
-                  target="_blank"
-                  rel="noreferrer"
-                  className="icon-colour home-social-icons"
-                >
-                  <AiFillInstagram />
-                </a>
-              </li>
+              {USERS.social.github && (
+                <li className="social-icons">
+                  <a
+                    href={USERS.social.github}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="icon-colour  home-social-icons"
+                  >
+                    <AiFillGithub />
+                  </a>
+                </li>
+              )}
+              {USERS.social.twitter && (
+                <li className="social-icons">
+                  <a
+                    href={USERS.social.twitter}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="icon-colour  home-social-icons"
+                  >
+                    <AiOutlineTwitter />
+                  </a>
+                </li>
+              )}
+              {USERS.social.linkedin && (
+                <li className="social-icons">
+                  <a
+                    href={USERS.social.linkedin}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="icon-colour  home-social-icons"
+                  >
+                    <FaLinkedinIn />
+                  </a>
+                </li>
+              )}
+              {USERS.social.instagram && (
+                <li className="social-icons">
+                  <a
+                    href={USERS.social.instagram}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="icon-colour home-social-icons"
+                  >
+                    <AiFillInstagram />
+                  </a>
+                </li>
+              )}
             </ul>
           </Col>
         </Row>
