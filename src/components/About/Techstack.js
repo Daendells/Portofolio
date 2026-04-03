@@ -1,6 +1,6 @@
 import React from "react";
 import { Col, Row } from "react-bootstrap";
-import { SiPowerbi, SiMicrosoftexcel, SiMysql, SiPython, SiSap, SiGithub } from "react-icons/si";
+import { SiPowerbi, SiMicrosoftexcel, SiMysql, SiPython, SiSap, SiGithub, SiPostman } from "react-icons/si";
 import { FaSyncAlt, FaProjectDiagram, FaAward, FaCogs } from "react-icons/fa";
 
 function Techstack() {
@@ -45,6 +45,10 @@ function Techstack() {
       <Col xs={4} md={2} className="tech-icons">
         <FaSyncAlt />
         <div className="tech-icons-text">Agile</div>
+      </Col>
+      <Col xs={4} md={2} className="tech-icons">
+        <SiPostman />
+        <div className="tech-icons-text">Postman</div>
       </Col>
     </Row>
   );
