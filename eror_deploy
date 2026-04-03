@@ -1,0 +1,73 @@
+01:29:10.761 Running build in Washington, D.C., USA (East) – iad1
+01:29:10.762 Build machine configuration: 2 cores, 8 GB
+01:29:10.772 Cloning github.com/Daendells/Portofolio (Branch: main, Commit: 9c23d0f)
+01:29:10.773 Skipping build cache, deployment was triggered without cache.
+01:29:12.137 Cloning completed: 1.365s
+01:29:12.529 Running "vercel build"
+01:29:13.329 Vercel CLI 50.38.2
+01:29:13.872 Installing dependencies...
+01:29:16.300 npm warn ERESOLVE overriding peer dependency
+01:29:16.300 npm warn While resolving: react-reconciler@0.23.0
+01:29:16.300 npm warn Found: react@17.0.2
+01:29:16.300 npm warn node_modules/react
+01:29:16.301 npm warn   react@"^17.0.2" from the root project
+01:29:16.301 npm warn   22 more (@react-aria/ssr, @react-pdf/renderer, @restart/hooks, ...)
+01:29:16.301 npm warn
+01:29:16.301 npm warn Could not resolve dependency:
+01:29:16.301 npm warn peer react@"^16.0.0" from react-reconciler@0.23.0
+01:29:16.301 npm warn node_modules/react-reconciler
+01:29:16.302 npm warn   react-reconciler@"^0.23.0" from @react-pdf/renderer@2.3.0
+01:29:16.302 npm warn   node_modules/@react-pdf/renderer
+01:29:16.302 npm warn
+01:29:16.302 npm warn Conflicting peer dependency: react@16.14.0
+01:29:16.302 npm warn node_modules/react
+01:29:16.302 npm warn   peer react@"^16.0.0" from react-reconciler@0.23.0
+01:29:16.302 npm warn   node_modules/react-reconciler
+01:29:16.302 npm warn     react-reconciler@"^0.23.0" from @react-pdf/renderer@2.3.0
+01:29:16.303 npm warn     node_modules/@react-pdf/renderer
+01:29:18.925 npm warn deprecated whatwg-encoding@1.0.5: Use @exodus/bytes instead for a more spec-conformant and faster implementation
+01:29:19.029 npm warn deprecated w3c-hr-time@1.0.2: Use your platform's native performance.now() and performance.timeOrigin.
+01:29:19.344 npm warn deprecated stable@0.1.8: Modern JS already guarantees Array#sort() is a stable sort, so this library is deprecated. See the compatibility table on MDN: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/sort#browser_compatibility
+01:29:19.630 npm warn deprecated rollup-plugin-terser@7.0.2: This package has been deprecated and is no longer maintained. Please use @rollup/plugin-terser
+01:29:19.649 npm warn deprecated sourcemap-codec@1.4.8: Please use @jridgewell/sourcemap-codec instead
+01:29:19.696 npm warn deprecated rimraf@3.0.2: Rimraf versions prior to v4 are no longer supported
+01:29:19.827 npm warn deprecated workbox-cacheable-response@6.6.0: workbox-background-sync@6.6.0
+01:29:20.025 npm warn deprecated q@1.5.1: You or someone you depend on is using Q, the JavaScript Promise library that gave JavaScript developers strong feelings about promises. They can almost certainly migrate to the native JavaScript promise now. Thank you literally everyone for joining me in this bet against the odds. Be excellent to each other.
+01:29:20.025 npm warn deprecated
+01:29:20.026 npm warn deprecated (For a CapTP with native promises, see @endo/eventual-send and @endo/captp)
+01:29:20.124 npm warn deprecated workbox-google-analytics@6.6.0: It is not compatible with newer versions of GA starting with v4, as long as you are using GAv3 it should be ok, but the package is not longer being maintained
+01:29:21.203 npm warn deprecated react-tsparticles@1.43.1: @tsparticles/react is the new version, please use that
+01:29:21.436 npm warn deprecated inflight@1.0.6: This module is not supported, and leaks memory. Do not use it. Check out lru-cache if you want a good and tested way to coalesce async requests by a key value, which is much more comprehensive and powerful.
+01:29:21.630 npm warn deprecated glob@7.2.3: Glob versions prior to v9 are no longer supported
+01:29:22.226 npm warn deprecated domexception@2.0.1: Use your platform's native DOMException instead
+01:29:22.914 npm warn deprecated abab@2.0.6: Use your platform's native atob() and btoa() methods instead
+01:29:23.891 npm warn deprecated @humanwhocodes/config-array@0.13.0: Use @eslint/config-array instead
+01:29:23.962 npm warn deprecated @humanwhocodes/object-schema@2.0.3: Use @eslint/object-schema instead
+01:29:24.430 npm warn deprecated @babel/plugin-proposal-private-methods@7.18.6: This proposal has been merged to the ECMAScript standard and thus this plugin is no longer maintained. Please use @babel/plugin-transform-private-methods instead.
+01:29:24.431 npm warn deprecated @babel/plugin-proposal-nullish-coalescing-operator@7.18.6: This proposal has been merged to the ECMAScript standard and thus this plugin is no longer maintained. Please use @babel/plugin-transform-nullish-coalescing-operator instead.
+01:29:24.449 npm warn deprecated @babel/plugin-proposal-optional-chaining@7.21.0: This proposal has been merged to the ECMAScript standard and thus this plugin is no longer maintained. Please use @babel/plugin-transform-optional-chaining instead.
+01:29:24.451 npm warn deprecated @babel/plugin-proposal-numeric-separator@7.18.6: This proposal has been merged to the ECMAScript standard and thus this plugin is no longer maintained. Please use @babel/plugin-transform-numeric-separator instead.
+01:29:24.452 npm warn deprecated @babel/plugin-proposal-class-properties@7.18.6: This proposal has been merged to the ECMAScript standard and thus this plugin is no longer maintained. Please use @babel/plugin-transform-class-properties instead.
+01:29:24.752 npm warn deprecated svgo@1.3.2: This SVGO version is no longer supported. Upgrade to v2.x.x.
+01:29:25.903 npm warn deprecated source-map@0.8.0-beta.0: The work that was done in this beta branch won't be included in future versions
+01:29:26.526 npm warn deprecated @babel/plugin-proposal-private-property-in-object@7.21.11: This proposal has been merged to the ECMAScript standard and thus this plugin is no longer maintained. Please use @babel/plugin-transform-private-property-in-object instead.
+01:29:30.012 npm warn deprecated eslint@8.57.1: This version is no longer supported. Please see https://eslint.org/version-support for other options.
+01:29:32.698 npm warn deprecated tsparticles@1.43.1: tsParticles v3 is out, it contains breaking changes and it's recommended to migrate to that version with fixes and new features
+01:29:34.002 
+01:29:34.003 added 1675 packages in 20s
+01:29:34.003 
+01:29:34.003 282 packages are looking for funding
+01:29:34.004   run `npm fund` for details
+01:29:34.006 npm notice
+01:29:34.006 npm notice New minor version of npm available! 11.11.0 -> 11.12.1
+01:29:34.006 npm notice Changelog: https://github.com/npm/cli/releases/tag/v11.12.1
+01:29:34.006 npm notice To update run: npm install -g npm@11.12.1
+01:29:34.007 npm notice
+01:29:34.062 Running "npm run build"
+01:29:34.166 
+01:29:34.167 > portfolio@0.1.0 build
+01:29:34.167 > react-scripts build
+01:29:34.167 
+01:29:35.146 (node:187) [DEP0176] DeprecationWarning: fs.F_OK is deprecated, use fs.constants.F_OK instead
+01:29:35.147 (Use `node --trace-deprecation ...` to show where the warning was created)
+01:29:35.162 Creating an optimized production build...

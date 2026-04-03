@@ -3,7 +3,7 @@ import { Container, Row, Col } from "react-bootstrap";
 import ProjectCard from "./ProjectCards";
 import Particle from "../Particle";
 import leaf from "../../Assets/Projects/leaf.png";
-import { PROJECTS, CERTIFICATES, RELATIVE_PATH_TO_PORTO } from "../../Constants";
+import { PROJECTS, CERTIFICATES } from "../../Constants";
 
 function Projects() {
   return (

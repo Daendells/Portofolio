@@ -4,6 +4,7 @@ import macOs from "../../Assets/TechIcons/Apple MacOSX.svg";
 import chrome from "../../Assets/TechIcons/Google Chrome.svg";
 import vsCode from "../../Assets/TechIcons/vscode.svg";
 import intelliJ from "../../Assets/TechIcons/intellij-idea.svg";
+import postman from "../../Assets/TechIcons/Postman.svg";
 
 function Toolstack() {
   return (
@@ -24,6 +25,11 @@ function Toolstack() {
       <Col xs={4} md={2} className="tech-icons ">
         <img src={intelliJ} alt="go" className="tech-icon-images" />
         <div className="tech-icons-text">IntelliJ</div>
+      </Col>
+
+      <Col xs={4} md={2} className="tech-icons ">
+        <img src={postman} alt="Postman" className="tech-icon-images" />
+        <div className="tech-icons-text">Postman</div>
       </Col>
     </Row>
   );

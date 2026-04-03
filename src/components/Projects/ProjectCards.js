@@ -11,10 +11,8 @@ import "react-pdf/dist/esm/Page/AnnotationLayer.css";
 pdfjs.GlobalWorkerOptions.workerSrc = `//cdnjs.cloudflare.com/ajax/libs/pdf.js/${pdfjs.version}/pdf.worker.min.js`;
 
 function ProjectCards(props) {
-  const [numPages, setNumPages] = React.useState(null);
-
-  function onDocumentLoadSuccess({ numPages }) {
-    setNumPages(numPages);
+  function onDocumentLoadSuccess() {
+    // PDF loaded successfully
   }
 
   // Find the first PDF to show as preview if available
