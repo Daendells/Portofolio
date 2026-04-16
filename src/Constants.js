@@ -147,8 +147,8 @@ export const CERTIFICATES = [
         isPdf: true
     },
     {
-        title: "Resilience Program",
-        description: "Nestlé (2025)",
+        title: "Resilience",
+        description: "Nestlé (2026)",
         image: null,
         files: [
             { name: "Resilience Certificate", link: "Certificate/Resilience_Nestle.pdf", type: "pdf" }
