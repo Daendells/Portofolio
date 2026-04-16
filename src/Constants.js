@@ -145,6 +145,15 @@ export const CERTIFICATES = [
             { name: "DAMC Certificate", link: "Certificate/DAMC_Certificate.pdf", type: "pdf" }
         ],
         isPdf: true
+    },
+    {
+        title: "Resilience Program",
+        description: "Nestlé (2025)",
+        image: null,
+        files: [
+            { name: "Resilience Certificate", link: "Certificate/Resilience_Nestle.pdf", type: "pdf" }
+        ],
+        isPdf: true
     }
 
 ];
