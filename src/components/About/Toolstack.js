@@ -5,6 +5,7 @@ import chrome from "../../Assets/TechIcons/Google Chrome.svg";
 import vsCode from "../../Assets/TechIcons/vscode.svg";
 import intelliJ from "../../Assets/TechIcons/intellij-idea.svg";
 import postman from "../../Assets/TechIcons/Postman.svg";
+import packetTracer from "../../Assets/TechIcons/PacketTracer.svg";
 
 function Toolstack() {
   return (
@@ -30,6 +31,11 @@ function Toolstack() {
       <Col xs={4} md={2} className="tech-icons ">
         <img src={postman} alt="Postman" className="tech-icon-images" />
         <div className="tech-icons-text">Postman</div>
+      </Col>
+
+      <Col xs={4} md={2} className="tech-icons ">
+        <img src={packetTracer} alt="Packet Tracer" className="tech-icon-images" />
+        <div className="tech-icons-text">Packet Tracer</div>
       </Col>
     </Row>
   );
