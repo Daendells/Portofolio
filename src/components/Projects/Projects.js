@@ -26,6 +26,8 @@ function Projects() {
                 title={project.title}
                 description={project.description}
                 files={project.files}
+                ghLink={project.ghLink}
+                demoLink={project.demoLink}
               />
             </Col>
           ))}

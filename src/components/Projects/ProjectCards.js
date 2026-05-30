@@ -44,7 +44,7 @@ function ProjectCards(props) {
         </Card.Text>
 
         {/* Render a button for each file in the project */}
-        {props.files && props.files.map((file, idx) => (
+        {props.files && props.files.length > 0 && props.files.map((file, idx) => (
           <div key={idx} style={{ marginTop: '10px' }}>
             <Button
               variant="primary"
@@ -58,11 +58,16 @@ function ProjectCards(props) {
           </div>
         ))}
 
-        {/* Existing buttons logic if ghLink passed differently (legacy) */}
-        {props.ghLink && !props.files && (
-          <Button variant="primary" href={props.ghLink} target="_blank">
+        {/* GitHub Link */}
+        {props.ghLink && (
+          <Button
+            variant="primary"
+            href={props.ghLink}
+            target="_blank"
+            style={{ marginTop: '10px', marginRight: '10px' }}
+          >
             <BsGithub /> &nbsp;
-            {props.isBlog ? "Blog" : "GitHub"}
+            {"GitHub"}
           </Button>
         )}
 

@@ -24,6 +24,24 @@ export const RELATIVE_PATH_TO_PORTO = "/assets/portfolio";
 
 export const PROJECTS = [
     {
+        title: "AssetHub — Web Asset Management System",
+        description: "A full-featured web-based Asset Management System built with React and Supabase. Supports role-based access control (Admin, Manager, Staff), real-time asset tracking, maintenance scheduling, assignment management, audit logs, and analytics dashboard. Deployed and accessible live.",
+        image: "/assets/portfolio/assethub/assethub-web.png",
+        files: [],
+        isPdf: false,
+        ghLink: null,
+        demoLink: "https://asset-hub-1.lovable.app"
+    },
+    {
+        title: "AssetHub — Mobile Asset Management App",
+        description: "A cross-platform mobile application for enterprise asset management, built with React Native / Expo. Features include asset registry with search & filter, lifecycle tracking (Active, Maintenance, Borrowed), QR code scanning, role-based access (Admin, Code Admin), and audit logs. Available on GitHub.",
+        image: "/assets/portfolio/assethub/assethub-mobile.png",
+        files: [],
+        isPdf: false,
+        ghLink: "https://github.com/Daendells/Mobile_APP",
+        demoLink: null
+    },
+    {
         title: "IT Risk Management",
         description: "Comprehensive risk management plan identifying potential IT threats, vulnerabilities, and mitigation strategies for organizational resilience.",
         image: null,
