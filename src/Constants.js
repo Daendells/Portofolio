@@ -34,7 +34,7 @@ export const PROJECTS = [
     },
     {
         title: "AssetHub — Mobile Asset Management App",
-        description: "A cross-platform mobile application for enterprise asset management, built with React Native / Expo. Features include asset registry with search & filter, lifecycle tracking (Active, Maintenance, Borrowed), QR code scanning, role-based access (Admin, Code Admin), and audit logs. Available on GitHub.",
+        description: "A cross-platform mobile application for enterprise asset management, built with React Native / Expo. Features include asset registry with search & filter, lifecycle tracking (Active, Maintenance, Borrowed), role-based access (Admin, Code Admin), and audit logs. Available on GitHub.",
         image: "/assets/portfolio/assethub/assethub-mobile.png",
         files: [],
         isPdf: false,
