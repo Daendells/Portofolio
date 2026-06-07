@@ -24,6 +24,15 @@ export const RELATIVE_PATH_TO_PORTO = "/assets/portfolio";
 
 export const PROJECTS = [
     {
+        title: "RAG Akademik — AI Chatbot Peraturan Kampus",
+        description: "An intelligent AI-powered academic assistant built with Retrieval-Augmented Generation (RAG) architecture. Leverages a vector knowledge base of 30+ indexed university regulation documents to answer student queries in real-time — covering SKS limits, thesis requirements, GPA policies, scholarships, graduation criteria, and more. Built with Python, Streamlit, sentence-transformers for semantic search, and OpenRouter LLM API. Deployed live on Streamlit Cloud with pre-computed embeddings for sub-second retrieval performance.",
+        image: "/assets/portfolio/ragakademik/ragakademik-preview.png",
+        files: [],
+        isPdf: false,
+        ghLink: null,
+        demoLink: "https://ragakademik.streamlit.app/"
+    },
+    {
         title: "AssetHub — Web Asset Management System",
         description: "A full-featured web-based Asset Management System built with React and Supabase. Supports role-based access control (Admin, Manager, Staff), real-time asset tracking, maintenance scheduling, assignment management, audit logs, and analytics dashboard. Deployed and accessible live.",
         image: "/assets/portfolio/assethub/assethub-web.png",
