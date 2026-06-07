@@ -33,6 +33,15 @@ export const PROJECTS = [
         demoLink: "https://ragakademik.streamlit.app/"
     },
     {
+        title: "Conduit — Full CI/CD Pipeline on GCP",
+        description: "End-to-end DevOps implementation of the Conduit blogging platform (Laravel/PHP) with a production-grade CI/CD pipeline. Built and containerized with Docker, automated via GitHub Actions with secrets management, and deployed to Google Cloud Run through Artifact Registry. Backend powered by MongoDB, quality-gated with PHPUnit test suites, and internally monitored with Grafana dashboards. Demonstrates real-world DevOps competencies: containerization, cloud deployment, automated testing, secret handling, and observability.",
+        image: "/assets/portfolio/conduit/conduit-preview.png",
+        files: [],
+        isPdf: false,
+        ghLink: "https://github.com/Daendells/Conduit-CI-CD",
+        demoLink: "https://pso-conduit-service-opurikvscq-et.a.run.app/"
+    },
+    {
         title: "AssetHub — Web Asset Management System",
         description: "A full-featured web-based Asset Management System built with React and Supabase. Supports role-based access control (Admin, Manager, Staff), real-time asset tracking, maintenance scheduling, assignment management, audit logs, and analytics dashboard. Deployed and accessible live.",
         image: "/assets/portfolio/assethub/assethub-web.png",
