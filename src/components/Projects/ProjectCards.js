@@ -45,17 +45,16 @@ function ProjectCards(props) {
 
         {/* Render a button for each file in the project */}
         {props.files && props.files.length > 0 && props.files.map((file, idx) => (
-          <div key={idx} style={{ marginTop: '10px' }}>
-            <Button
-              variant="primary"
-              href={`${RELATIVE_PATH_TO_PORTO}/${file.link}`}
-              target="_blank"
-              size="sm"
-            >
-              {file.type === 'pdf' ? <CgFileDocument /> : <BsDownload />} &nbsp;
-              {file.name}
-            </Button>
-          </div>
+          <Button
+            key={idx}
+            variant="primary"
+            href={`${RELATIVE_PATH_TO_PORTO}/${file.link}`}
+            target="_blank"
+            style={{ marginTop: '10px', marginRight: '10px' }}
+          >
+            {file.type === 'pdf' ? <CgFileDocument /> : <BsDownload />} &nbsp;
+            {file.name}
+          </Button>
         ))}
 
         {/* GitHub Link */}
@@ -77,10 +76,19 @@ function ProjectCards(props) {
             variant="primary"
             href={props.demoLink}
             target="_blank"
-            style={{ marginLeft: "10px" }}
+            style={{ marginTop: '10px', marginRight: '10px' }}
           >
-            <CgWebsite /> &nbsp;
-            {"Demo"}
+            {props.demoLink.includes("colab.research.google.com") ? (
+              <>
+                <CgWebsite /> &nbsp;
+                {"Google Colab"}
+              </>
+            ) : (
+              <>
+                <CgWebsite /> &nbsp;
+                {"Demo"}
+              </>
+            )}
           </Button>
         )}
       </Card.Body>

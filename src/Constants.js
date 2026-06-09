@@ -24,6 +24,28 @@ export const RELATIVE_PATH_TO_PORTO = "/assets/portfolio";
 
 export const PROJECTS = [
     {
+        title: "Stock Price Forecasting — Classical ML & Deep Learning",
+        description: "A professional time series forecasting system analyzing 10 years of historical trading data for United Tractors Tbk (UNTR.JK). Evaluates multiple architectures including Moving Average, ARIMA(5,1,0), Facebook Prophet, XGBoost, and a double-layer LSTM network. Incorporates rigorous validation methodologies: 1-step rolling Walk-Forward validation to simulate real trading, residual diagnostics (Ljung-Box Test) to mathematically reject underfitting, and learning curve monitoring to prevent overfitting. The custom-trained LSTM network achieved superior predictive accuracy with a MAPE of 1.04% and MAE of 254.56.",
+        image: "/assets/portfolio/time_series/v1_forecasting_klasik.png",
+        files: [
+            { name: "Laporan PDF", link: "time_series/v1_forecasting_klasik.pdf", type: "pdf" }
+        ],
+        isPdf: false,
+        ghLink: null,
+        demoLink: "https://colab.research.google.com/drive/1PmCxi3E9srX3Hpct5Hvo2gbp_3hQb60a?usp=sharing"
+    },
+    {
+        title: "Stock Price Forecasting — Amazon Chronos-2 Foundation Model",
+        description: "An advanced implementation of Amazon's Chronos-2 Foundation Model (120M parameters) for zero-shot stock forecasting of UNTR.JK. Built and deployed a dynamic 1-step rolling Walk-Forward validation pipeline on GPU to solve zero-shot drift and flatlining. Conducted in-depth statistical checks: residual Ljung-Box test (p-value 0.915) proving zero underfitting, and a critical directional analysis—revealing the model's zero-shot limitations under domestic market micro-volatility (48.28% Directional Accuracy). Compare-tested zero-shot performance directly against custom-trained ML pipelines.",
+        image: "/assets/portfolio/time_series/v2_chronos_foundation.png",
+        files: [
+            { name: "Laporan PDF", link: "time_series/v2_chronos_foundation.pdf", type: "pdf" }
+        ],
+        isPdf: false,
+        ghLink: null,
+        demoLink: "https://colab.research.google.com/drive/1U83z42kPZF3e1ZWpM43Nh6pjnQ4mMeW8?usp=sharing"
+    },
+    {
         title: "RAG Akademik — AI Chatbot Peraturan Kampus",
         description: "An intelligent AI-powered academic assistant built with Retrieval-Augmented Generation (RAG) architecture. Leverages a vector knowledge base of 30+ indexed university regulation documents to answer student queries in real-time — covering SKS limits, thesis requirements, GPA policies, scholarships, graduation criteria, and more. Built with Python, Streamlit, sentence-transformers for semantic search, and OpenRouter LLM API. Deployed live on Streamlit Cloud with pre-computed embeddings for sub-second retrieval performance.",
         image: "/assets/portfolio/ragakademik/ragakademik-preview.png",
