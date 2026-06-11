@@ -4,12 +4,12 @@
 export const USERS = {
     name: "Davin Jonathan Tanus",
     titles: [
-        "Data Visualization Specialist",
-        "Power BI Developer",
         "Data Analyst",
+        "Dashboard Developer",
+        "AI & ML Practitioner",
         "Software Engineer"
     ],
-    desciption: "I am a Data Visualization Specialist designated to turning complex data into clear, actionable insights using Power BI and other analytics tools.",
+    desciption: "A results-oriented Information Systems student at ITS with expertise in data analytics, dashboarding, and Agile-based project management. Experienced in building end-to-end data pipelines, AI-powered applications, and full-stack systems — from RAG chatbots and stock forecasting models to CI/CD pipelines and asset management platforms. Collaborative and communicative, with a track record of delivering impactful technical projects under tight deadlines.",
     social: {
         github: "https://github.com/Daendells", // Add if known, else blank
         linkedin: "https://www.linkedin.com/in/davin-jonathan-tanus-32a19b308/", // Add if known, else blank
@@ -130,8 +130,8 @@ export const PROJECTS = [
         isPdf: false
     },
     {
-        title: "Agile Project Management",
-        description: "Project management documentation utilizing Agile methodologies, including sprint planning, backlog management, and retrospective analysis.",
+        title: "Project Lead — Agile Snacklicious",
+        description: "Led end-to-end culinary business operations for Snacklicious using Agile methodology (Scrum/Kanban). Managed Sprint Planning, backlog grooming, and retrospective cycles to deliver project milestones on time. Coordinated cross-functional team collaboration and applied Agile documentation practices throughout the project lifecycle.",
         image: null,
         files: [
             { name: "Final Agile Report", link: "mpt/MPT_Agile_Report.pdf", type: "pdf" }
@@ -221,20 +221,59 @@ export const CERTIFICATES = [
             { name: "Resilience Certificate", link: "Certificate/Resilience_Nestle.pdf", type: "pdf" }
         ],
         isPdf: true
+    },
+    {
+        title: "CCNA: Introduction to Networks",
+        description: "Cisco Netacad (In Progress)",
+        image: null,
+        files: [],
+        isPdf: false
+    },
+    {
+        title: "DevNet Associate (DevOps)",
+        description: "Cisco (In Progress)",
+        image: null,
+        files: [],
+        isPdf: false
     }
 
 ];
 
 export const SKILLS = [
-    { name: "Power BI", type: "Data Visualization" },
-    { name: "SAP S/4HANA", type: "ERP" },
-    { name: "SQL", type: "Database" },
-    { name: "Python", type: "Programming" },
-    { name: "Excel", type: "Data Analysis" },
-    { name: "Odoo", type: "ERP" },
-    { name: "BPMN", type: "Process Modeling" },
-    { name: "GitHub", type: "Version Control" },
-    { name: "ISO Standards", type: "Quality Assurance" },
-    { name: "Agile Methodology", type: "Project Management" }
+    // Data & Analytics
+    { name: "SQL (MySQL, DuckDB)", type: "Data & Analytics" },
+    { name: "Python", type: "Data & Analytics" },
+    { name: "ETL Pipeline", type: "Data & Analytics" },
+    { name: "Data Warehousing (Star Schema, SCD)", type: "Data & Analytics" },
+    { name: "Time Series Forecasting", type: "Data & Analytics" },
+    { name: "Data Visualization", type: "Data & Analytics" },
+    { name: "K-Means Clustering & PCA", type: "Data & Analytics" },
+    { name: "ARIMA / Prophet / Holt-Winters", type: "Data & Analytics" },
+    // AI & Vision
+    { name: "Machine Learning", type: "AI & Vision" },
+    { name: "Deep Learning (LSTM, XGBoost)", type: "AI & Vision" },
+    { name: "Computer Vision (OpenCV, MediaPipe)", type: "AI & Vision" },
+    { name: "Face & Gesture Recognition", type: "AI & Vision" },
+    { name: "RAG / LLM / Semantic Search", type: "AI & Vision" },
+    // Tools & Software
+    { name: "Power BI", type: "Tools & Software" },
+    { name: "SAP S/4HANA", type: "Tools & Software" },
+    { name: "Google Cloud Platform", type: "Tools & Software" },
+    { name: "Excel", type: "Tools & Software" },
+    { name: "Odoo", type: "Tools & Software" },
+    { name: "Git / GitHub", type: "Tools & Software" },
+    { name: "Jupyter Notebook", type: "Tools & Software" },
+    { name: "Docker", type: "Tools & Software" },
+    // Management & Systems
+    { name: "Agile Scrum / Kanban", type: "Management & Systems" },
+    { name: "Risk Management (FMEA, ISO 31000)", type: "Management & Systems" },
+    { name: "IS/IT Strategic Planning", type: "Management & Systems" },
+    { name: "BPMN", type: "Management & Systems" },
+    // Web & Programming
+    { name: "JavaScript", type: "Web & Programming" },
+    { name: "HTML / CSS", type: "Web & Programming" },
+    { name: "Laravel", type: "Web & Programming" },
+    { name: "Streamlit", type: "Web & Programming" },
+    { name: "React / Vite", type: "Web & Programming" },
 ];
 
