@@ -110,8 +110,8 @@ export const PROJECTS = [
         isPdf: true
     },
     {
-        title: "Analisis Kluster pada Faktor-Faktor Numerik yang Mempengaruhi Harapan Hidup Global",
-        description: "Cluster analysis of numerical factors affecting global life expectancy using data mining techniques.",
+        title: "Analisis Kluster pada Faktor-Faktor Numerik Fisik dan Kimiawi yang Memengaruhi Karakteristik Kualitas Pisang",
+        description: "A data science project applying unsupervised machine learning to the Banana Quality Dataset to uncover hidden patterns in physical and chemical numerical features. Implemented KNNImputer to handle missing values and preserve data integrity, followed by MinMaxScaler for feature standardization. Applied Principal Component Analysis (PCA) to reduce dimensionality and simplify feature complexity without significant variance loss. Executed K-Means Clustering optimized via the Elbow Method and Silhouette Coefficient, then validated segmentation consistency using V-Measure Score. Built with Python (Pandas, NumPy, Scikit-Learn, Matplotlib, Seaborn).",
         image: null,
         files: [
             { name: "Final Analysis Report", link: "add/Cluster_Analysis_Report.pdf", type: "pdf" }
