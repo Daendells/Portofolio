@@ -160,6 +160,15 @@ export const PROJECTS = [
 
 export const CERTIFICATES = [
     {
+        title: "Data Analyst",
+        description: "Udemy (2025)",
+        image: null,
+        files: [
+            { name: "Data Analyst Certificate", link: "Certificate/Data_analyst_Udemy.pdf", type: "pdf" }
+        ],
+        isPdf: true
+    },
+    {
         title: "Software Engineer Intern",
         description: "HackerRank (2025)",
         image: null,

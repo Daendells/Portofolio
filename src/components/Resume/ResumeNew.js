@@ -43,11 +43,19 @@ function ResumeNew() {
             onLoadSuccess={onDocumentLoadSuccess}
           >
             {Array.from(new Array(numPages), (el, index) => (
-              <Page
+              <div
                 key={`page_${index + 1}`}
-                pageNumber={index + 1}
-                scale={width > 786 ? 1.7 : 0.6}
-              />
+                style={{
+                  marginBottom: index < numPages - 1 ? "20px" : "0",
+                  boxShadow: "0 4px 12px rgba(0,0,0,0.4)",
+                  borderRadius: "2px",
+                }}
+              >
+                <Page
+                  pageNumber={index + 1}
+                  scale={width > 786 ? 1.7 : 0.6}
+                />
+              </div>
             ))}
           </Document>
         </Row>
