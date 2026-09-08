@@ -1,9 +1,12 @@
 import React from "react";
 import Card from "react-bootstrap/Card";
 import Button from "react-bootstrap/Button";
-import { BsAward, BsBoxArrowUpRight, BsCalendar3, BsPeople } from "react-icons/bs";
+import { BsAward, BsCalendar3, BsEye, BsPeople } from "react-icons/bs";
 
-function CredentialCard({ credential, type }) {
+const getPreviewType = (link) =>
+  link.toLowerCase().endsWith(".pdf") ? "pdf" : "image";
+
+function CredentialCard({ credential, onPreview, type }) {
   const isActivity = type === "activity";
 
   return (
@@ -35,17 +38,35 @@ function CredentialCard({ credential, type }) {
         </div>
 
         <div className="credential-actions">
-          {credential.files.map((file) => (
-            <Button
-              key={file.link}
-              variant="primary"
-              href={file.link}
-              target="_blank"
-              rel="noreferrer"
-            >
-              <BsBoxArrowUpRight aria-hidden="true" /> {file.name}
-            </Button>
-          ))}
+          {credential.files.map((file) => {
+            const fileLabel = file.name.replace(/^View\s+/i, "");
+            const isGenericCredential = fileLabel.toLowerCase() === "credential";
+            const buttonLabel = isGenericCredential
+              ? isActivity
+                ? "activity document"
+                : "certificate"
+              : fileLabel;
+            const previewTitle = isGenericCredential
+              ? credential.title
+              : `${credential.title} — ${fileLabel}`;
+
+            return (
+              <Button
+                key={file.link}
+                variant="primary"
+                type="button"
+                onClick={() =>
+                  onPreview({
+                    src: file.link,
+                    title: previewTitle,
+                    type: getPreviewType(file.link),
+                  })
+                }
+              >
+                <BsEye aria-hidden="true" /> Preview {buttonLabel}
+              </Button>
+            );
+          })}
         </div>
       </Card.Body>
     </Card>

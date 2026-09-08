@@ -1,10 +1,11 @@
-import React from "react";
+import React, { useState } from "react";
 import { Col, Container, Row } from "react-bootstrap";
+import MediaPreviewModal from "../MediaPreviewModal";
 import Particle from "../Particle";
 import CredentialCard from "./CredentialCard";
 import { ACTIVITIES, CERTIFICATES } from "../../data/credentials";
 
-function CredentialSection({ description, items, title, type }) {
+function CredentialSection({ description, items, onPreview, title, type }) {
   return (
     <section className="credential-section-block" aria-labelledby={`${type}-heading`}>
       <div className="section-heading-wrap">
@@ -18,7 +19,11 @@ function CredentialSection({ description, items, title, type }) {
       <Row className="credential-grid">
         {items.map((item) => (
           <Col lg={4} md={6} className="credential-card" key={item.title}>
-            <CredentialCard credential={item} type={type} />
+            <CredentialCard
+              credential={item}
+              type={type}
+              onPreview={onPreview}
+            />
           </Col>
         ))}
       </Row>
@@ -27,6 +32,8 @@ function CredentialSection({ description, items, title, type }) {
 }
 
 function Credentials() {
+  const [preview, setPreview] = useState(null);
+
   return (
     <Container fluid className="project-section credentials-page">
       <Particle />
@@ -47,12 +54,19 @@ function Credentials() {
           description="Verified course completions, technical credentials, and competitive achievements."
           items={CERTIFICATES}
           type="certificate"
+          onPreview={setPreview}
         />
         <CredentialSection
           title="Learning Activities"
           description="Technical events, campus training, and professional-development sessions I participated in."
           items={ACTIVITIES}
           type="activity"
+          onPreview={setPreview}
+        />
+
+        <MediaPreviewModal
+          preview={preview}
+          onHide={() => setPreview(null)}
         />
       </Container>
     </Container>

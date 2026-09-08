@@ -97,11 +97,11 @@ export const PROJECTS = [
     },
     {
         title: "RAG Akademik — AI Chatbot Peraturan Kampus",
-        description: "An intelligent AI-powered academic assistant built with Retrieval-Augmented Generation (RAG) architecture. Leverages a vector knowledge base of 30+ indexed university regulation documents to answer student queries in real-time — covering SKS limits, thesis requirements, GPA policies, scholarships, graduation criteria, and more. Built with Python, Streamlit, sentence-transformers for semantic search, and OpenRouter LLM API. Deployed live on Streamlit Cloud with pre-computed embeddings for sub-second retrieval performance.",
+        description: "An intelligent AI-powered academic assistant built with Retrieval-Augmented Generation (RAG) architecture. Leverages a vector knowledge base of 30+ indexed university regulation documents to answer student queries — covering SKS limits, thesis requirements, GPA policies, scholarships, graduation criteria, and more. Built with Python, Streamlit, sentence-transformers for semantic search, and OpenRouter LLM API, with pre-computed embeddings for efficient retrieval.",
         image: "/assets/portfolio/ragakademik/ragakademik-preview.png",
         files: [],
         isPdf: false,
-        ghLink: null,
+        ghLink: "https://github.com/Daendells/RAGAkademik",
         demoLink: "https://ragakademik.streamlit.app/"
     },
     {
@@ -111,7 +111,7 @@ export const PROJECTS = [
         files: [],
         isPdf: false,
         ghLink: "https://github.com/Daendells/Conduit-CI-CD",
-        demoLink: "https://pso-conduit-service-opurikvscq-et.a.run.app/"
+        demoLink: null
     },
     {
         title: "AssetHub — Web Asset Management System",
@@ -119,7 +119,7 @@ export const PROJECTS = [
         image: "/assets/portfolio/assethub/assethub-web.png",
         files: [],
         isPdf: false,
-        ghLink: null,
+        ghLink: "https://github.com/Daendells/asset-hub-1",
         demoLink: "https://asset-hub-1.lovable.app"
     },
     {

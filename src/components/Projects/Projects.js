@@ -1,6 +1,7 @@
-import React from "react";
+import React, { useState } from "react";
 import { Col, Container, Row } from "react-bootstrap";
 import { PROJECTS } from "../../Constants";
+import MediaPreviewModal from "../MediaPreviewModal";
 import Particle from "../Particle";
 import ProjectCard from "./ProjectCards";
 
@@ -10,22 +11,19 @@ const projectSections = [
     category: "Internship Work",
     description:
       "Selected systems from my AI Engineering internship at PT Salam Pacific Indonesia Lines. Descriptions are intentionally general and no internal assets are published.",
+    matches: (project) => project.category === "Internship Work",
   },
   {
-    title: "Machine Learning",
-    category: "Machine Learning",
+    title: "Selected Projects",
     description:
-      "Reproducible computer-vision and natural-language-processing projects with documented evaluation results.",
-  },
-  {
-    title: "Selected Work",
-    category: null,
-    description:
-      "A broader selection of data, software engineering, cloud, analytics, and information-systems projects.",
+      "Machine learning, data, cloud, analytics, software engineering, and information-systems work in one collection.",
+    matches: (project) => project.category !== "Internship Work",
   },
 ];
 
 function Projects() {
+  const [preview, setPreview] = useState(null);
+
   return (
     <Container fluid className="project-section">
       <Particle />
@@ -42,11 +40,7 @@ function Projects() {
         </header>
 
         {projectSections.map((section) => {
-          const items = PROJECTS.filter((project) =>
-            section.category
-              ? project.category === section.category
-              : !project.category
-          );
+          const items = PROJECTS.filter(section.matches);
 
           return (
             <section className="project-section-block" key={section.title}>
@@ -63,13 +57,22 @@ function Projects() {
                     className="project-card"
                     key={project.title}
                   >
-                    <ProjectCard {...project} imgPath={project.image} />
+                    <ProjectCard
+                      {...project}
+                      imgPath={project.image}
+                      onPreview={setPreview}
+                    />
                   </Col>
                 ))}
               </Row>
             </section>
           );
         })}
+
+        <MediaPreviewModal
+          preview={preview}
+          onHide={() => setPreview(null)}
+        />
       </Container>
     </Container>
   );

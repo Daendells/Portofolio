@@ -1,15 +1,39 @@
 import React from "react";
 import Button from "react-bootstrap/Button";
 import Card from "react-bootstrap/Card";
-import { BsCodeSlash, BsDownload, BsGithub, BsShieldLock } from "react-icons/bs";
+import {
+  BsCodeSlash,
+  BsDownload,
+  BsEye,
+  BsGithub,
+  BsShieldLock,
+} from "react-icons/bs";
 import { CgFileDocument, CgWebsite } from "react-icons/cg";
 import { RELATIVE_PATH_TO_PORTO } from "../../Constants";
 
 function ProjectCards(props) {
+  const openPreview = (src, title, type) => {
+    props.onPreview({ src, title, type });
+  };
+
   return (
     <Card className="project-card-view">
       {props.imgPath ? (
-        <Card.Img variant="top" src={props.imgPath} alt={`${props.title} preview`} />
+        <button
+          type="button"
+          className="project-image-preview"
+          onClick={() => openPreview(props.imgPath, props.title, "image")}
+          aria-label={`Preview ${props.title}`}
+        >
+          <Card.Img
+            variant="top"
+            src={props.imgPath}
+            alt={`${props.title} preview`}
+          />
+          <span className="project-image-preview-label">
+            <BsEye aria-hidden="true" /> Preview image
+          </span>
+        </button>
       ) : (
         <div className="project-card-placeholder" aria-hidden="true">
           {props.confidential ? (
@@ -45,17 +69,32 @@ function ProjectCards(props) {
         )}
 
         <div className="project-actions">
-          {props.files?.map((file) => (
-            <Button
-              key={file.link}
-              variant="primary"
-              href={`${RELATIVE_PATH_TO_PORTO}/${file.link}`}
-              target="_blank"
-              rel="noreferrer"
-            >
-              {file.type === "pdf" ? <CgFileDocument /> : <BsDownload />} {file.name}
-            </Button>
-          ))}
+          {props.files?.map((file) => {
+            const fileLink = `${RELATIVE_PATH_TO_PORTO}/${file.link}`;
+            const isPreviewable = file.type === "pdf" || file.type === "image";
+
+            return isPreviewable ? (
+              <Button
+                key={file.link}
+                variant="primary"
+                type="button"
+                onClick={() =>
+                  openPreview(fileLink, `${props.title} — ${file.name}`, file.type)
+                }
+              >
+                {file.type === "pdf" ? <CgFileDocument /> : <BsEye />} {file.name}
+              </Button>
+            ) : (
+              <Button
+                key={file.link}
+                variant="primary"
+                href={fileLink}
+                download
+              >
+                <BsDownload /> {file.name}
+              </Button>
+            );
+          })}
 
           {props.ghLink && (
             <Button variant="primary" href={props.ghLink} target="_blank" rel="noreferrer">

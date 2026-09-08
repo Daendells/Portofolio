@@ -618,6 +618,47 @@ button:focus {
   opacity: 0.96 !important;
 }
 
+.project-image-preview {
+  position: relative;
+  display: block;
+  width: 100%;
+  padding: 0;
+  overflow: hidden;
+  border: 0;
+  background: transparent;
+  cursor: zoom-in;
+}
+
+.project-image-preview-label {
+  position: absolute;
+  right: 28px;
+  bottom: 28px;
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  padding: 7px 10px;
+  border: 1px solid rgba(255, 255, 255, 0.28);
+  border-radius: 999px;
+  background: rgba(13, 8, 22, 0.86);
+  color: #fff;
+  font-size: 0.7rem;
+  font-weight: 600;
+  opacity: 0;
+  transform: translateY(6px);
+  transition: opacity 0.2s ease, transform 0.2s ease;
+}
+
+.project-image-preview:hover .project-image-preview-label,
+.project-image-preview:focus-visible .project-image-preview-label {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.project-image-preview:focus-visible {
+  outline: 2px solid #d3a9f2;
+  outline-offset: -2px;
+}
+
 .project-card-placeholder {
   display: flex;
   min-height: 210px;
@@ -772,6 +813,56 @@ button:focus {
   font-size: 0.74rem;
 }
 
+.media-preview-modal {
+  max-width: min(1180px, calc(100vw - 32px));
+}
+
+.media-preview-modal .modal-content {
+  overflow: hidden;
+  border: 1px solid rgba(198, 154, 232, 0.32);
+  background: #171021;
+  color: #fff;
+  box-shadow: 0 24px 80px rgba(0, 0, 0, 0.55);
+}
+
+.media-preview-modal .modal-header,
+.media-preview-modal .modal-footer {
+  border-color: rgba(198, 154, 232, 0.16);
+}
+
+.media-preview-modal .modal-header .btn-close {
+  filter: invert(1) grayscale(1);
+}
+
+.media-preview-modal .modal-title {
+  padding-right: 16px;
+  font-size: 1rem;
+  line-height: 1.45;
+}
+
+.media-preview-modal .modal-body {
+  display: flex;
+  min-height: 420px;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  background: #0d0912;
+}
+
+.media-preview-frame {
+  width: 100%;
+  height: min(76vh, 820px);
+  border: 0;
+  background: #fff;
+}
+
+.media-preview-image {
+  display: block;
+  max-width: 100%;
+  max-height: 76vh;
+  object-fit: contain;
+}
+
 @media (max-width: 767px) {
   .project-section {
     padding-top: 120px !important;
@@ -798,6 +889,26 @@ button:focus {
   .section-description {
     margin-right: auto;
     margin-left: auto;
+  }
+
+  .project-image-preview-label {
+    right: 20px;
+    bottom: 20px;
+    opacity: 1;
+    transform: none;
+  }
+
+  .media-preview-modal {
+    max-width: calc(100vw - 16px);
+    margin: 8px auto;
+  }
+
+  .media-preview-modal .modal-body {
+    min-height: 300px;
+  }
+
+  .media-preview-frame {
+    height: 70vh;
   }
 }
 
