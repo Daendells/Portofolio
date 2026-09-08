@@ -1,8 +1,6 @@
 import React from "react";
 import { Container, Row, Col } from "react-bootstrap";
 import myImg from "../../Assets/avatar.svg";
-import Tilt from "react-parallax-tilt";
-
 
 function Home2() {
   return (
@@ -14,42 +12,37 @@ function Home2() {
               LET ME <span className="purple"> INTRODUCE </span> MYSELF
             </h1>
             <p className="home-about-body">
-              I'm a results-oriented{" "}
-              <b className="purple">Information Systems</b> student at ITS with
-              a strong foundation in{" "}
-              <b className="purple">data analytics, dashboarding,</b> and{" "}
-              <b className="purple">AI-powered applications.</b>
+              I'm an <b className="purple">Information Systems</b> student at
+              ITS and currently an{" "}
+              <b className="purple">AI Engineer Intern at PT SPIL.</b>
               <br />
               <br />
-              I specialize in tools like{" "}
-              <i>
-                <b className="purple">Power BI, Python, and Scikit-Learn </b>
-              </i>
-              to build end-to-end data pipelines, machine learning models, and
-              interactive dashboards.
+              I build practical systems across{" "}
+              <b className="purple">
+                document intelligence, machine learning, data analytics,
+              </b>{" "}
+              and full-stack engineering. My internship work is presented only
+              at a high level to protect company information.
               <br />
               <br />
-              My field of interest spans{" "}
-              <i>
-                <b className="purple">
-                  Time Series Forecasting, Computer Vision, RAG &amp; LLM,{" "}
-                </b>
-              </i>
-              and full-stack development — from CI/CD pipelines on{" "}
-              <b className="purple">Google Cloud Platform</b> to mobile asset
-              management apps.
+              My recent machine-learning work includes{" "}
+              <b className="purple">
+                image classification, Indonesian sentiment analysis, RAG,
+              </b>{" "}
+              and time-series forecasting. I enjoy turning experiments into
+              maintainable products with clear evaluation and thoughtful user
+              experiences.
               <br />
               <br />
             </p>
           </Col>
           <Col md={4} className="myAvtar">
-            <Tilt>
-              <img src={myImg} className="img-fluid" alt="avatar" />
-            </Tilt>
+            <img src={myImg} className="img-fluid" alt="Davin avatar" />
           </Col>
         </Row>
       </Container>
     </Container>
   );
 }
+
 export default Home2;

@@ -12,7 +12,7 @@ function AboutCard() {
           <p style={{ textAlign: "justify" }}>
             Hi Everyone, I am <span className="purple">{USERS.name}</span>.
             <br />
-            {USERS.desciption}
+            {USERS.description}
             <br />
             <br />
             Apart from coding and data visualization, some other activities that I love to do!

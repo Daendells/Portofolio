@@ -1,58 +1,75 @@
 import React from "react";
-import { Container, Row, Col } from "react-bootstrap";
-import ProjectCard from "./ProjectCards";
+import { Col, Container, Row } from "react-bootstrap";
+import { PROJECTS } from "../../Constants";
 import Particle from "../Particle";
-import leaf from "../../Assets/Projects/leaf.png";
-import { PROJECTS, CERTIFICATES } from "../../Constants";
+import ProjectCard from "./ProjectCards";
+
+const projectSections = [
+  {
+    title: "Internship Work",
+    category: "Internship Work",
+    description:
+      "Selected systems from my AI Engineering internship at PT Salam Pacific Indonesia Lines. Descriptions are intentionally general and no internal assets are published.",
+  },
+  {
+    title: "Machine Learning",
+    category: "Machine Learning",
+    description:
+      "Reproducible computer-vision and natural-language-processing projects with documented evaluation results.",
+  },
+  {
+    title: "Selected Work",
+    category: null,
+    description:
+      "A broader selection of data, software engineering, cloud, analytics, and information-systems projects.",
+  },
+];
 
 function Projects() {
   return (
     <Container fluid className="project-section">
       <Particle />
       <Container>
-        <h1 className="project-heading">
-          My Recent <strong className="purple">Works </strong>
-        </h1>
-        <p style={{ color: "white" }}>
-          Here are a few projects and certifications I've worked on.
-        </p>
-        <Row style={{ justifyContent: "center", paddingBottom: "10px" }}>
-          {PROJECTS.map((project, index) => (
-            <Col md={4} className="project-card" key={index}>
-              <ProjectCard
-                imgPath={project.image || leaf} // Use leaf as default for now, or import a generic doc image
-                isBlog={false}
-                isPdf={project.isPdf}
-                title={project.title}
-                description={project.description}
-                files={project.files}
-                ghLink={project.ghLink}
-                demoLink={project.demoLink}
-              />
-            </Col>
-          ))}
-        </Row>
+        <header className="page-intro">
+          <p className="section-kicker">Applied engineering &amp; research</p>
+          <h1 className="project-heading">
+            Selected <strong className="purple">Projects</strong>
+          </h1>
+          <p className="section-description section-description--centered">
+            Work across AI engineering, machine learning, data, cloud, and
+            product development.
+          </p>
+        </header>
 
-        <h1 className="project-heading">
-          My <strong className="purple">Certifications </strong>
-        </h1>
-        <p style={{ color: "white" }}>
-          Achievments and Certifications.
-        </p>
-        <Row style={{ justifyContent: "center", paddingBottom: "10px" }}>
-          {CERTIFICATES.map((cert, index) => (
-            <Col md={4} className="project-card" key={index}>
-              <ProjectCard
-                imgPath={cert.image || leaf}
-                isBlog={false}
-                isPdf={cert.isPdf}
-                title={cert.title}
-                description={cert.description}
-                files={cert.files}
-              />
-            </Col>
-          ))}
-        </Row>
+        {projectSections.map((section) => {
+          const items = PROJECTS.filter((project) =>
+            section.category
+              ? project.category === section.category
+              : !project.category
+          );
+
+          return (
+            <section className="project-section-block" key={section.title}>
+              <div className="section-heading-wrap">
+                <p className="section-kicker">{items.length} selected projects</p>
+                <h2 className="project-heading">{section.title}</h2>
+                <p className="section-description">{section.description}</p>
+              </div>
+              <Row className="project-grid">
+                {items.map((project) => (
+                  <Col
+                    lg={items.length === 2 ? 6 : 4}
+                    md={6}
+                    className="project-card"
+                    key={project.title}
+                  >
+                    <ProjectCard {...project} imgPath={project.image} />
+                  </Col>
+                ))}
+              </Row>
+            </section>
+          );
+        })}
       </Container>
     </Container>
   );

@@ -1,8 +1,16 @@
-import { render, screen } from '@testing-library/react';
-import App from './App';
+import { render, screen } from "@testing-library/react";
+import App from "./App";
 
-test('renders learn react link', () => {
+jest.mock("./components/Particle", () => function ParticleMock() {
+  return <div data-testid="particle-background" />;
+});
+
+jest.mock("./components/ScrollToTop", () => function ScrollToTopMock() {
+  return null;
+});
+
+test("renders Davin's portfolio navigation", () => {
   render(<App />);
-  const linkElement = screen.getByText(/learn react/i);
-  expect(linkElement).toBeInTheDocument();
+  expect(screen.getByRole("link", { name: /projects/i })).toBeInTheDocument();
+  expect(screen.getByRole("link", { name: /credentials/i })).toBeInTheDocument();
 });

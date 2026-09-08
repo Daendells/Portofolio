@@ -1,98 +1,77 @@
 import React from "react";
-import Card from "react-bootstrap/Card";
 import Button from "react-bootstrap/Button";
-import { Document, Page, pdfjs } from "react-pdf";
-import { CgWebsite, CgFileDocument } from "react-icons/cg";
-import { BsGithub, BsDownload } from "react-icons/bs";
+import Card from "react-bootstrap/Card";
+import { BsCodeSlash, BsDownload, BsGithub, BsShieldLock } from "react-icons/bs";
+import { CgFileDocument, CgWebsite } from "react-icons/cg";
 import { RELATIVE_PATH_TO_PORTO } from "../../Constants";
-import "react-pdf/dist/esm/Page/AnnotationLayer.css";
-
-// Set worker for react-pdf
-pdfjs.GlobalWorkerOptions.workerSrc = `//cdnjs.cloudflare.com/ajax/libs/pdf.js/${pdfjs.version}/pdf.worker.min.js`;
 
 function ProjectCards(props) {
-  function onDocumentLoadSuccess() {
-    // PDF loaded successfully
-  }
-
-  // Find the first PDF to show as preview if available
-  const pdfFile = props.files?.find(f => f.type === 'pdf' || f.name.endsWith('.pdf'));
-  const pdfPath = pdfFile ? `${RELATIVE_PATH_TO_PORTO}/${pdfFile.link}` : null;
-
   return (
     <Card className="project-card-view">
-      {/* If it's a PDF project, show the first page as preview */}
-      {props.isPdf && pdfPath ? (
-        <div className="pdf-preview-container" style={{ height: '200px', overflow: 'hidden', marginBottom: '15px' }}>
-          <Document
-            file={pdfPath}
-            onLoadSuccess={onDocumentLoadSuccess}
-            loading="Loading PDF..."
-            className="d-flex justify-content-center"
-          >
-            <Page pageNumber={1} scale={0.5} renderTextLayer={false} />
-          </Document>
-        </div>
+      {props.imgPath ? (
+        <Card.Img variant="top" src={props.imgPath} alt={`${props.title} preview`} />
       ) : (
-        <Card.Img variant="top" src={props.imgPath} alt="card-img" />
+        <div className="project-card-placeholder" aria-hidden="true">
+          {props.confidential ? (
+            <BsShieldLock />
+          ) : props.isPdf ? (
+            <CgFileDocument />
+          ) : (
+            <BsCodeSlash />
+          )}
+          <span>
+            {props.confidential
+              ? "Private work"
+              : props.isPdf
+                ? "Documented case study"
+                : "Project case study"}
+          </span>
+        </div>
       )}
 
-      <Card.Body>
+      <Card.Body className="project-card-body">
+        {props.eyebrow && <p className="project-eyebrow">{props.eyebrow}</p>}
         <Card.Title>{props.title}</Card.Title>
-        <Card.Text style={{ textAlign: "justify" }}>
-          {props.description}
-        </Card.Text>
+        <Card.Text className="project-description">{props.description}</Card.Text>
 
-        {/* Render a button for each file in the project */}
-        {props.files && props.files.length > 0 && props.files.map((file, idx) => (
-          <Button
-            key={idx}
-            variant="primary"
-            href={`${RELATIVE_PATH_TO_PORTO}/${file.link}`}
-            target="_blank"
-            style={{ marginTop: '10px', marginRight: '10px' }}
-          >
-            {file.type === 'pdf' ? <CgFileDocument /> : <BsDownload />} &nbsp;
-            {file.name}
-          </Button>
-        ))}
-
-        {/* GitHub Link */}
-        {props.ghLink && (
-          <Button
-            variant="primary"
-            href={props.ghLink}
-            target="_blank"
-            style={{ marginTop: '10px', marginRight: '10px' }}
-          >
-            <BsGithub /> &nbsp;
-            {"GitHub"}
-          </Button>
+        {props.tags?.length > 0 && (
+          <div className="tag-list" aria-label="Technologies">
+            {props.tags.map((tag) => (
+              <span className="content-tag" key={tag}>
+                {tag}
+              </span>
+            ))}
+          </div>
         )}
 
-        {/* Demo Link Logic */}
-        {!props.isBlog && props.demoLink && (
-          <Button
-            variant="primary"
-            href={props.demoLink}
-            target="_blank"
-            style={{ marginTop: '10px', marginRight: '10px' }}
-          >
-            {props.demoLink.includes("colab.research.google.com") ? (
-              <>
-                <CgWebsite /> &nbsp;
-                {"Google Colab"}
-              </>
-            ) : (
-              <>
-                <CgWebsite /> &nbsp;
-                {"Demo"}
-              </>
-            )}
-          </Button>
-        )}
+        <div className="project-actions">
+          {props.files?.map((file) => (
+            <Button
+              key={file.link}
+              variant="primary"
+              href={`${RELATIVE_PATH_TO_PORTO}/${file.link}`}
+              target="_blank"
+              rel="noreferrer"
+            >
+              {file.type === "pdf" ? <CgFileDocument /> : <BsDownload />} {file.name}
+            </Button>
+          ))}
+
+          {props.ghLink && (
+            <Button variant="primary" href={props.ghLink} target="_blank" rel="noreferrer">
+              <BsGithub /> GitHub
+            </Button>
+          )}
+
+          {props.demoLink && (
+            <Button variant="primary" href={props.demoLink} target="_blank" rel="noreferrer">
+              <CgWebsite /> {props.demoLink.includes("colab.research.google.com") ? "Google Colab" : "Demo"}
+            </Button>
+          )}
+        </div>
       </Card.Body>
     </Card>
   );
 }
+
 export default ProjectCards;

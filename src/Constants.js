@@ -4,12 +4,12 @@
 export const USERS = {
     name: "Davin Jonathan Tanus",
     titles: [
+        "AI Engineer Intern @ SPIL",
+        "Machine Learning Engineer",
         "Data Analyst",
-        "Dashboard Developer",
-        "AI & ML Practitioner",
         "Software Engineer"
     ],
-    desciption: "A results-oriented Information Systems student at ITS with expertise in data analytics, dashboarding, and Agile-based project management. Experienced in building end-to-end data pipelines, AI-powered applications, and full-stack systems — from RAG chatbots and stock forecasting models to CI/CD pipelines and asset management platforms. Collaborative and communicative, with a track record of delivering impactful technical projects under tight deadlines.",
+    description: "An Information Systems student at ITS and AI Engineer Intern at PT Salam Pacific Indonesia Lines. I build practical AI, machine learning, data, and full-stack systems—from document intelligence and internal platforms to image classification, sentiment analysis, forecasting, and analytics. I care about reliable evaluation, maintainable software, and turning technical work into useful products.",
     social: {
         github: "https://github.com/Daendells", // Add if known, else blank
         linkedin: "https://www.linkedin.com/in/davin-jonathan-tanus-32a19b308/", // Add if known, else blank
@@ -23,6 +23,56 @@ export const USERS = {
 export const RELATIVE_PATH_TO_PORTO = "/assets/portfolio";
 
 export const PROJECTS = [
+    {
+        title: "Intelligent Document Verification Platform",
+        eyebrow: "AI Engineering Internship · Confidential",
+        category: "Internship Work",
+        description: "An internal platform that transforms operational PDF documents into structured, searchable information and supports automated verification against scheduling records. My work covers document extraction, normalization and matching logic, dashboard and API integration, authentication, database persistence, testing, and containerized delivery. Implementation details, data, and source code are withheld to protect company confidentiality.",
+        image: null,
+        files: [],
+        isPdf: false,
+        confidential: true,
+        tags: ["Document AI", "Next.js", "FastAPI", "PostgreSQL", "Docker"],
+        ghLink: null,
+        demoLink: null
+    },
+    {
+        title: "Talent Development & Assessment Platform",
+        eyebrow: "AI Engineering Internship · Confidential",
+        category: "Internship Work",
+        description: "A private workforce-development system for structured assessments, competency profiles, learning activities, and reporting. I contribute to full-stack features, secure access flows, data workflows, analytics and report generation, automated testing, and containerized deployment. The description intentionally remains high-level and no company data or internal artifacts are published.",
+        image: null,
+        files: [],
+        isPdf: false,
+        confidential: true,
+        tags: ["Next.js", "Go", "MySQL", "Analytics", "Docker"],
+        ghLink: null,
+        demoLink: null
+    },
+    {
+        title: "Multi-Class Image Classification with Transfer Learning",
+        eyebrow: "Machine Learning · Dicoding",
+        category: "Machine Learning",
+        description: "A reproducible image-classification pipeline trained on 13,394 Imagenette images across 10 classes. The project uses an 80/10/10 train-validation-test split, realistic augmentation, a MobileNetV2 transfer-learning backbone, staged fine-tuning, and callback-driven checkpointing. Evaluation includes learning curves, a confusion matrix, and per-class metrics, with 91.67% test accuracy. The trained model was exported to SavedModel, TensorFlow Lite, and TensorFlow.js formats.",
+        image: "/assets/portfolio/machine-learning/image-classification-training.png",
+        files: [],
+        isPdf: false,
+        tags: ["TensorFlow", "MobileNetV2", "Transfer Learning", "TFLite", "TensorFlow.js"],
+        ghLink: null,
+        demoLink: null
+    },
+    {
+        title: "Indonesian App Review Sentiment Analysis",
+        eyebrow: "Natural Language Processing · Dicoding",
+        category: "Machine Learning",
+        description: "An end-to-end three-class sentiment-analysis project built from more than 16,000 independently collected Indonesian app reviews. The pipeline handles text cleaning, slang normalization, sentiment-aware preprocessing, deduplication, class balancing, feature extraction, and repeatable inference. Three approaches—LinearSVC, logistic regression, and a PyTorch BiLSTM—were compared; the strongest evaluated model achieved 92.17% test accuracy, supported by per-class reporting and confusion-matrix analysis.",
+        image: "/assets/portfolio/machine-learning/sentiment-analysis-confusion-matrix.png",
+        files: [],
+        isPdf: false,
+        tags: ["NLP", "Scikit-Learn", "PyTorch", "BiLSTM", "Text Classification"],
+        ghLink: null,
+        demoLink: null
+    },
     {
         title: "Stock Price Forecasting — Classical ML & Deep Learning",
         description: "A professional time series forecasting system analyzing 10 years of historical trading data for United Tractors Tbk (UNTR.JK). Evaluates multiple architectures including Moving Average, ARIMA(5,1,0), Facebook Prophet, XGBoost, and a double-layer LSTM network. Incorporates rigorous validation methodologies: 1-step rolling Walk-Forward validation to simulate real trading, residual diagnostics (Ljung-Box Test) to mathematically reject underfitting, and learning curve monitoring to prevent overfitting. The custom-trained LSTM network achieved superior predictive accuracy with a MAPE of 1.04% and MAE of 254.56.",
@@ -156,87 +206,6 @@ export const PROJECTS = [
         ],
         isPdf: true
     }
-];
-
-export const CERTIFICATES = [
-    {
-        title: "Data Analyst",
-        description: "Udemy (2025)",
-        image: null,
-        files: [
-            { name: "Data Analyst Certificate", link: "Certificate/Data_analyst_Udemy.pdf", type: "pdf" }
-        ],
-        isPdf: true
-    },
-    {
-        title: "Software Engineer Intern",
-        description: "HackerRank (2025)",
-        image: null,
-        files: [
-            { name: "Software Engineer Intern Certificate", link: "Certificate/Software_Engineer_Intern_Certificate.pdf", type: "pdf" }
-        ],
-        isPdf: true
-    },
-    {
-        title: "SQL (Basic) Certificate",
-        description: "HackerRank (2025)",
-        image: null,
-        files: [
-            { name: "SQL Certificate", link: "Certificate/SQL_Basic_Certificate.pdf", type: "pdf" }
-        ],
-        isPdf: true
-    },
-    {
-        title: "Juara 2 Pemrograman",
-        description: "IS Competition, HMSI ITS (2024)",
-        image: null,
-        files: [
-            { name: "Certificate", link: "Certificate/Certificate_3.pdf", type: "pdf" }
-        ],
-        isPdf: true
-    },
-    {
-        title: "Introduction to SAP S/4HANA with GBI 4.2",
-        description: "SAP University Alliances (2024)",
-        image: null,
-        files: [
-            { name: "Certificate", link: "Certificate/Certificate_2.pdf", type: "pdf" }
-        ],
-        isPdf: true
-    },
-    {
-        title: "Intro to Data Analytics",
-        description: "RevoU Mini Course (2025)",
-        image: null,
-        files: [
-            { name: "DAMC Certificate", link: "Certificate/DAMC_Certificate.pdf", type: "pdf" }
-        ],
-        isPdf: true
-    },
-    {
-        title: "Resilience",
-        description: "Nestlé (2026)",
-        image: null,
-        files: [
-            { name: "Resilience Certificate", link: "Certificate/Resilience_Nestle.pdf", type: "pdf" }
-        ],
-        isPdf: true
-    },
-    {
-        title: "CCNA: Introduction to Networks",
-        description: "Cisco Netacad (In Progress)",
-        image: null,
-        files: [],
-        isPdf: false
-    },
-    {
-        title: "DevNet Associate (DevOps)",
-        description: "Cisco (In Progress)",
-        image: null,
-        files: [],
-        isPdf: false
-    }
-
 ];
 
 export const SKILLS = [
