@@ -1,6 +1,9 @@
 import React from "react";
 import { Container, Row, Col } from "react-bootstrap";
+import Button from "react-bootstrap/Button";
+import { Link } from "react-router-dom";
 import homeLogo from "../../Assets/home-main.svg";
+import cvPdf from "../../Assets/CV_Davin_Jonathan_Tanus_EN_New.pdf";
 import Particle from "../Particle";
 import Home2 from "./Home2";
 import Type from "./Type";
@@ -10,8 +13,17 @@ import {
   AiFillGithub,
   AiOutlineTwitter,
   AiFillInstagram,
+  AiOutlineDownload,
+  AiOutlineFundProjectionScreen,
 } from "react-icons/ai";
 import { FaLinkedinIn } from "react-icons/fa";
+
+const HIGHLIGHT_STATS = [
+  { value: "18", label: "Selected projects" },
+  { value: "92.17%", label: "Best model test accuracy" },
+  { value: "28", label: "Credentials & activities" },
+  { value: "3.64", label: "GPA at ITS" },
+];
 
 function Home() {
   return (
@@ -36,6 +48,25 @@ function Home() {
               <div style={{ padding: 50, textAlign: "left" }}>
                 <Type />
               </div>
+
+              <div className="home-cta">
+                <Button
+                  as={Link}
+                  to="/project"
+                  variant="primary"
+                  className="home-cta-button"
+                >
+                  <AiOutlineFundProjectionScreen aria-hidden="true" /> View My Work
+                </Button>
+                <Button
+                  href={cvPdf}
+                  download="Davin_Jonathan_Tanus_CV.pdf"
+                  variant="outline-light"
+                  className="home-cta-button"
+                >
+                  <AiOutlineDownload aria-hidden="true" /> Download CV
+                </Button>
+              </div>
             </Col>
 
             <Col md={5} style={{ paddingBottom: 20 }}>
@@ -45,6 +76,18 @@ function Home() {
                 className="img-fluid"
                 style={{ maxHeight: "450px" }}
               />
+            </Col>
+          </Row>
+          <Row>
+            <Col md={12}>
+              <dl className="home-stats" aria-label="Highlights">
+                {HIGHLIGHT_STATS.map((stat) => (
+                  <div className="home-stat" key={stat.label}>
+                    <dt className="home-stat-value">{stat.value}</dt>
+                    <dd className="home-stat-label">{stat.label}</dd>
+                  </div>
+                ))}
+              </dl>
             </Col>
           </Row>
         </Container>

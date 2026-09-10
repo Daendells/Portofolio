@@ -58,3 +58,63 @@ test("opens image previews and keeps the retired GCP project GitHub-only", () =>
     )
   ).toBeInTheDocument();
 });
+
+test("filters selected projects by category and search query", () => {
+  render(<Projects />);
+
+  fireEvent.click(screen.getByRole("button", { name: "Time Series" }));
+
+  expect(
+    screen.getByText(/Stock Price Forecasting — Classical ML/i)
+  ).toBeInTheDocument();
+  expect(
+    screen.queryByText(/RAG Akademik.*AI Chatbot Peraturan Kampus/i)
+  ).not.toBeInTheDocument();
+  // Internship work is never affected by the selected-projects filter.
+  expect(
+    screen.getByText("Intelligent Document Verification Platform")
+  ).toBeInTheDocument();
+
+  fireEvent.click(screen.getByRole("button", { name: "All" }));
+  fireEvent.change(
+    screen.getByRole("searchbox", { name: "Search projects" }),
+    { target: { value: "sentiment" } }
+  );
+
+  expect(
+    screen.getByText("Indonesian App Review Sentiment Analysis")
+  ).toBeInTheDocument();
+  expect(
+    screen.queryByText(
+      "Multi-Class Image Classification with Transfer Learning"
+    )
+  ).not.toBeInTheDocument();
+});
+
+test("exposes the Dicoding training notebooks on the ML project cards", () => {
+  render(<Projects />);
+
+  const imageCard = screen
+    .getByText("Multi-Class Image Classification with Transfer Learning")
+    .closest(".project-card-view");
+  const sentimentCard = screen
+    .getByText("Indonesian App Review Sentiment Analysis")
+    .closest(".project-card-view");
+
+  expect(
+    within(imageCard).getByRole("button", {
+      name: "Training Notebook (.ipynb)",
+    })
+  ).toHaveAttribute(
+    "href",
+    "/assets/portfolio/machine-learning/image-classification-imagenette-notebook.ipynb"
+  );
+  expect(
+    within(sentimentCard).getByRole("button", {
+      name: "Training Notebook (.ipynb)",
+    })
+  ).toHaveAttribute(
+    "href",
+    "/assets/portfolio/machine-learning/sentiment-analysis-gojek-training.ipynb"
+  );
+});

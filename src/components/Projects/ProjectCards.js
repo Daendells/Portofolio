@@ -56,6 +56,15 @@ function ProjectCards(props) {
       <Card.Body className="project-card-body">
         {props.eyebrow && <p className="project-eyebrow">{props.eyebrow}</p>}
         <Card.Title>{props.title}</Card.Title>
+        {props.metrics?.length > 0 && (
+          <div className="metric-list" aria-label="Key results">
+            {props.metrics.map((metric) => (
+              <span className="metric-chip" key={metric.label}>
+                <strong>{metric.value}</strong> {metric.label}
+              </span>
+            ))}
+          </div>
+        )}
         <Card.Text className="project-description">{props.description}</Card.Text>
 
         {props.tags?.length > 0 && (
@@ -72,6 +81,19 @@ function ProjectCards(props) {
           {props.files?.map((file) => {
             const fileLink = `${RELATIVE_PATH_TO_PORTO}/${file.link}`;
             const isPreviewable = file.type === "pdf" || file.type === "image";
+
+            if (file.type === "notebook") {
+              return (
+                <Button
+                  key={file.link}
+                  variant="primary"
+                  href={fileLink}
+                  download
+                >
+                  <BsCodeSlash /> {file.name}
+                </Button>
+              );
+            }
 
             return isPreviewable ? (
               <Button

@@ -1,5 +1,8 @@
 import React from "react";
 import { Container, Row, Col } from "react-bootstrap";
+import Button from "react-bootstrap/Button";
+import { Link } from "react-router-dom";
+import { BsArrowRight } from "react-icons/bs";
 import myImg from "../../Assets/avatar.svg";
 
 function Home2() {
@@ -35,6 +38,14 @@ function Home2() {
               <br />
               <br />
             </p>
+            <Button
+              as={Link}
+              to="/project"
+              variant="primary"
+              className="home-cta-button"
+            >
+              Explore selected projects <BsArrowRight aria-hidden="true" />
+            </Button>
           </Col>
           <Col md={4} className="myAvtar">
             <img src={myImg} className="img-fluid" alt="Davin avatar" />
