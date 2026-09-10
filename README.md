@@ -24,3 +24,9 @@ npm start
 npm test -- --watchAll=false
 npm run build
 ```
+
+## CV source
+
+The editable, print-ready CV source is stored at
+`docs/cv/Davin_Jonathan_Tanus_CV.html`. Its generated PDF is used by the
+portfolio Resume page at `src/Assets/CV_Davin_Jonathan_Tanus_EN_New.pdf`.

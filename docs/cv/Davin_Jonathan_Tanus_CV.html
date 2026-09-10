@@ -1,0 +1,506 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Davin Jonathan Tanus — Curriculum Vitae</title>
+    <style>
+      :root {
+        --ink: #172033;
+        --muted: #526071;
+        --navy: #173a5e;
+        --teal: #087f8c;
+        --line: #d9e1e8;
+        --paper: #ffffff;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      html,
+      body {
+        margin: 0;
+        padding: 0;
+        background: #e9edf1;
+        color: var(--ink);
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 10pt;
+        line-height: 1.42;
+      }
+
+      .sheet {
+        width: 210mm;
+        min-height: 297mm;
+        margin: 12mm auto;
+        padding: 12mm 14mm 11mm;
+        background: var(--paper);
+        box-shadow: 0 8px 28px rgba(23, 32, 51, 0.14);
+      }
+
+      .sheet + .sheet {
+        break-before: page;
+      }
+
+      h1,
+      h2,
+      h3,
+      p {
+        margin-top: 0;
+      }
+
+      h1 {
+        margin-bottom: 2mm;
+        color: var(--navy);
+        font-size: 27pt;
+        font-weight: 700;
+        letter-spacing: -0.03em;
+        line-height: 1;
+      }
+
+      h2 {
+        margin: 5mm 0 2.2mm;
+        padding-bottom: 1.1mm;
+        border-bottom: 1.2px solid var(--navy);
+        color: var(--navy);
+        font-size: 11.2pt;
+        font-weight: 700;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+      }
+
+      h3 {
+        margin-bottom: 0.6mm;
+        color: var(--ink);
+        font-size: 10.3pt;
+        line-height: 1.25;
+      }
+
+      a {
+        color: var(--teal);
+        font-weight: 600;
+        text-decoration: none;
+      }
+
+      a:hover,
+      a:focus {
+        text-decoration: underline;
+      }
+
+      ul {
+        margin: 1.2mm 0 0;
+        padding-left: 4.6mm;
+      }
+
+      li {
+        margin-bottom: 0.9mm;
+        padding-left: 0.5mm;
+      }
+
+      .headline {
+        margin-bottom: 2.3mm;
+        color: var(--muted);
+        font-size: 11.7pt;
+        font-weight: 700;
+      }
+
+      .contact {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 1.2mm 3.3mm;
+        color: var(--muted);
+        font-size: 9pt;
+      }
+
+      .contact span:not(:last-child)::after {
+        margin-left: 3.3mm;
+        color: #a8b2bd;
+        content: "•";
+      }
+
+      .summary {
+        margin-bottom: 0;
+        color: #2a3545;
+        font-size: 10pt;
+      }
+
+      .entry {
+        margin-bottom: 3.2mm;
+        break-inside: avoid;
+      }
+
+      .entry:last-child {
+        margin-bottom: 0;
+      }
+
+      .entry-header {
+        display: flex;
+        align-items: baseline;
+        justify-content: space-between;
+        gap: 8mm;
+      }
+
+      .entry-title {
+        margin: 0;
+      }
+
+      .entry-meta {
+        flex: 0 0 auto;
+        color: var(--muted);
+        font-size: 8.8pt;
+        font-weight: 700;
+        white-space: nowrap;
+      }
+
+      .entry-subtitle {
+        margin-bottom: 1mm;
+        color: var(--muted);
+        font-size: 9.1pt;
+        font-weight: 600;
+      }
+
+      .project-links {
+        display: inline-flex;
+        flex-wrap: wrap;
+        gap: 0 2.3mm;
+        margin-left: 1.2mm;
+        font-size: 8.7pt;
+        font-weight: 400;
+      }
+
+      .project-links a + a::before {
+        margin-right: 2.3mm;
+        color: #a8b2bd;
+        content: "|";
+      }
+
+      .compact-list {
+        margin-top: 0;
+      }
+
+      .skill-row,
+      .credential-row {
+        margin-bottom: 1.5mm;
+      }
+
+      .skill-row strong,
+      .credential-row strong {
+        color: var(--navy);
+      }
+
+      .continued {
+        display: flex;
+        align-items: baseline;
+        justify-content: space-between;
+        padding-bottom: 2.2mm;
+        border-bottom: 1px solid var(--line);
+        color: var(--muted);
+        font-size: 8.2pt;
+      }
+
+      .continued strong {
+        color: var(--navy);
+        font-size: 10pt;
+      }
+
+      .footer-note {
+        margin-top: 5mm;
+        padding-top: 2.5mm;
+        border-top: 1px solid var(--line);
+        color: var(--muted);
+        font-size: 7.8pt;
+        text-align: center;
+      }
+
+      @page {
+        size: A4;
+        margin: 0;
+      }
+
+      @media print {
+        html,
+        body {
+          background: #fff;
+          print-color-adjust: exact;
+          -webkit-print-color-adjust: exact;
+        }
+
+        .sheet {
+          width: 210mm;
+          min-height: 297mm;
+          margin: 0;
+          box-shadow: none;
+          break-after: page;
+        }
+
+        .sheet:last-child {
+          break-after: auto;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <article class="sheet">
+        <header>
+          <h1>Davin Jonathan Tanus</h1>
+          <p class="headline">AI Engineer Intern | Machine Learning &amp; Software Engineering</p>
+          <div class="contact" aria-label="Contact information">
+            <span>Surabaya, Indonesia</span>
+            <span><a href="tel:+6282194655321">+62 821-9465-5321</a></span>
+            <span><a href="mailto:davinjtanus@gmail.com">davinjtanus@gmail.com</a></span>
+            <span><a href="https://www.linkedin.com/in/davin-jonathan-tanus-32a19b308/">LinkedIn</a></span>
+            <span><a href="https://github.com/Daendells">GitHub</a></span>
+            <span><a href="https://portofolio-liard-ten.vercel.app/">Portfolio</a></span>
+          </div>
+        </header>
+
+        <section>
+          <h2>Professional Summary</h2>
+          <p class="summary">
+            Information Systems undergraduate (GPA 3.64/4.00) and AI Engineer Intern with hands-on
+            experience building document-intelligence, machine-learning, data, and full-stack systems.
+            Delivered internal applications with Next.js, FastAPI, Go, relational databases, and Docker;
+            developed evaluated solutions across computer vision, Indonesian NLP, RAG, and time-series
+            forecasting. Combines rigorous model evaluation with maintainable, product-oriented engineering.
+          </p>
+        </section>
+
+        <section>
+          <h2>Professional Experience</h2>
+          <div class="entry">
+            <div class="entry-header">
+              <h3 class="entry-title">AI Engineer Intern — PT Salam Pacific Indonesia Lines</h3>
+              <span class="entry-meta">2026 – Present</span>
+            </div>
+            <p class="entry-subtitle">Applied AI &amp; Full-Stack Engineering</p>
+            <ul>
+              <li>
+                Develop and integrate an internal document-intelligence platform that transforms operational
+                PDFs into structured, searchable records and supports automated cross-document verification.
+              </li>
+              <li>
+                Contribute full-stack features to a talent development and assessment platform spanning
+                competency profiles, learning activities, analytics, and report generation.
+              </li>
+              <li>
+                Build secure application flows and REST APIs across Next.js, FastAPI/Python, Go,
+                PostgreSQL/MySQL, and Docker-based environments.
+              </li>
+              <li>
+                Write automated tests and collaborate with engineering stakeholders while protecting
+                confidential company data and implementation details.
+              </li>
+            </ul>
+          </div>
+        </section>
+
+        <section>
+          <h2>Education</h2>
+          <div class="entry">
+            <div class="entry-header">
+              <h3 class="entry-title">Institut Teknologi Sepuluh Nopember (ITS)</h3>
+              <span class="entry-meta">Aug 2023 – Present</span>
+            </div>
+            <p class="entry-subtitle">Bachelor's Degree in Information Systems | GPA: 3.64/4.00</p>
+          </div>
+        </section>
+
+        <section>
+          <h2>Selected Projects</h2>
+          <div class="entry">
+            <h3>
+              Multi-Class Image Classification with Transfer Learning
+              <span class="project-links">
+                <a href="https://portofolio-liard-ten.vercel.app/project">Project details</a>
+                <a href="https://portofolio-liard-ten.vercel.app/assets/portfolio/machine-learning/image-classification-training.png">Evaluation preview</a>
+              </span>
+            </h3>
+            <ul>
+              <li>
+                Trained a 10-class MobileNetV2 transfer-learning model on 13,394 Imagenette images using
+                an 80/10/10 split, augmentation, staged fine-tuning, and checkpointing.
+              </li>
+              <li>
+                Achieved 91.67% test accuracy and exported the trained model to SavedModel,
+                TensorFlow Lite, and TensorFlow.js formats.
+              </li>
+            </ul>
+          </div>
+
+          <div class="entry">
+            <h3>
+              Indonesian App Review Sentiment Analysis
+              <span class="project-links">
+                <a href="https://portofolio-liard-ten.vercel.app/project">Project details</a>
+                <a href="https://portofolio-liard-ten.vercel.app/assets/portfolio/machine-learning/sentiment-analysis-confusion-matrix.png">Evaluation preview</a>
+              </span>
+            </h3>
+            <ul>
+              <li>
+                Built a three-class Indonesian sentiment pipeline from 16,000+ independently collected app
+                reviews, including cleaning, slang normalization, deduplication, and class balancing.
+              </li>
+              <li>
+                Benchmarked LinearSVC, logistic regression, and a PyTorch BiLSTM; the strongest evaluated
+                model achieved 92.17% test accuracy with per-class and confusion-matrix analysis.
+              </li>
+            </ul>
+          </div>
+
+          <div class="entry">
+            <h3>
+              RAG Academic Assistant
+              <span class="project-links">
+                <a href="https://ragakademik.streamlit.app/">Live application</a>
+                <a href="https://github.com/Daendells/RAGAkademik">GitHub</a>
+              </span>
+            </h3>
+            <ul>
+              <li>
+                Built a Retrieval-Augmented Generation assistant over 30+ university regulation documents
+                using semantic search, sentence-transformers, Streamlit, and an LLM API.
+              </li>
+              <li>
+                Used pre-computed embeddings to support efficient retrieval for academic-policy questions.
+              </li>
+            </ul>
+          </div>
+
+        </section>
+      </article>
+
+      <article class="sheet">
+        <div class="continued">
+          <strong>Davin Jonathan Tanus</strong>
+          <span>AI Engineer Intern | Page 2 of 2</span>
+        </div>
+
+        <section>
+          <h2>Selected Projects — Continued</h2>
+          <div class="entry">
+            <h3>
+              Stock Price Forecasting — Classical ML, Deep Learning &amp; Chronos-2
+              <span class="project-links">
+                <a href="https://colab.research.google.com/drive/1PmCxi3E9srX3Hpct5Hvo2gbp_3hQb60a?usp=sharing">Classical notebook</a>
+                <a href="https://colab.research.google.com/drive/1U83z42kPZF3e1ZWpM43Nh6pjnQ4mMeW8?usp=sharing">Chronos-2 notebook</a>
+              </span>
+            </h3>
+            <ul>
+              <li>
+                Developed an end-to-end forecasting workflow on 10 years of UNTR.JK data and compared
+                ARIMA, Prophet, XGBoost, LSTM, and the zero-shot Amazon Chronos-2 foundation model.
+              </li>
+              <li>
+                Applied rolling walk-forward validation and residual diagnostics; the custom LSTM achieved
+                1.04% MAPE and 254.56 MAE.
+              </li>
+            </ul>
+          </div>
+
+          <div class="entry">
+            <h3>
+              Conduit CI/CD Pipeline on Google Cloud Platform
+              <span class="project-links">
+                <a href="https://github.com/Daendells/Conduit-CI-CD">GitHub</a>
+              </span>
+            </h3>
+            <ul>
+              <li>
+                Containerized a Laravel application with Docker and implemented automated test and
+                deployment workflows using GitHub Actions, Google Cloud Run, and Artifact Registry.
+              </li>
+              <li>
+                Integrated MongoDB, PHPUnit quality gates, secrets handling, and Grafana-oriented monitoring.
+              </li>
+            </ul>
+          </div>
+
+          <div class="entry">
+            <h3>
+              AssetHub — Web &amp; Mobile Asset Management
+              <span class="project-links">
+                <a href="https://asset-hub-1.lovable.app/">Live web application</a>
+                <a href="https://github.com/Daendells/Mobile_APP">Mobile GitHub</a>
+              </span>
+            </h3>
+            <ul>
+              <li>
+                Developed web and mobile workflows for asset tracking, maintenance, assignments, audit logs,
+                analytics, and role-based access using React, Supabase, and React Native/Expo.
+              </li>
+            </ul>
+          </div>
+        </section>
+
+        <section>
+          <h2>Technical Skills</h2>
+          <p class="skill-row"><strong>Languages:</strong> Python, JavaScript, SQL, Go</p>
+          <p class="skill-row"><strong>AI &amp; Machine Learning:</strong> TensorFlow, PyTorch, scikit-learn, XGBoost, NLP, RAG, computer vision, transfer learning, LSTM/BiLSTM, time-series forecasting</p>
+          <p class="skill-row"><strong>Application &amp; Data:</strong> Next.js, React, FastAPI, Streamlit, REST APIs, PostgreSQL, MySQL, Supabase, data preprocessing</p>
+          <p class="skill-row"><strong>Cloud, DevOps &amp; Analytics:</strong> Docker, GitHub Actions, Google Cloud Platform, AWS, Microsoft Fabric, Power BI, Git</p>
+        </section>
+
+        <section>
+          <h2>Selected Certifications</h2>
+          <p class="credential-row">
+            <strong><a href="https://portofolio-liard-ten.vercel.app/assets/credentials/certificates/dicoding-deep-learning-fundamentals.pdf">Deep Learning Fundamentals</a></strong>
+            — Dicoding Indonesia, Sep 2026
+          </p>
+          <p class="credential-row">
+            <strong><a href="https://portofolio-liard-ten.vercel.app/assets/credentials/certificates/dicoding-data-science-with-microsoft-fabric.pdf">Data Science with Microsoft Fabric</a></strong>
+            — Dicoding Indonesia, Aug 2026
+          </p>
+          <p class="credential-row">
+            <strong><a href="https://portofolio-liard-ten.vercel.app/assets/credentials/certificates/dicoding-generative-ai-with-microsoft-azure.pdf">Building Generative AI Applications with Microsoft Azure</a></strong>
+            — Dicoding Indonesia, Aug 2026
+          </p>
+          <p class="credential-row">
+            <strong>LangChain Academy Foundations:</strong>
+            <a href="https://portofolio-liard-ten.vercel.app/assets/credentials/certificates/langchain-introduction-to-langchain-python.pdf">LangChain</a>,
+            <a href="https://portofolio-liard-ten.vercel.app/assets/credentials/certificates/langchain-introduction-to-langgraph-python.pdf">LangGraph</a>, and
+            <a href="https://portofolio-liard-ten.vercel.app/assets/credentials/certificates/langchain-introduction-to-langsmith-deployment.pdf">LangSmith Deployment</a>
+            — Aug 2026
+          </p>
+          <p class="credential-row">
+            <strong><a href="https://portofolio-liard-ten.vercel.app/assets/credentials/certificates/cisco-devnet-associate-course-completion.pdf">Cisco DevNet Associate</a></strong>
+            — Cisco Networking Academy × ITS, Jul 2026
+          </p>
+          <p class="credential-row">
+            <strong><a href="https://portofolio-liard-ten.vercel.app/assets/credentials/certificates/aws-ai-academy-basic-beginner.png">AWS AI Academy — Basic &amp; Beginner</a></strong>
+            — Dicoding × AWS Training and Certification, Aug 2026
+          </p>
+          <p class="credential-row">
+            <strong><a href="https://portofolio-liard-ten.vercel.app/assets/credentials/certificates/dicoding-prompt-engineering-for-software-developers.pdf">Prompt Engineering for Software Developers</a></strong>
+            — Dicoding Indonesia, Jul 2026
+          </p>
+          <p class="credential-row">
+            <a href="https://portofolio-liard-ten.vercel.app/credentials">View the complete credential and learning-activity archive</a>
+          </p>
+        </section>
+
+        <section>
+          <h2>Leadership &amp; Achievement</h2>
+          <div class="entry">
+            <div class="entry-header">
+              <h3 class="entry-title">Intern Staff — Himpunan Mahasiswa Sistem Informasi (HMSI) ITS</h3>
+              <span class="entry-meta">Sep 2024 – Dec 2024</span>
+            </div>
+          </div>
+          <div class="entry">
+            <div class="entry-header">
+              <h3 class="entry-title">
+                <a href="https://portofolio-liard-ten.vercel.app/assets/credentials/certificates/hmsi-its-is-competition-programming-runner-up.pdf">2nd Place — Information Systems Programming Competition</a>
+              </h3>
+              <span class="entry-meta">2024</span>
+            </div>
+          </div>
+        </section>
+
+        <p class="footer-note">
+          Supporting project evidence and credentials are linked throughout this document.
+        </p>
+      </article>
+    </main>
+  </body>
+</html>

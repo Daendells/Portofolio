@@ -28,7 +28,7 @@ function ResumeNew() {
           <Button
             variant="primary"
             href={pdf}
-            target="_blank"
+            download="Davin_Jonathan_Tanus_CV.pdf"
             style={{ maxWidth: "250px" }}
           >
             <AiOutlineDownload />
@@ -64,7 +64,7 @@ function ResumeNew() {
           <Button
             variant="primary"
             href={pdf}
-            target="_blank"
+            download="Davin_Jonathan_Tanus_CV.pdf"
             style={{ maxWidth: "250px" }}
           >
             <AiOutlineDownload />
