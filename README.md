@@ -30,3 +30,15 @@ npm run build
 The editable, print-ready CV source is stored at
 `docs/cv/Davin_Jonathan_Tanus_CV.html`. Its generated PDF is used by the
 portfolio Resume page at `src/Assets/CV_Davin_Jonathan_Tanus_EN_New.pdf`.
+
+## Portfolio document source
+
+The standalone application portfolio (selected work, English, 5× A4) source is
+stored at `docs/portfolio/Davin_Jonathan_Tanus_Portfolio.html`. Its generated
+PDF is downloadable from the Resume page at
+`src/Assets/Portfolio_Davin_Jonathan_Tanus.pdf`. Regenerate either PDF with
+headless Chrome, e.g.:
+
+```powershell
+& "C:\Program Files\Google\Chrome\Application\chrome.exe" --headless --disable-gpu --no-pdf-header-footer --print-to-pdf="src\Assets\Portfolio_Davin_Jonathan_Tanus.pdf" "file:///C:/path/to/repo/docs/portfolio/Davin_Jonathan_Tanus_Portfolio.html"
+```

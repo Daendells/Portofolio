@@ -3,7 +3,8 @@ import { Container, Row } from "react-bootstrap";
 import Button from "react-bootstrap/Button";
 import Particle from "../Particle";
 import pdf from "../../Assets/CV_Davin_Jonathan_Tanus_EN_New.pdf";
-import { AiOutlineDownload } from "react-icons/ai";
+import portfolioPdf from "../../Assets/Portfolio_Davin_Jonathan_Tanus.pdf";
+import { AiOutlineDownload, AiOutlineFundProjectionScreen } from "react-icons/ai";
 import { Document, Page, pdfjs } from "react-pdf";
 import "react-pdf/dist/esm/Page/AnnotationLayer.css";
 pdfjs.GlobalWorkerOptions.workerSrc = `//cdnjs.cloudflare.com/ajax/libs/pdf.js/${pdfjs.version}/pdf.worker.min.js`;
@@ -24,7 +25,7 @@ function ResumeNew() {
     <div>
       <Container fluid className="resume-section">
         <Particle />
-        <Row style={{ justifyContent: "center", position: "relative" }}>
+        <Row style={{ justifyContent: "center", position: "relative", gap: "12px" }}>
           <Button
             variant="primary"
             href={pdf}
@@ -33,6 +34,15 @@ function ResumeNew() {
           >
             <AiOutlineDownload />
             &nbsp;Download CV
+          </Button>
+          <Button
+            variant="outline-light"
+            href={portfolioPdf}
+            download="Davin_Jonathan_Tanus_Portfolio.pdf"
+            style={{ maxWidth: "250px" }}
+          >
+            <AiOutlineFundProjectionScreen />
+            &nbsp;Download Portfolio
           </Button>
         </Row>
 
@@ -60,7 +70,7 @@ function ResumeNew() {
           </Document>
         </Row>
 
-        <Row style={{ justifyContent: "center", position: "relative" }}>
+        <Row style={{ justifyContent: "center", position: "relative", gap: "12px" }}>
           <Button
             variant="primary"
             href={pdf}
@@ -69,6 +79,15 @@ function ResumeNew() {
           >
             <AiOutlineDownload />
             &nbsp;Download CV
+          </Button>
+          <Button
+            variant="outline-light"
+            href={portfolioPdf}
+            download="Davin_Jonathan_Tanus_Portfolio.pdf"
+            style={{ maxWidth: "250px" }}
+          >
+            <AiOutlineFundProjectionScreen />
+            &nbsp;Download Portfolio
           </Button>
         </Row>
       </Container>

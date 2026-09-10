@@ -1,0 +1,592 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Davin Jonathan Tanus — Portfolio (Selected Work 2024–2026)</title>
+    <style>
+      :root {
+        --ink: #172033;
+        --muted: #526071;
+        --navy: #173a5e;
+        --teal: #087f8c;
+        --line: #d9e1e8;
+        --paper: #ffffff;
+        --chip: #eef4f6;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      html,
+      body {
+        margin: 0;
+        padding: 0;
+        background: #e9edf1;
+        color: var(--ink);
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 10pt;
+        line-height: 1.45;
+      }
+
+      .sheet {
+        width: 210mm;
+        min-height: 297mm;
+        margin: 12mm auto;
+        padding: 12mm 14mm 11mm;
+        background: var(--paper);
+        box-shadow: 0 8px 28px rgba(23, 32, 51, 0.14);
+      }
+
+      .sheet + .sheet {
+        break-before: page;
+      }
+
+      h1,
+      h2,
+      h3,
+      p {
+        margin-top: 0;
+      }
+
+      h2 {
+        margin: 5mm 0 2.5mm;
+        padding-bottom: 1.1mm;
+        border-bottom: 1.2px solid var(--navy);
+        color: var(--navy);
+        font-size: 11.2pt;
+        font-weight: 700;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+      }
+
+      h3 {
+        margin-bottom: 0.6mm;
+        color: var(--ink);
+        font-size: 10.6pt;
+        line-height: 1.25;
+      }
+
+      a {
+        color: var(--teal);
+        font-weight: 600;
+        text-decoration: none;
+      }
+
+      a:hover,
+      a:focus {
+        text-decoration: underline;
+      }
+
+      ul {
+        margin: 1.2mm 0 0;
+        padding-left: 4.6mm;
+      }
+
+      li {
+        margin-bottom: 0.9mm;
+        padding-left: 0.5mm;
+      }
+
+      /* Cover */
+      .cover {
+        display: flex;
+        min-height: 265mm;
+        flex-direction: column;
+        justify-content: center;
+      }
+
+      .cover-kicker {
+        margin-bottom: 3mm;
+        color: var(--teal);
+        font-size: 10.5pt;
+        font-weight: 700;
+        letter-spacing: 0.22em;
+        text-transform: uppercase;
+      }
+
+      .cover h1 {
+        margin-bottom: 3mm;
+        color: var(--navy);
+        font-size: 34pt;
+        font-weight: 700;
+        letter-spacing: -0.03em;
+        line-height: 1.02;
+      }
+
+      .cover-headline {
+        margin-bottom: 4mm;
+        color: var(--muted);
+        font-size: 12.5pt;
+        font-weight: 700;
+      }
+
+      .cover-summary {
+        max-width: 150mm;
+        margin-bottom: 6mm;
+        color: #2a3545;
+        font-size: 10.5pt;
+      }
+
+      .cover-contact {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 1.2mm 3.3mm;
+        margin-bottom: 8mm;
+        color: var(--muted);
+        font-size: 9.5pt;
+      }
+
+      .cover-contact span:not(:last-child)::after {
+        margin-left: 3.3mm;
+        color: #a8b2bd;
+        content: "•";
+      }
+
+      .cover-contents {
+        border-top: 1px solid var(--line);
+        padding-top: 4mm;
+        color: var(--muted);
+        font-size: 9pt;
+      }
+
+      .cover-contents strong {
+        color: var(--navy);
+      }
+
+      /* Shared */
+      .contact {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 1.2mm 3.3mm;
+        color: var(--muted);
+        font-size: 9pt;
+      }
+
+      .contact span:not(:last-child)::after {
+        margin-left: 3.3mm;
+        color: #a8b2bd;
+        content: "•";
+      }
+
+      .page-head h1 {
+        margin-bottom: 1.5mm;
+        color: var(--navy);
+        font-size: 20pt;
+        letter-spacing: -0.02em;
+        line-height: 1.05;
+      }
+
+      .page-head p {
+        margin-bottom: 1mm;
+        color: var(--muted);
+        font-size: 10pt;
+        font-weight: 700;
+      }
+
+      .entry {
+        margin-bottom: 4mm;
+        break-inside: avoid;
+      }
+
+      .entry:last-child {
+        margin-bottom: 0;
+      }
+
+      .entry-meta {
+        margin-bottom: 1mm;
+        color: var(--muted);
+        font-size: 9pt;
+        font-weight: 600;
+      }
+
+      .role-line {
+        margin: 0 0 1mm;
+        color: #2a3545;
+        font-size: 9.6pt;
+      }
+
+      .role-line strong {
+        color: var(--navy);
+      }
+
+      .stack {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 1.4mm;
+        margin: 1.6mm 0 0;
+        padding: 0;
+        list-style: none;
+      }
+
+      .stack li {
+        margin: 0;
+        padding: 0.7mm 2.4mm;
+        border-radius: 999px;
+        background: var(--chip);
+        color: var(--navy);
+        font-size: 8.2pt;
+        font-weight: 700;
+      }
+
+      .project-links {
+        display: inline-flex;
+        flex-wrap: wrap;
+        gap: 0 2.3mm;
+        margin-left: 1.2mm;
+        font-size: 8.7pt;
+        font-weight: 400;
+      }
+
+      .project-links a + a::before {
+        margin-right: 2.3mm;
+        color: #a8b2bd;
+        content: "|";
+      }
+
+      .skill-row {
+        margin-bottom: 1.5mm;
+      }
+
+      .skill-row strong {
+        color: var(--navy);
+      }
+
+      .continued {
+        display: flex;
+        align-items: baseline;
+        justify-content: space-between;
+        padding-bottom: 2.2mm;
+        border-bottom: 1px solid var(--line);
+        color: var(--muted);
+        font-size: 8.2pt;
+      }
+
+      .continued strong {
+        color: var(--navy);
+        font-size: 10pt;
+      }
+
+      .footer-note {
+        margin-top: 5mm;
+        padding-top: 2.5mm;
+        border-top: 1px solid var(--line);
+        color: var(--muted);
+        font-size: 7.8pt;
+        text-align: center;
+      }
+
+      .closing {
+        margin-top: 6mm;
+        padding: 4mm 5mm;
+        border-left: 3px solid var(--teal);
+        background: #f2f7f8;
+        color: #2a3545;
+        font-size: 9.6pt;
+      }
+
+      @page {
+        size: A4;
+        margin: 0;
+      }
+
+      @media print {
+        html,
+        body {
+          background: #fff;
+          print-color-adjust: exact;
+          -webkit-print-color-adjust: exact;
+        }
+
+        .sheet {
+          width: 210mm;
+          min-height: 297mm;
+          margin: 0;
+          box-shadow: none;
+          break-after: page;
+        }
+
+        .sheet:last-child {
+          break-after: auto;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <!-- Page 1: Cover -->
+      <article class="sheet">
+        <div class="cover">
+          <p class="cover-kicker">Portfolio · Selected Work 2024–2026</p>
+          <h1>Davin Jonathan Tanus</h1>
+          <p class="cover-headline">AI &amp; Mobile Software Engineer — Information Systems, ITS</p>
+          <p class="cover-summary">
+            I build mobile and intelligent products end to end: a cross-platform asset-management
+            app, an on-device-ready image classifier, a deployed RAG academic assistant, and
+            rigorously evaluated ML systems. I enjoy challenge-based teamwork, turning user problems
+            into shipped products with thoughtful experiences and measurable results.
+          </p>
+          <div class="cover-contact" aria-label="Contact information">
+            <span>Surabaya, Indonesia</span>
+            <span><a href="mailto:davinjtanus@gmail.com">davinjtanus@gmail.com</a></span>
+            <span><a href="tel:+6282194655321">+62 821-9465-5321</a></span>
+            <span><a href="https://www.linkedin.com/in/davin-jonathan-tanus-32a19b308/">LinkedIn</a></span>
+            <span><a href="https://github.com/Daendells">GitHub</a></span>
+            <span><a href="https://portofolio-liard-ten.vercel.app/">Portfolio</a></span>
+          </div>
+          <p class="cover-contents">
+            <strong>Inside:</strong> Profile &amp; education · Featured mobile, AI &amp; software
+            projects with outcomes · Leadership &amp; achievements · Technical skills ·
+            Selected certifications
+          </p>
+        </div>
+      </article>
+
+      <!-- Page 2: Profile, education, skills -->
+      <article class="sheet">
+        <div class="continued">
+          <strong>Davin Jonathan Tanus</strong>
+          <span>Portfolio · Page 2 of 5</span>
+        </div>
+
+        <section>
+          <h2>Profile</h2>
+          <p class="role-line">
+            Information Systems undergraduate at Institut Teknologi Sepuluh Nopember (GPA 3.64/4.00)
+            and AI Engineer Intern at PT Salam Pacific Indonesia Lines. My work spans
+            <strong>mobile development (React Native/Expo)</strong>, full-stack engineering,
+            <strong>on-device-ready machine learning</strong>, and applied AI products. I work in
+            Agile teams, evaluate rigorously, and care about shipping products people actually use.
+          </p>
+        </section>
+
+        <section>
+          <h2>Education</h2>
+          <div class="entry">
+            <h3>Institut Teknologi Sepuluh Nopember (ITS)</h3>
+            <p class="entry-meta">Bachelor's Degree in Information Systems · Aug 2023 – Present · GPA 3.64/4.00</p>
+            <ul>
+              <li>Relevant areas: software engineering, data analytics, machine learning, IS/IT strategy, IT risk and service management.</li>
+              <li>2nd Place — Information Systems Programming Competition (HMSI ITS, 2024).</li>
+            </ul>
+          </div>
+          <div class="entry">
+            <h3>AI Engineer Intern — PT Salam Pacific Indonesia Lines</h3>
+            <p class="entry-meta">Applied AI &amp; Full-Stack Engineering · 2026 – Present</p>
+            <ul>
+              <li>Build internal document-intelligence and talent-development platforms (Next.js, FastAPI/Go, PostgreSQL/MySQL, Docker) with secure access flows, testing, and reporting.</li>
+            </ul>
+          </div>
+        </section>
+
+        <section>
+          <h2>Technical Skills</h2>
+          <p class="skill-row"><strong>Mobile:</strong> React Native / Expo (cross-platform app: registry, lifecycle tracking, role-based access, audit logs)</p>
+          <p class="skill-row"><strong>AI &amp; Machine Learning:</strong> TensorFlow, PyTorch, scikit-learn, transfer learning, BiLSTM, time-series forecasting, on-device deployment (TensorFlow Lite, TensorFlow.js, SavedModel)</p>
+          <p class="skill-row"><strong>Software &amp; Data:</strong> JavaScript, Python, SQL, Go · React, Next.js, FastAPI, Streamlit, REST APIs · PostgreSQL, MySQL, Supabase, MongoDB</p>
+          <p class="skill-row"><strong>Cloud, DevOps &amp; Ways of Working:</strong> Docker, GCP + Cloud Run, GitHub Actions CI/CD, Git · Agile Scrum/Kanban, product-oriented delivery</p>
+        </section>
+
+        <section>
+          <h2>Leadership &amp; Achievements</h2>
+          <div class="entry">
+            <h3>Project Lead — Agile Snacklicious</h3>
+            <p class="entry-meta">Scrum/Kanban delivery · Cross-functional team</p>
+            <ul>
+              <li>Led sprint planning, backlog grooming, and retrospectives to deliver milestones on time.</li>
+            </ul>
+          </div>
+          <div class="entry">
+            <h3>Intern Staff — HMSI ITS (Information Systems Student Association)</h3>
+            <p class="entry-meta">Sep 2024 – Dec 2024</p>
+          </div>
+          <div class="entry">
+            <h3><a href="https://portofolio-liard-ten.vercel.app/assets/credentials/certificates/hmsi-its-is-competition-programming-runner-up.pdf">2nd Place — IS Programming Competition</a></h3>
+            <p class="entry-meta">HMSI ITS · 2024</p>
+          </div>
+        </section>
+      </article>
+
+      <!-- Page 3: Featured projects (mobile + on-device ML) -->
+      <article class="sheet">
+        <div class="continued">
+          <strong>Davin Jonathan Tanus</strong>
+          <span>Portfolio · Page 3 of 5</span>
+        </div>
+
+        <section>
+          <h2>Featured Projects — Mobile &amp; On-Device Intelligence</h2>
+
+          <div class="entry">
+            <h3>
+              AssetHub — Mobile Asset Management App
+              <span class="project-links">
+                <a href="https://github.com/Daendells/Mobile_APP">GitHub</a>
+                <a href="https://portofolio-liard-ten.vercel.app/project">Case study</a>
+              </span>
+            </h3>
+            <p class="entry-meta">Role: Mobile developer · Cross-platform (React Native / Expo)</p>
+            <ul>
+              <li><strong>Problem:</strong> enterprises need asset tracking beyond the desk — registry, lifecycle states, and accountability on the go.</li>
+              <li><strong>Approach:</strong> built searchable asset registry with filters, lifecycle tracking (Active, Maintenance, Borrowed), role-based access, and audit logs.</li>
+              <li><strong>Outcome:</strong> working cross-platform app delivered alongside a deployed web counterpart with shared access-control model.</li>
+            </ul>
+            <ul class="stack"><li>React Native</li><li>Expo</li><li>Role-Based Access</li><li>Audit Logs</li></ul>
+          </div>
+
+          <div class="entry">
+            <h3>
+              Multi-Class Image Classification with On-Device Export
+              <span class="project-links">
+                <a href="https://portofolio-liard-ten.vercel.app/assets/portfolio/machine-learning/image-classification-imagenette-notebook.ipynb">Training notebook</a>
+                <a href="https://portofolio-liard-ten.vercel.app/project">Case study</a>
+              </span>
+            </h3>
+            <p class="entry-meta">Role: ML engineer · Dicoding deep-learning project</p>
+            <ul>
+              <li><strong>Problem:</strong> accurate image recognition that can run beyond the lab — server, mobile, and browser.</li>
+              <li><strong>Approach:</strong> MobileNetV2 transfer learning on 13,394 Imagenette images (10 classes, 80/10/10 split), augmentation, staged fine-tuning, checkpointing; evaluated with learning curves, confusion matrix, per-class metrics.</li>
+              <li><strong>Outcome:</strong> 91.67% test accuracy; model exported to SavedModel, TensorFlow Lite (mobile), and TensorFlow.js (browser).</li>
+            </ul>
+            <ul class="stack"><li>TensorFlow</li><li>MobileNetV2</li><li>Transfer Learning</li><li>TFLite</li><li>TensorFlow.js</li></ul>
+          </div>
+
+          <div class="entry">
+            <h3>
+              RAG Akademik — AI Chatbot for Campus Regulations
+              <span class="project-links">
+                <a href="https://ragakademik.streamlit.app/">Live application</a>
+                <a href="https://github.com/Daendells/RAGAkademik">GitHub</a>
+              </span>
+            </h3>
+            <p class="entry-meta">Role: Builder · Deployed product</p>
+            <ul>
+              <li><strong>Problem:</strong> students struggle to find answers across dozens of academic regulation documents.</li>
+              <li><strong>Approach:</strong> retrieval-augmented generation over 30+ indexed documents with semantic search and pre-computed embeddings for fast, grounded answers.</li>
+              <li><strong>Outcome:</strong> live assistant answering policy questions (SKS limits, thesis, GPA, scholarships, graduation).</li>
+            </ul>
+            <ul class="stack"><li>RAG</li><li>LLM</li><li>Streamlit</li><li>Semantic Search</li></ul>
+          </div>
+        </section>
+      </article>
+
+      <!-- Page 4: Featured projects (ML rigor + engineering) -->
+      <article class="sheet">
+        <div class="continued">
+          <strong>Davin Jonathan Tanus</strong>
+          <span>Portfolio · Page 4 of 5</span>
+        </div>
+
+        <section>
+          <h2>Featured Projects — ML Rigor &amp; Engineering Depth</h2>
+
+          <div class="entry">
+            <h3>
+              Indonesian App Review Sentiment Analysis
+              <span class="project-links">
+                <a href="https://portofolio-liard-ten.vercel.app/assets/portfolio/machine-learning/sentiment-analysis-gojek-training.ipynb">Training notebook</a>
+                <a href="https://portofolio-liard-ten.vercel.app/project">Case study</a>
+              </span>
+            </h3>
+            <p class="entry-meta">Role: ML engineer · Dicoding NLP project · 16,000+ self-scraped reviews</p>
+            <ul>
+              <li><strong>Problem:</strong> distill thousands of Indonesian app reviews into product signal (positive / neutral / negative).</li>
+              <li><strong>Approach:</strong> slang normalization, sentiment-aware preprocessing, deduplication, class balancing; benchmarked LinearSVC, logistic regression, and a PyTorch BiLSTM with per-class and confusion-matrix analysis.</li>
+              <li><strong>Outcome:</strong> 92.17% test accuracy with a repeatable inference module.</li>
+            </ul>
+            <ul class="stack"><li>NLP</li><li>Scikit-Learn</li><li>PyTorch BiLSTM</li><li>Text Classification</li></ul>
+          </div>
+
+          <div class="entry">
+            <h3>
+              Stock Price Forecasting — Classical ML, Deep Learning &amp; Chronos-2
+              <span class="project-links">
+                <a href="https://colab.research.google.com/drive/1PmCxi3E9srX3Hpct5Hvo2gbp_3hQb60a?usp=sharing">Classical notebook</a>
+                <a href="https://colab.research.google.com/drive/1U83z42kPZF3e1ZWpM43Nh6pjnQ4mMeW8?usp=sharing">Chronos-2 notebook</a>
+              </span>
+            </h3>
+            <p class="entry-meta">Role: ML engineer · 10 years of UNTR.JK data</p>
+            <ul>
+              <li><strong>Problem:</strong> compare classical, deep, and foundation-model forecasting under realistic trading simulation.</li>
+              <li><strong>Approach:</strong> rolling walk-forward validation and residual diagnostics across ARIMA, Prophet, XGBoost, LSTM, and zero-shot Amazon Chronos-2 (120M).</li>
+              <li><strong>Outcome:</strong> custom LSTM at 1.04% MAPE; honest analysis of zero-shot limits (48.28% directional accuracy).</li>
+            </ul>
+            <ul class="stack"><li>Time Series</li><li>LSTM</li><li>XGBoost</li><li>Foundation Model</li></ul>
+          </div>
+
+          <div class="entry">
+            <h3>
+              Conduit — Full CI/CD Pipeline on Google Cloud
+              <span class="project-links">
+                <a href="https://github.com/Daendells/Conduit-CI-CD">GitHub</a>
+                <a href="https://portofolio-liard-ten.vercel.app/project">Case study</a>
+              </span>
+            </h3>
+            <p class="entry-meta">Role: DevOps implementer</p>
+            <ul>
+              <li><strong>Problem:</strong> ship a Laravel app with production-grade automation instead of manual deploys.</li>
+              <li><strong>Approach:</strong> Docker containerization, GitHub Actions pipeline with secrets management, deploy to Cloud Run via Artifact Registry, PHPUnit quality gates, MongoDB backend, Grafana-oriented monitoring.</li>
+              <li><strong>Outcome:</strong> reproducible container-to-cloud pipeline demonstrating deployment discipline.</li>
+            </ul>
+            <ul class="stack"><li>Docker</li><li>GCP</li><li>GitHub Actions</li><li>Laravel</li></ul>
+          </div>
+        </section>
+      </article>
+
+      <!-- Page 5: Certifications + closing -->
+      <article class="sheet">
+        <div class="continued">
+          <strong>Davin Jonathan Tanus</strong>
+          <span>Portfolio · Page 5 of 5</span>
+        </div>
+
+        <section>
+          <h2>Selected Certifications</h2>
+          <div class="entry">
+            <h3>Belajar Fundamental Deep Learning — Dicoding Indonesia (Sep 2026)</h3>
+            <p class="entry-meta">Computer vision, NLP, evaluation, deployment workflows</p>
+          </div>
+          <div class="entry">
+            <h3>Cisco DevNet Associate — Cisco Networking Academy × ITS (Jul 2026)</h3>
+            <p class="entry-meta">APIs, automation, application security, testing, cloud deployment</p>
+          </div>
+          <div class="entry">
+            <h3>AWS AI Academy — Basic &amp; Beginner — Dicoding × AWS (Aug 2026)</h3>
+            <p class="entry-meta">AI foundations on cloud infrastructure</p>
+          </div>
+          <div class="entry">
+            <h3>LangChain Academy Foundations — LangChain, LangGraph, LangSmith (Aug 2026)</h3>
+            <p class="entry-meta">LLM applications, agentic workflows, deployment operations</p>
+          </div>
+          <p class="role-line">
+            Full archive (24 certifications + learning activities with verification documents):
+            <a href="https://portofolio-liard-ten.vercel.app/credentials">portofolio-liard-ten.vercel.app/credentials</a>
+          </p>
+        </section>
+
+        <section>
+          <h2>More Selected Work</h2>
+          <p class="role-line">
+            AssetHub Web (React + Supabase, live), Environmental Data ETL, BCA KPI dashboards,
+            Banana-Quality clustering (K-Means + PCA), IT risk management, IS/IT strategic planning,
+            and computer-vision simulation — all documented with reports and previews at
+            <a href="https://portofolio-liard-ten.vercel.app/project">portofolio-liard-ten.vercel.app/project</a>.
+          </p>
+        </section>
+
+        <div class="closing">
+          <strong>Let's build something people love to use.</strong><br />
+          I learn fast, collaborate in Agile teams, and finish what I start — from model notebook to
+          deployed product. Reach me at
+          <a href="mailto:davinjtanus@gmail.com">davinjtanus@gmail.com</a> or
+          <a href="https://www.linkedin.com/in/davin-jonathan-tanus-32a19b308/">LinkedIn</a>.
+        </div>
+
+        <p class="footer-note">
+          All projects link to live evidence: notebooks, repositories, applications, and reports.
+        </p>
+      </article>
+    </main>
+  </body>
+</html>
