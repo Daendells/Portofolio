@@ -9,7 +9,7 @@ export const USERS = {
         "Data Analyst",
         "Software Engineer"
     ],
-    description: "An Information Systems student at ITS and AI Engineer Intern at PT Salam Pacific Indonesia Lines. I build practical AI, machine learning, data, and full-stack systems—from document intelligence and internal platforms to image classification, sentiment analysis, forecasting, and analytics. I care about reliable evaluation, maintainable software, and turning technical work into useful products.",
+    description: "An Information Systems student at ITS and AI Engineer Intern at PT Salam Pacific Indonesia Lines. I build practical AI, machine learning, data, and full-stack systems—from document intelligence and internal platforms to in-browser sign-language recognition, image classification, sentiment analysis, forecasting, and analytics. I care about reliable evaluation, maintainable software, and turning technical work into useful products.",
     social: {
         github: "https://github.com/Daendells", // Add if known, else blank
         linkedin: "https://www.linkedin.com/in/davin-jonathan-tanus-32a19b308/", // Add if known, else blank
@@ -48,6 +48,22 @@ export const PROJECTS = [
         tags: ["Next.js", "Go", "MySQL", "Analytics", "Docker"],
         ghLink: null,
         demoLink: null
+    },
+    {
+        title: "BISINDO Fingerspelling — In-Browser Sign Language Recognition",
+        eyebrow: "Computer Vision · Live Web Demo",
+        category: "Machine Learning",
+        description: "A real-time recognizer for the 26 letters of the Indonesian Sign Language (BISINDO) alphabet that runs entirely in the browser: a 2.6M-parameter YOLO11n detector exported to ONNX and executed client-side with ONNX Runtime Web, with an 8-frame vote for stable live typing. An audit found that 63% of the public dataset's validation images were near-copies of training images, so the data was re-split by perceptual-hash groups. The model was chosen on validation, scored once on a held-out test set, and tested on an unseen signer against YOLOv8n, landmark-SVM, and DINOv2-SVM baselines.",
+        image: "/assets/portfolio/bisindo/bisindo-preview.png",
+        files: [],
+        isPdf: false,
+        metrics: [
+            { value: "98.5%", label: "Held-out test top-1" },
+            { value: "93.6%", label: "Unseen-signer top-1" }
+        ],
+        tags: ["YOLO11", "Computer Vision", "ONNX Runtime Web", "PyTorch", "Data Leakage Audit"],
+        ghLink: "https://github.com/Daendells/bisindo",
+        demoLink: "https://daendells.github.io/bisindo/"
     },
     {
         title: "Multi-Class Image Classification with Transfer Learning",
@@ -290,7 +306,8 @@ export const SKILLS = [
     // AI & Vision
     { name: "Machine Learning", type: "AI & Vision" },
     { name: "Deep Learning (LSTM, XGBoost)", type: "AI & Vision" },
-    { name: "Computer Vision (OpenCV, MediaPipe)", type: "AI & Vision" },
+    { name: "Computer Vision (YOLO, OpenCV, MediaPipe)", type: "AI & Vision" },
+    { name: "In-Browser Inference (ONNX Runtime Web)", type: "AI & Vision" },
     { name: "Face & Gesture Recognition", type: "AI & Vision" },
     { name: "RAG / LLM / Semantic Search", type: "AI & Vision" },
     // Tools & Software

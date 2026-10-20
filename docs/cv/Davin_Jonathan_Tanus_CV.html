@@ -310,6 +310,27 @@
           <h2>Selected Projects</h2>
           <div class="entry">
             <h3>
+              BISINDO Fingerspelling — In-Browser Sign Language Recognition
+              <span class="project-links">
+                <a href="https://daendells.github.io/bisindo/">Live demo</a>
+                <a href="https://github.com/Daendells/bisindo">GitHub</a>
+              </span>
+            </h3>
+            <ul>
+              <li>
+                Built a real-time recognizer for the 26-letter Indonesian Sign Language alphabet: a 2.6M-parameter
+                YOLO11n detector exported to ONNX and run fully client-side with ONNX Runtime Web on GitHub Pages.
+              </li>
+              <li>
+                Found train/validation leakage in the public dataset (63% near-duplicate validation images) and
+                re-split by perceptual-hash groups; reached 98.5% top-1 on a held-out test set and 93.6% on an
+                unseen signer, with per-letter failure analysis against YOLOv8n, landmark-SVM and DINOv2 baselines.
+              </li>
+            </ul>
+          </div>
+
+          <div class="entry">
+            <h3>
               Multi-Class Image Classification with Transfer Learning
               <span class="project-links">
                 <a href="https://portofolio-liard-ten.vercel.app/project">Project details</a>
@@ -350,25 +371,6 @@
             </ul>
           </div>
 
-          <div class="entry">
-            <h3>
-              RAG Academic Assistant
-              <span class="project-links">
-                <a href="https://ragakademik.streamlit.app/">Live application</a>
-                <a href="https://github.com/Daendells/RAGAkademik">GitHub</a>
-              </span>
-            </h3>
-            <ul>
-              <li>
-                Built a Retrieval-Augmented Generation assistant over 30+ university regulation documents
-                using semantic search, sentence-transformers, Streamlit, and an LLM API.
-              </li>
-              <li>
-                Used pre-computed embeddings to support efficient retrieval for academic-policy questions.
-              </li>
-            </ul>
-          </div>
-
         </section>
       </article>
 
@@ -380,6 +382,22 @@
 
         <section>
           <h2>Selected Projects — Continued</h2>
+          <div class="entry">
+            <h3>
+              RAG Academic Assistant
+              <span class="project-links">
+                <a href="https://ragakademik.streamlit.app/">Live application</a>
+                <a href="https://github.com/Daendells/RAGAkademik">GitHub</a>
+              </span>
+            </h3>
+            <ul>
+              <li>
+                Built a Retrieval-Augmented Generation assistant over 30+ university regulation documents, with
+                semantic search over pre-computed sentence-transformer embeddings, Streamlit, and an LLM API.
+              </li>
+            </ul>
+          </div>
+
           <div class="entry">
             <h3>
               Stock Price Forecasting — Classical ML, Deep Learning &amp; Chronos-2
@@ -438,7 +456,7 @@
         <section>
           <h2>Technical Skills</h2>
           <p class="skill-row"><strong>Languages:</strong> Python, JavaScript, SQL, Go</p>
-          <p class="skill-row"><strong>AI &amp; Machine Learning:</strong> TensorFlow, PyTorch, scikit-learn, XGBoost, NLP, RAG, computer vision, transfer learning, LSTM/BiLSTM, time-series forecasting, model deployment (SavedModel, TensorFlow Lite, TensorFlow.js)</p>
+          <p class="skill-row"><strong>AI &amp; Machine Learning:</strong> TensorFlow, PyTorch, scikit-learn, XGBoost, NLP, RAG, computer vision (YOLO), transfer learning, LSTM/BiLSTM, time-series forecasting, model deployment (ONNX Runtime Web, TF Lite, TF.js)</p>
           <p class="skill-row"><strong>Application &amp; Data:</strong> Next.js, React, FastAPI, Streamlit, REST APIs, PostgreSQL, MySQL, Supabase, data preprocessing</p>
           <p class="skill-row"><strong>Cloud, DevOps &amp; Analytics:</strong> Docker, GitHub Actions, Google Cloud Platform, AWS, Microsoft Fabric, Power BI, Git</p>
         </section>

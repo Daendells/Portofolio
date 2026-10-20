@@ -323,8 +323,8 @@
           <p class="cover-headline">AI &amp; Mobile Software Engineer — Information Systems, ITS</p>
           <p class="cover-summary">
             I build mobile and intelligent products end to end: a cross-platform asset-management
-            app, an on-device-ready image classifier, a deployed RAG academic assistant, and
-            rigorously evaluated ML systems. I enjoy challenge-based teamwork, turning user problems
+            app, an in-browser sign-language recognizer, an on-device-ready image classifier, a deployed
+            RAG academic assistant, and rigorously evaluated ML systems. I enjoy challenge-based teamwork, turning user problems
             into shipped products with thoughtful experiences and measurable results.
           </p>
           <div class="cover-contact" aria-label="Contact information">
@@ -483,6 +483,23 @@
 
           <div class="entry">
             <h3>
+              BISINDO Fingerspelling — In-Browser Sign Language Recognition
+              <span class="project-links">
+                <a href="https://daendells.github.io/bisindo/">Live demo</a>
+                <a href="https://github.com/Daendells/bisindo">GitHub</a>
+              </span>
+            </h3>
+            <p class="entry-meta">Role: ML engineer &amp; front-end · personal project · 26 letters, on-device</p>
+            <ul>
+              <li><strong>Problem:</strong> read the Indonesian Sign Language alphabet from a webcam without a server, and know how far the accuracy can be trusted.</li>
+              <li><strong>Approach:</strong> audited the public dataset (63% of validation images were near-copies of training images) and re-split by perceptual-hash groups; fine-tuned YOLO11n, chose on validation only, exported to ONNX and ran it client-side with ONNX Runtime Web plus an 8-frame vote.</li>
+              <li><strong>Outcome:</strong> 98.5% on a held-out test set (scored once) and 93.6% on an unseen signer; every error there falls on O or Y, and the failure analysis is published on the live demo page.</li>
+            </ul>
+            <ul class="stack"><li>YOLO11</li><li>PyTorch</li><li>ONNX Runtime Web</li><li>Data Leakage Audit</li></ul>
+          </div>
+
+          <div class="entry">
+            <h3>
               Indonesian App Review Sentiment Analysis
               <span class="project-links">
                 <a href="https://portofolio-liard-ten.vercel.app/assets/portfolio/machine-learning/sentiment-analysis-gojek-training.ipynb">Training notebook</a>
@@ -515,22 +532,6 @@
             <ul class="stack"><li>Time Series</li><li>LSTM</li><li>XGBoost</li><li>Foundation Model</li></ul>
           </div>
 
-          <div class="entry">
-            <h3>
-              Conduit — Full CI/CD Pipeline on Google Cloud
-              <span class="project-links">
-                <a href="https://github.com/Daendells/Conduit-CI-CD">GitHub</a>
-                <a href="https://portofolio-liard-ten.vercel.app/project">Case study</a>
-              </span>
-            </h3>
-            <p class="entry-meta">Role: DevOps implementer</p>
-            <ul>
-              <li><strong>Problem:</strong> ship a Laravel app with production-grade automation instead of manual deploys.</li>
-              <li><strong>Approach:</strong> Docker containerization, GitHub Actions pipeline with secrets management, deploy to Cloud Run via Artifact Registry, PHPUnit quality gates, MongoDB backend, Grafana-oriented monitoring.</li>
-              <li><strong>Outcome:</strong> reproducible container-to-cloud pipeline demonstrating deployment discipline.</li>
-            </ul>
-            <ul class="stack"><li>Docker</li><li>GCP</li><li>GitHub Actions</li><li>Laravel</li></ul>
-          </div>
         </section>
       </article>
 
@@ -568,7 +569,8 @@
         <section>
           <h2>More Selected Work</h2>
           <p class="role-line">
-            AssetHub Web (React + Supabase, live), Environmental Data ETL, BCA KPI dashboards,
+            Conduit CI/CD on Google Cloud (Docker, GitHub Actions, Cloud Run), AssetHub Web (React +
+            Supabase, live), Environmental Data ETL, BCA KPI dashboards,
             Banana-Quality clustering (K-Means + PCA), IT risk management, IS/IT strategic planning,
             and computer-vision simulation — all documented with reports and previews at
             <a href="https://portofolio-liard-ten.vercel.app/project">portofolio-liard-ten.vercel.app/project</a>.

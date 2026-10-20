@@ -91,6 +91,23 @@ test("filters selected projects by category and search query", () => {
   ).not.toBeInTheDocument();
 });
 
+test("links the BISINDO project to its live demo and repository", () => {
+  render(<Projects />);
+
+  const card = screen
+    .getByText(/BISINDO Fingerspelling/i)
+    .closest(".project-card-view");
+
+  expect(within(card).getByRole("button", { name: "Demo" })).toHaveAttribute(
+    "href",
+    "https://daendells.github.io/bisindo/"
+  );
+  expect(within(card).getByRole("button", { name: "GitHub" })).toHaveAttribute(
+    "href",
+    "https://github.com/Daendells/bisindo"
+  );
+});
+
 test("exposes the Dicoding training notebooks on the ML project cards", () => {
   render(<Projects />);
 

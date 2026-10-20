@@ -30,7 +30,8 @@ function Home2() {
               <br />
               My recent machine-learning work includes{" "}
               <b className="purple">
-                image classification, Indonesian sentiment analysis, RAG,
+                in-browser sign-language recognition, image classification,
+                Indonesian sentiment analysis, RAG,
               </b>{" "}
               and time-series forecasting. I enjoy turning experiments into
               maintainable products with clear evaluation and thoughtful user
