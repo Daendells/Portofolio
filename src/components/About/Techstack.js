@@ -4,6 +4,7 @@ import {
   SiPowerbi, SiMicrosoftexcel, SiMysql, SiPython, SiSap, SiGithub,
   SiPostman, SiDocker, SiGooglecloud, SiStreamlit, SiScikitlearn,
   SiJupyter, SiLaravel, SiJavascript, SiReact, SiPandas, SiMongodb,
+  SiMicrosoftpowerpoint, SiHtml5, SiCss3,
 } from "react-icons/si";
 import { FaSyncAlt, FaProjectDiagram } from "react-icons/fa";
 
@@ -60,7 +61,19 @@ function Techstack() {
         <SiMicrosoftexcel />
         <div className="tech-icons-text">Excel</div>
       </Col>
+      <Col xs={4} md={2} className="tech-icons">
+        <SiMicrosoftpowerpoint />
+        <div className="tech-icons-text">PowerPoint</div>
+      </Col>
       {/* Web & Programming */}
+      <Col xs={4} md={2} className="tech-icons">
+        <SiHtml5 />
+        <div className="tech-icons-text">HTML</div>
+      </Col>
+      <Col xs={4} md={2} className="tech-icons">
+        <SiCss3 />
+        <div className="tech-icons-text">CSS</div>
+      </Col>
       <Col xs={4} md={2} className="tech-icons">
         <SiJavascript />
         <div className="tech-icons-text">JavaScript</div>

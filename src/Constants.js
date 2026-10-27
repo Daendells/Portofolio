@@ -205,14 +205,14 @@ export const PROJECTS = [
         tags: ["Risk Management", "ISO 31000"]
     },
     {
-        title: "Environmental Agency Data ETL",
+        title: "Academic Data Warehouse & ETL Design",
         eyebrow: "Coursework · Data Engineering",
         category: "Data & Analytics",
-        description: "Implementation of an Extract, Transform, Load (ETL) pipeline to consolidate and clean environmental data for analysis and reporting.",
+        description: "Data warehouse design for ITS academic processes (course registration and advisor approval of study plans): 5W1H business-process analysis, fact-table granularity, dimension tables with slowly changing dimensions, and documented ETL steps to clean and load the data.",
         image: null,
         files: [
             { name: "ETL Process Report", link: "dlh/DLH-Davin%20Jonathan%20Tanus-5026231131-A-ETL%20(2).pdf", type: "pdf" },
-            { name: "Data Analysis Doc", link: "dlh/5026231131_DLHA%20(2)%20(2).pdf", type: "pdf" }
+            { name: "Advisor Approval Warehouse Design", link: "dlh/5026231131_DLHA%20(2)%20(2).pdf", type: "pdf" }
         ],
         isPdf: true,
         tags: ["ETL", "Data Cleaning"]
@@ -256,10 +256,10 @@ export const PROJECTS = [
         tags: ["Dashboard", "KPI", "Analytics"]
     },
     {
-        title: "Project Lead — Agile Snacklicious",
+        title: "Scrum Master — Agile Snacklicious",
         eyebrow: "Leadership · Agile Delivery",
         category: "Info Systems",
-        description: "Led end-to-end culinary business operations for Snacklicious using Agile methodology (Scrum/Kanban). Managed Sprint Planning, backlog grooming, and retrospective cycles to deliver project milestones on time. Coordinated cross-functional team collaboration and applied Agile documentation practices throughout the project lifecycle.",
+        description: "Scrum Master and coordinator for a six-person team running the Snacklicious snack business over four Scrum sprints. Led sprint execution, daily scrums, and retrospectives, divided tasks across the team, and tracked income and expenses for the project budget and cash flow.",
         image: null,
         files: [
             { name: "Final Agile Report", link: "mpt/MPT_Agile_Report.pdf", type: "pdf" }
@@ -315,6 +315,7 @@ export const SKILLS = [
     { name: "SAP S/4HANA", type: "Tools & Software" },
     { name: "Google Cloud Platform", type: "Tools & Software" },
     { name: "Excel", type: "Tools & Software" },
+    { name: "PowerPoint", type: "Tools & Software" },
     { name: "Odoo", type: "Tools & Software" },
     { name: "Git / GitHub", type: "Tools & Software" },
     { name: "Jupyter Notebook", type: "Tools & Software" },

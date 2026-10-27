@@ -72,7 +72,7 @@ function Projects() {
             <p className="section-kicker">{internshipItems.length} selected projects</p>
             <h2 className="project-heading">Internship Work</h2>
             <p className="section-description">
-              Selected systems from my AI Engineering internship at PT Salam Pacific Indonesia Lines. Descriptions are intentionally general and no internal assets are published.
+              Selected systems from my AI Engineering internship in the Performance Excellence division of PT Salam Pacific Indonesia Lines. Descriptions are intentionally general and no internal assets are published.
             </p>
           </div>
           <Row className="project-grid">
