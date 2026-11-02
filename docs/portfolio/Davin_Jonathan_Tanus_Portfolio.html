@@ -320,12 +320,12 @@
         <div class="cover">
           <p class="cover-kicker">Portfolio · Selected Work 2024–2026</p>
           <h1>Davin Jonathan Tanus</h1>
-          <p class="cover-headline">AI &amp; Mobile Software Engineer — Information Systems, ITS</p>
+          <p class="cover-headline">AI Engineer — Information Systems, ITS</p>
           <p class="cover-summary">
-            I build mobile and intelligent products end to end: a cross-platform asset-management
-            app, an in-browser sign-language recognizer, an on-device-ready image classifier, a deployed
-            RAG academic assistant, and rigorously evaluated ML systems. I enjoy challenge-based teamwork, turning user problems
-            into shipped products with thoughtful experiences and measurable results.
+            I build AI products end to end and measure them: a RAG assistant that cites the exact article of
+            the ITS academic regulation, an in-browser sign-language recognizer, and evaluated NLP and vision
+            models. At work I build LLM-based CV screening and document-intelligence tools. I care about
+            honest evaluation and about shipping things people can use.
           </p>
           <div class="cover-contact" aria-label="Contact information">
             <span>Surabaya, Indonesia</span>
@@ -336,7 +336,7 @@
             <span><a href="https://davintanus.vercel.app/">Portfolio</a></span>
           </div>
           <p class="cover-contents">
-            <strong>Inside:</strong> Profile &amp; education · Featured mobile, AI &amp; software
+            <strong>Inside:</strong> Profile &amp; education · Featured AI and machine-learning
             projects with outcomes · Leadership &amp; achievements · Technical skills ·
             Selected certifications
           </p>
@@ -355,8 +355,8 @@
           <p class="role-line">
             Information Systems undergraduate at Institut Teknologi Sepuluh Nopember (GPA 3.64/4.00)
             and AI Engineer Intern at PT Salam Pacific Indonesia Lines. My work spans
-            <strong>mobile development (native Android with Kotlin)</strong>, full-stack engineering,
-            <strong>on-device-ready machine learning</strong>, and applied AI products. I work in
+            <strong>retrieval-augmented generation and LLM evaluation</strong>, <strong>machine learning</strong>
+            from data audit to deployment, and the full-stack engineering around them. I work in
             Agile teams, evaluate rigorously, and care about shipping products people actually use.
           </p>
         </section>
@@ -384,9 +384,8 @@
 
         <section>
           <h2>Technical Skills</h2>
-          <p class="skill-row"><strong>Mobile:</strong> Android with Kotlin, Jetpack Compose, and Room (asset register, lifecycle tracking, role-based access, activity logs)</p>
-          <p class="skill-row"><strong>AI &amp; Machine Learning:</strong> TensorFlow, PyTorch, scikit-learn, transfer learning, BiLSTM, time-series forecasting, on-device deployment (TensorFlow Lite, TensorFlow.js, SavedModel)</p>
-          <p class="skill-row"><strong>Software &amp; Data:</strong> JavaScript, HTML, CSS, Python, SQL, Go · React, Next.js, FastAPI, Streamlit, REST APIs · PostgreSQL, MySQL, Supabase, MongoDB</p>
+          <p class="skill-row"><strong>AI &amp; Machine Learning:</strong> RAG with hybrid search, LLM evaluation, ONNX Runtime, TensorFlow, PyTorch, scikit-learn, transfer learning, BiLSTM, time-series forecasting, on-device deployment (TensorFlow Lite, TensorFlow.js, SavedModel)</p>
+          <p class="skill-row"><strong>Software &amp; Data:</strong> JavaScript, HTML, CSS, Python, SQL, Go · React, Next.js, FastAPI, Streamlit, REST APIs · PostgreSQL, MySQL, MongoDB</p>
           <p class="skill-row"><strong>Cloud, DevOps &amp; Ways of Working:</strong> Power BI, Microsoft Fabric, Excel, PowerPoint · Docker, GCP + Cloud Run, GitHub Actions CI/CD, Git · Agile Scrum/Kanban, product-oriented delivery</p>
         </section>
 
@@ -410,7 +409,7 @@
         </section>
       </article>
 
-      <!-- Page 3: Featured projects (mobile + on-device ML) -->
+      <!-- Page 3: Featured projects (AI products) -->
       <article class="sheet">
         <div class="continued">
           <strong>Davin Jonathan Tanus</strong>
@@ -418,23 +417,72 @@
         </div>
 
         <section>
-          <h2>Featured Projects — Mobile &amp; On-Device Intelligence</h2>
+          <h2>Featured Projects — AI Products</h2>
 
           <div class="entry">
             <h3>
-              AssetHub — Mobile Asset Management App
+              RAG Assistant for the ITS Academic Regulation
               <span class="project-links">
-                <a href="https://github.com/Daendells/Mobile_APP">GitHub</a>
+                <a href="https://ragakademik.streamlit.app/">Live demo</a>
+                <a href="https://github.com/Daendells/RAGAkademik">GitHub</a>
+              </span>
+            </h3>
+            <p class="entry-meta">Role: AI engineer · personal project · 57-page official regulation, 91 articles</p>
+            <ul>
+              <li><strong>Problem:</strong> students need exact answers from a long academic regulation, and an AI answer is only useful if it points to the article it came from.</li>
+              <li><strong>Approach:</strong> OCR-tolerant chunking per Pasal and ayat; BM25 and multilingual-e5 embeddings fused by reciprocal rank fusion; the LLM must cite retrieved passages and the server drops any other citation; quantised ONNX runtime without PyTorch (about 285 MB of RAM); FastAPI, Docker, pytest, and CI that fails if retrieval drops.</li>
+              <li><strong>Outcome:</strong> on a frozen 70-question set, retrieval MRR 0.84 against 0.80 for keywords alone, and all 10 questions outside the regulation refused; a hand check of the LLM judge is published with the failure cases.</li>
+            </ul>
+            <ul class="stack"><li>RAG</li><li>Hybrid Search</li><li>LLM Evaluation</li><li>FastAPI</li><li>ONNX</li></ul>
+          </div>
+
+          <div class="entry">
+            <h3>
+              BISINDO Fingerspelling — In-Browser Sign Language Recognition
+              <span class="project-links">
+                <a href="https://daendells.github.io/bisindo/">Live demo</a>
+                <a href="https://github.com/Daendells/bisindo">GitHub</a>
+              </span>
+            </h3>
+            <p class="entry-meta">Role: ML engineer &amp; front-end · personal project · 26 letters, on-device</p>
+            <ul>
+              <li><strong>Problem:</strong> read the Indonesian Sign Language alphabet from a webcam without a server, and know how far the accuracy can be trusted.</li>
+              <li><strong>Approach:</strong> audited the public dataset (63% of validation images were near-copies of training images) and re-split by perceptual-hash groups; fine-tuned YOLO11n, chose on validation only, exported to ONNX and ran it client-side with ONNX Runtime Web plus an 8-frame vote.</li>
+              <li><strong>Outcome:</strong> 98.5% on a held-out test set (scored once) and 93.6% on an unseen signer; every error there falls on O or Y, and the failure analysis is published on the live demo page.</li>
+            </ul>
+            <ul class="stack"><li>YOLO11</li><li>PyTorch</li><li>ONNX Runtime Web</li><li>Data Leakage Audit</li></ul>
+          </div>
+
+
+
+        </section>
+      </article>
+
+      <!-- Page 4: Featured projects (ML rigor + engineering) -->
+      <article class="sheet">
+        <div class="continued">
+          <strong>Davin Jonathan Tanus</strong>
+          <span>Portfolio · Page 4 of 5</span>
+        </div>
+
+        <section>
+          <h2>Featured Projects — Machine Learning</h2>
+
+          <div class="entry">
+            <h3>
+              Indonesian App Review Sentiment Analysis
+              <span class="project-links">
+                <a href="https://davintanus.vercel.app/assets/portfolio/machine-learning/sentiment-analysis-gojek-training.ipynb">Training notebook</a>
                 <a href="https://davintanus.vercel.app/project">Case study</a>
               </span>
             </h3>
-            <p class="entry-meta">Role: Mobile developer · Native Android prototype (Kotlin)</p>
+            <p class="entry-meta">Role: ML engineer · Dicoding NLP project · 16,000+ self-scraped reviews</p>
             <ul>
-              <li><strong>Problem:</strong> enterprises need asset tracking beyond the desk — registry, lifecycle states, and accountability on the go.</li>
-              <li><strong>Approach:</strong> searchable asset register, five lifecycle states with a per-asset timeline, admin/staff/viewer roles, admin invitation codes, and an activity log, stored in a local Room database.</li>
-              <li><strong>Outcome:</strong> installable demo APK, built alongside a deployed React and Supabase web version with the same three roles.</li>
+              <li><strong>Problem:</strong> distill thousands of Indonesian app reviews into product signal (positive / neutral / negative).</li>
+              <li><strong>Approach:</strong> slang normalization, sentiment-aware preprocessing, deduplication, class balancing; benchmarked LinearSVC, logistic regression, and a PyTorch BiLSTM with per-class and confusion-matrix analysis.</li>
+              <li><strong>Outcome:</strong> 92.17% test accuracy with a repeatable inference module.</li>
             </ul>
-            <ul class="stack"><li>Kotlin</li><li>Jetpack Compose</li><li>Room</li><li>Role-Based Access</li></ul>
+            <ul class="stack"><li>NLP</li><li>Scikit-Learn</li><li>PyTorch BiLSTM</li><li>Text Classification</li></ul>
           </div>
 
           <div class="entry">
@@ -454,68 +502,7 @@
             <ul class="stack"><li>TensorFlow</li><li>MobileNetV2</li><li>Transfer Learning</li><li>TFLite</li><li>TensorFlow.js</li></ul>
           </div>
 
-          <div class="entry">
-            <h3>
-              RAG Akademik — AI Chatbot for Campus Regulations
-              <span class="project-links">
-                <a href="https://ragakademik.streamlit.app/">Live application</a>
-                <a href="https://github.com/Daendells/RAGAkademik">GitHub</a>
-              </span>
-            </h3>
-            <p class="entry-meta">Role: Builder · Deployed product</p>
-            <ul>
-              <li><strong>Problem:</strong> students struggle to find answers in long academic regulations.</li>
-              <li><strong>Approach:</strong> retrieval-augmented generation over 30 hand-written regulation summaries with semantic search and pre-computed embeddings for fast, grounded answers.</li>
-              <li><strong>Outcome:</strong> live assistant answering policy questions (SKS limits, thesis, GPA, scholarships, graduation).</li>
-            </ul>
-            <ul class="stack"><li>RAG</li><li>LLM</li><li>Streamlit</li><li>Semantic Search</li></ul>
-          </div>
-        </section>
-      </article>
 
-      <!-- Page 4: Featured projects (ML rigor + engineering) -->
-      <article class="sheet">
-        <div class="continued">
-          <strong>Davin Jonathan Tanus</strong>
-          <span>Portfolio · Page 4 of 5</span>
-        </div>
-
-        <section>
-          <h2>Featured Projects — ML Rigor &amp; Engineering Depth</h2>
-
-          <div class="entry">
-            <h3>
-              BISINDO Fingerspelling — In-Browser Sign Language Recognition
-              <span class="project-links">
-                <a href="https://daendells.github.io/bisindo/">Live demo</a>
-                <a href="https://github.com/Daendells/bisindo">GitHub</a>
-              </span>
-            </h3>
-            <p class="entry-meta">Role: ML engineer &amp; front-end · personal project · 26 letters, on-device</p>
-            <ul>
-              <li><strong>Problem:</strong> read the Indonesian Sign Language alphabet from a webcam without a server, and know how far the accuracy can be trusted.</li>
-              <li><strong>Approach:</strong> audited the public dataset (63% of validation images were near-copies of training images) and re-split by perceptual-hash groups; fine-tuned YOLO11n, chose on validation only, exported to ONNX and ran it client-side with ONNX Runtime Web plus an 8-frame vote.</li>
-              <li><strong>Outcome:</strong> 98.5% on a held-out test set (scored once) and 93.6% on an unseen signer; every error there falls on O or Y, and the failure analysis is published on the live demo page.</li>
-            </ul>
-            <ul class="stack"><li>YOLO11</li><li>PyTorch</li><li>ONNX Runtime Web</li><li>Data Leakage Audit</li></ul>
-          </div>
-
-          <div class="entry">
-            <h3>
-              Indonesian App Review Sentiment Analysis
-              <span class="project-links">
-                <a href="https://davintanus.vercel.app/assets/portfolio/machine-learning/sentiment-analysis-gojek-training.ipynb">Training notebook</a>
-                <a href="https://davintanus.vercel.app/project">Case study</a>
-              </span>
-            </h3>
-            <p class="entry-meta">Role: ML engineer · Dicoding NLP project · 16,000+ self-scraped reviews</p>
-            <ul>
-              <li><strong>Problem:</strong> distill thousands of Indonesian app reviews into product signal (positive / neutral / negative).</li>
-              <li><strong>Approach:</strong> slang normalization, sentiment-aware preprocessing, deduplication, class balancing; benchmarked LinearSVC, logistic regression, and a PyTorch BiLSTM with per-class and confusion-matrix analysis.</li>
-              <li><strong>Outcome:</strong> 92.17% test accuracy with a repeatable inference module.</li>
-            </ul>
-            <ul class="stack"><li>NLP</li><li>Scikit-Learn</li><li>PyTorch BiLSTM</li><li>Text Classification</li></ul>
-          </div>
 
 
         </section>
@@ -555,8 +542,7 @@
         <section>
           <h2>More Selected Work</h2>
           <p class="role-line">
-            Conduit CI/CD on Google Cloud (Docker, GitHub Actions, Cloud Run), AssetHub Web (React +
-            Supabase, live), Academic Data Warehouse &amp; ETL, BCA KPI dashboards,
+            Conduit CI/CD on Google Cloud (Docker, GitHub Actions, Cloud Run), Academic Data Warehouse &amp; ETL, BCA KPI dashboards,
             Banana-Quality clustering (K-Means + PCA), ISO 31000 risk management, IS/IT strategic planning,
             and computer-vision simulation — all documented with reports and previews at
             <a href="https://davintanus.vercel.app/project">davintanus.vercel.app/project</a>.

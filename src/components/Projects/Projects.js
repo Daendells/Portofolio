@@ -9,7 +9,6 @@ const CATEGORY_FILTERS = [
   "All",
   "Machine Learning",
   "AI Applications",
-  "Software Engineering",
   "Cloud & DevOps",
 ];
 

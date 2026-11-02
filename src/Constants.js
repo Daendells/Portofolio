@@ -102,18 +102,18 @@ export const PROJECTS = [
         demoLink: null
     },
     {
-        title: "RAG Academic Assistant — Campus Regulation Chatbot",
-        eyebrow: "Generative AI · Deployed App",
+        title: "RAG Academic Assistant — Cited Answers from the ITS Academic Regulation",
+        eyebrow: "Generative AI · Deployed App · Evaluated",
         category: "AI Applications",
-        description: "An intelligent AI-powered academic assistant built with Retrieval-Augmented Generation (RAG) architecture. Uses a knowledge base of 30 hand-written summaries of common academic regulations to answer student questions — covering SKS limits, thesis requirements, GPA policies, scholarships, graduation criteria, and more. Built with Python, Streamlit, sentence-transformers for semantic search, and OpenRouter LLM API, with pre-computed embeddings for efficient retrieval.",
+        description: "Answers students' questions in Indonesian from the official text of Peraturan Rektor ITS No. 33/2025 (57 pages, 91 articles) and cites the exact Pasal, ayat, and page for every answer. The OCR'd PDF is split into one chunk per article, retrieved with BM25 and multilingual-e5 embeddings fused by reciprocal rank fusion, and answered by a free LLM whose citations the server checks before showing them. Measured on a frozen set of 70 questions: retrieval MRR 0.84 (keywords alone 0.80), and all 10 questions outside the regulation are refused instead of guessed. Runs without PyTorch (quantised ONNX, about 285 MB of RAM), with FastAPI, a plain HTML/JS page, Docker, pytest, and CI that fails if retrieval quality drops.",
         image: "/assets/portfolio/ragakademik/ragakademik-preview.png",
         files: [],
         isPdf: false,
         metrics: [
-            { value: "30", label: "Regulation summaries" },
-            { value: "Live", label: "Deployed on Streamlit" }
+            { value: "0.84", label: "Retrieval MRR, 60 questions" },
+            { value: "10/10", label: "Out-of-scope questions refused" }
         ],
-        tags: ["RAG", "LLM", "Streamlit", "Semantic Search"],
+        tags: ["RAG", "Hybrid Search", "LLM Evaluation", "FastAPI", "ONNX"],
         ghLink: "https://github.com/Daendells/RAGAkademik",
         demoLink: "https://ragakademik.streamlit.app/"
     },
@@ -127,33 +127,6 @@ export const PROJECTS = [
         isPdf: false,
         tags: ["Docker", "GCP", "GitHub Actions", "Laravel", "MongoDB"],
         ghLink: "https://github.com/Daendells/Conduit-CI-CD",
-        demoLink: null
-    },
-    {
-        title: "AssetHub — Web Asset Management System",
-        eyebrow: "Full-Stack · Deployed",
-        category: "Software Engineering",
-        description: "A full-featured web-based Asset Management System built with React and Supabase. Supports role-based access control (admin, staff, viewer), real-time asset tracking, maintenance scheduling, assignment management, audit logs, and analytics dashboard. Deployed and accessible live.",
-        image: "/assets/portfolio/assethub/assethub-web.png",
-        files: [],
-        isPdf: false,
-        metrics: [
-            { value: "Live", label: "Deployed web app" }
-        ],
-        tags: ["React", "Supabase", "RBAC", "Analytics"],
-        ghLink: null,
-        demoLink: "https://asset-hub-1.lovable.app"
-    },
-    {
-        title: "AssetHub — Mobile Asset Management App",
-        eyebrow: "Mobile · Native Android",
-        category: "Software Engineering",
-        description: "A native Android prototype for company asset management, built with Kotlin, Jetpack Compose, and a local Room database. Features an asset register with search, lifecycle status (active, maintenance, borrowed, broken, retired) with a per-asset timeline, role-based access for admin, staff, and viewer, admin invitation codes with expiry and usage limits, an activity log, and a dashboard that adapts to phones and tablets. A demo APK is available in the repository.",
-        image: "/assets/portfolio/assethub/assethub-mobile.png",
-        files: [],
-        isPdf: false,
-        tags: ["Kotlin", "Jetpack Compose", "Room", "Android"],
-        ghLink: "https://github.com/Daendells/Mobile_APP",
         demoLink: null
     },
     {

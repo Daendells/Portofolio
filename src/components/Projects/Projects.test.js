@@ -155,3 +155,11 @@ test("leaves out the forecasting study until it is re-run without the one-day of
   expect(screen.queryByText(/Stock Price Forecasting/i)).not.toBeInTheDocument();
   expect(screen.queryByRole("button", { name: "Time Series" })).not.toBeInTheDocument();
 });
+
+test("drops the AI-builder AssetHub prototypes and shows the rebuilt RAG assistant", () => {
+  render(<Projects />);
+
+  expect(screen.queryByText(/AssetHub/i)).not.toBeInTheDocument();
+  const ragCard = screen.getByText(/RAG Academic Assistant/i).closest(".project-card-view");
+  expect(within(ragCard).getByText(/Peraturan Rektor ITS No\. 33\/2025/i)).toBeInTheDocument();
+});

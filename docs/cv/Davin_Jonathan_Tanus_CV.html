@@ -357,16 +357,20 @@
 
           <div class="entry">
             <h3>
-              RAG Academic Assistant
+              RAG Assistant for the ITS Academic Regulation
               <span class="project-links">
-                <a href="https://ragakademik.streamlit.app/">Live application</a>
+                <a href="https://ragakademik.streamlit.app/">Live demo</a>
                 <a href="https://github.com/Daendells/RAGAkademik">GitHub</a>
               </span>
             </h3>
             <ul>
               <li>
-                Built a Retrieval-Augmented Generation assistant over 30 academic-regulation summaries, with
-                semantic search over pre-computed sentence-transformer embeddings, Streamlit, and an LLM API.
+                Answers questions from the official 57-page regulation with Pasal, ayat, and page citations: OCR-tolerant
+                chunking of all 91 articles, BM25 + multilingual-e5 hybrid search, and server-side citation checks.
+              </li>
+              <li>
+                Evaluated on a frozen 70-question set: retrieval MRR 0.84 (keywords alone 0.80) and 10/10 out-of-scope
+                questions refused; FastAPI, quantised ONNX (285 MB RAM), Docker, pytest, and a CI quality gate.
               </li>
             </ul>
           </div>
@@ -400,28 +404,13 @@
             </ul>
           </div>
 
-          <div class="entry">
-            <h3>
-              AssetHub — Web &amp; Mobile Asset Management
-              <span class="project-links">
-                <a href="https://asset-hub-1.lovable.app/">Live web application</a>
-                <a href="https://github.com/Daendells/Mobile_APP">Mobile GitHub</a>
-              </span>
-            </h3>
-            <ul>
-              <li>
-                Developed web and mobile workflows for asset tracking, maintenance, assignments, audit logs,
-                analytics, and role-based access: a React and Supabase web app, plus a native Android app (Kotlin, Jetpack Compose, Room).
-              </li>
-            </ul>
-          </div>
         </section>
 
         <section>
           <h2>Technical Skills</h2>
           <p class="skill-row"><strong>Languages:</strong> Python, Go, JavaScript, TypeScript, SQL, HTML, CSS</p>
-          <p class="skill-row"><strong>AI &amp; Machine Learning:</strong> TensorFlow, PyTorch, scikit-learn, XGBoost, NLP, RAG, computer vision (YOLO), transfer learning, LSTM/BiLSTM, time-series forecasting, model deployment (ONNX Runtime Web, TF Lite, TF.js)</p>
-          <p class="skill-row"><strong>Application &amp; Data:</strong> Next.js, React, FastAPI, Streamlit, REST APIs, PostgreSQL, MySQL, Supabase, data preprocessing, Excel, PowerPoint</p>
+          <p class="skill-row"><strong>AI &amp; Machine Learning:</strong> TensorFlow, PyTorch, scikit-learn, XGBoost, NLP, RAG (hybrid search, LLM evaluation), computer vision (YOLO), transfer learning, LSTM/BiLSTM, time-series forecasting, model deployment (ONNX Runtime Web, TF Lite, TF.js)</p>
+          <p class="skill-row"><strong>Application &amp; Data:</strong> Next.js, React, FastAPI, Streamlit, REST APIs, PostgreSQL, MySQL, data preprocessing, Excel, PowerPoint</p>
           <p class="skill-row"><strong>Cloud, DevOps &amp; Analytics:</strong> Docker, GitHub Actions, Google Cloud Platform, AWS, Microsoft Fabric, Power BI, Git</p>
         </section>
 
