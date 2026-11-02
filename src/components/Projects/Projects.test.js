@@ -29,7 +29,7 @@ test("opens image previews and keeps the retired GCP project GitHub-only", () =>
     .getByText(/Conduit.*Full CI\/CD Pipeline on GCP/i)
     .closest(".project-card-view");
   const ragCard = screen
-    .getByText(/RAG Akademik.*AI Chatbot Peraturan Kampus/i)
+    .getByText(/RAG Academic Assistant/i)
     .closest(".project-card-view");
 
   expect(
@@ -68,7 +68,7 @@ test("filters selected projects by category and search query", () => {
     screen.getByText(/Stock Price Forecasting — Classical ML/i)
   ).toBeInTheDocument();
   expect(
-    screen.queryByText(/RAG Akademik.*AI Chatbot Peraturan Kampus/i)
+    screen.queryByText(/RAG Academic Assistant/i)
   ).not.toBeInTheDocument();
   // Internship work is never affected by the selected-projects filter.
   expect(
@@ -134,4 +134,18 @@ test("exposes the Dicoding training notebooks on the ML project cards", () => {
     "href",
     "/assets/portfolio/machine-learning/sentiment-analysis-gojek-training.ipynb"
   );
+});
+
+test("lists coursework in its own section, outside the filtered selection", () => {
+  render(<Projects />);
+
+  const coursework = screen.getByRole("region", { name: "Coursework" });
+  const selected = screen.getByRole("region", { name: "Selected projects" });
+
+  expect(within(coursework).getByText("IT Risk Management")).toBeInTheDocument();
+  expect(within(selected).queryByText("IT Risk Management")).not.toBeInTheDocument();
+  expect(screen.queryByRole("button", { name: "Info Systems" })).not.toBeInTheDocument();
+
+  fireEvent.click(screen.getByRole("button", { name: "Time Series" }));
+  expect(within(coursework).getByText("IT Risk Management")).toBeInTheDocument();
 });

@@ -5,11 +5,11 @@ export const USERS = {
     name: "Davin Jonathan Tanus",
     titles: [
         "AI Engineer Intern @ SPIL",
-        "Machine Learning Engineer",
-        "Data Analyst",
-        "Software Engineer"
+        "Machine Learning & Computer Vision",
+        "Data Analytics",
+        "Full-Stack Development"
     ],
-    description: "An Information Systems student at ITS and AI Engineer Intern at PT Salam Pacific Indonesia Lines. I build practical AI, machine learning, data, and full-stack systems—from document intelligence and internal platforms to in-browser sign-language recognition, image classification, sentiment analysis, forecasting, and analytics. I care about reliable evaluation, maintainable software, and turning technical work into useful products.",
+    description: "I am an Information Systems student at ITS, expected to graduate in August 2027, and an AI Engineer Intern in the Performance Excellence division of PT Salam Pacific Indonesia Lines. At work I build internal tools for recruitment, assessment analytics, and document processing. In my own projects I take machine-learning work from raw data and careful evaluation to a working demo, such as Indonesian sign-language recognition that runs entirely in the browser. My undergraduate thesis classifies bacterial and viral pneumonia in children's chest X-rays with the RDNet-Tiny architecture.",
     social: {
         github: "https://github.com/Daendells", // Add if known, else blank
         linkedin: "https://www.linkedin.com/in/davin-jonathan-tanus-32a19b308/", // Add if known, else blank
@@ -105,10 +105,10 @@ export const PROJECTS = [
         title: "Stock Price Forecasting — Classical ML & Deep Learning",
         eyebrow: "Time Series · Applied Research",
         category: "Time Series",
-        description: "A professional time series forecasting system analyzing 10 years of historical trading data for United Tractors Tbk (UNTR.JK). Evaluates multiple architectures including Moving Average, ARIMA(5,1,0), Facebook Prophet, XGBoost, and a double-layer LSTM network. Incorporates rigorous validation methodologies: 1-step rolling Walk-Forward validation to simulate real trading, residual diagnostics (Ljung-Box Test) to mathematically reject underfitting, and learning curve monitoring to prevent overfitting. The custom-trained LSTM network achieved superior predictive accuracy with a MAPE of 1.04% and MAE of 254.56.",
+        description: "A forecasting study on 10 years of daily UNTR.JK (United Tractors) stock prices comparing a 30-day moving average, ARIMA(5,1,0), Prophet, XGBoost, and a two-layer LSTM. Every model is evaluated the same way: one-step-ahead rolling walk-forward validation, plus residual diagnostics (Ljung-Box) and learning curves. The LSTM had the lowest error of the five models (MAPE 1.04%, MAE 254.56), against 12.77% MAPE for the moving-average baseline.",
         image: "/assets/portfolio/time_series/v1_forecasting_klasik.png",
         files: [
-            { name: "Laporan PDF", link: "time_series/laporan_v1_forecasting_klasik.pdf", type: "pdf" }
+            { name: "PDF Report", link: "time_series/laporan_v1_forecasting_klasik.pdf", type: "pdf" }
         ],
         isPdf: false,
         metrics: [
@@ -123,22 +123,22 @@ export const PROJECTS = [
         title: "Stock Price Forecasting — Amazon Chronos-2 Foundation Model",
         eyebrow: "Time Series · Foundation Models",
         category: "Time Series",
-        description: "An advanced implementation of Amazon's Chronos-2 Foundation Model (120M parameters) for zero-shot stock forecasting of UNTR.JK. Built and deployed a dynamic 1-step rolling Walk-Forward validation pipeline on GPU to solve zero-shot drift and flatlining. Conducted in-depth statistical checks: residual Ljung-Box test (p-value 0.915) proving zero underfitting, and a critical directional analysis—revealing the model's zero-shot limitations under domestic market micro-volatility (48.28% Directional Accuracy). Compare-tested zero-shot performance directly against custom-trained ML pipelines.",
+        description: "Zero-shot forecasting of UNTR.JK with Amazon's Chronos-2 foundation model (120M parameters), run in the same one-step-ahead walk-forward loop as the classical study and compared with its custom-trained models. Its residuals showed no remaining autocorrelation (Ljung-Box p = 0.915), but it predicted the direction of the next day's price move only 48.28% of the time, which shows the limits of zero-shot forecasting on day-to-day price changes.",
         image: "/assets/portfolio/time_series/v2_chronos_foundation.png",
         files: [
-            { name: "Laporan PDF", link: "time_series/laporan_v2_chronos_foundation.pdf", type: "pdf" }
+            { name: "PDF Report", link: "time_series/laporan_v2_chronos_foundation.pdf", type: "pdf" }
         ],
         isPdf: false,
         metrics: [
             { value: "120M", label: "Chronos-2 parameters" },
-            { value: "0.915", label: "Residual Ljung-Box p-value" }
+            { value: "48.28%", label: "Next-day direction correct" }
         ],
         tags: ["Foundation Model", "Zero-Shot", "Walk-Forward", "GPU"],
         ghLink: null,
         demoLink: "https://colab.research.google.com/drive/1U83z42kPZF3e1ZWpM43Nh6pjnQ4mMeW8?usp=sharing"
     },
     {
-        title: "RAG Akademik — AI Chatbot Peraturan Kampus",
+        title: "RAG Academic Assistant — Campus Regulation Chatbot",
         eyebrow: "Generative AI · Deployed App",
         category: "AI Applications",
         description: "An intelligent AI-powered academic assistant built with Retrieval-Augmented Generation (RAG) architecture. Leverages a vector knowledge base of 30+ indexed university regulation documents to answer student queries — covering SKS limits, thesis requirements, GPA policies, scholarships, graduation criteria, and more. Built with Python, Streamlit, sentence-transformers for semantic search, and OpenRouter LLM API, with pre-computed embeddings for efficient retrieval.",
@@ -195,7 +195,7 @@ export const PROJECTS = [
     {
         title: "IT Risk Management",
         eyebrow: "Coursework · Risk Analysis",
-        category: "Info Systems",
+        category: "Coursework",
         description: "Comprehensive risk management plan identifying potential IT threats, vulnerabilities, and mitigation strategies for organizational resilience.",
         image: null,
         files: [
@@ -207,7 +207,7 @@ export const PROJECTS = [
     {
         title: "Academic Data Warehouse & ETL Design",
         eyebrow: "Coursework · Data Engineering",
-        category: "Data & Analytics",
+        category: "Coursework",
         description: "Data warehouse design for ITS academic processes (course registration and advisor approval of study plans): 5W1H business-process analysis, fact-table granularity, dimension tables with slowly changing dimensions, and documented ETL steps to clean and load the data.",
         image: null,
         files: [
@@ -218,9 +218,9 @@ export const PROJECTS = [
         tags: ["ETL", "Data Cleaning"]
     },
     {
-        title: "Perencanaan Strategis SI/TI di TECHNOPRENEURSHIP DEVELOPMENT CENTRE (TDC) ITS",
+        title: "IS/IT Strategic Planning — ITS Technopreneurship Development Centre",
         eyebrow: "Coursework · IT Strategy",
-        category: "Info Systems",
+        category: "Coursework",
         description: "Strategic planning for Information Systems/Technology at TDC ITS, aligning IT initiatives with business goals.",
         image: null,
         files: [
@@ -230,9 +230,9 @@ export const PROJECTS = [
         tags: ["IT Strategy", "Business Alignment"]
     },
     {
-        title: "Analisis Kluster pada Faktor-Faktor Numerik Fisik dan Kimiawi yang Memengaruhi Karakteristik Kualitas Pisang",
+        title: "Banana Quality Cluster Analysis (K-Means & PCA)",
         eyebrow: "Coursework · Unsupervised Learning",
-        category: "Data & Analytics",
+        category: "Coursework",
         description: "A data science project applying unsupervised machine learning to the Banana Quality Dataset to uncover hidden patterns in physical and chemical numerical features. Implemented KNNImputer to handle missing values and preserve data integrity, followed by MinMaxScaler for feature standardization. Applied Principal Component Analysis (PCA) to reduce dimensionality and simplify feature complexity without significant variance loss. Executed K-Means Clustering optimized via the Elbow Method and Silhouette Coefficient, then validated segmentation consistency using V-Measure Score. Built with Python (Pandas, NumPy, Scikit-Learn, Matplotlib, Seaborn).",
         image: null,
         files: [
@@ -244,7 +244,7 @@ export const PROJECTS = [
     {
         title: "BCA Dashboard Project",
         eyebrow: "Coursework · Business Intelligence",
-        category: "Data & Analytics",
+        category: "Coursework",
         description: "Interactive dashboard designed for Bank Central Asia (BCA) to visualize key performance indicators and operational metrics.",
         image: "/assets/portfolio/meoti/Screenshot 2026-01-02 172655.png",
         files: [
@@ -258,7 +258,7 @@ export const PROJECTS = [
     {
         title: "Scrum Master — Agile Snacklicious",
         eyebrow: "Leadership · Agile Delivery",
-        category: "Info Systems",
+        category: "Coursework",
         description: "Scrum Master and coordinator for a six-person team running the Snacklicious snack business over four Scrum sprints. Led sprint execution, daily scrums, and retrospectives, divided tasks across the team, and tracked income and expenses for the project budget and cash flow.",
         image: null,
         files: [
@@ -270,7 +270,7 @@ export const PROJECTS = [
     {
         title: "Web Security Assessment",
         eyebrow: "Coursework · Security",
-        category: "Info Systems",
+        category: "Coursework",
         description: "Security assessment and vulnerability analysis of web applications.",
         image: null,
         files: [
@@ -282,7 +282,7 @@ export const PROJECTS = [
     {
         title: "Computer Vision Simulation",
         eyebrow: "Coursework · Computer Vision",
-        category: "Machine Learning",
+        category: "Coursework",
         description: "Simulation and analysis of computer vision algorithms, demonstrating object detection and recognition capabilities.",
         image: null,
         files: [
@@ -292,44 +292,3 @@ export const PROJECTS = [
         tags: ["Computer Vision", "Object Detection"]
     }
 ];
-
-export const SKILLS = [
-    // Data & Analytics
-    { name: "SQL (MySQL, DuckDB)", type: "Data & Analytics" },
-    { name: "Python", type: "Data & Analytics" },
-    { name: "ETL Pipeline", type: "Data & Analytics" },
-    { name: "Data Warehousing (Star Schema, SCD)", type: "Data & Analytics" },
-    { name: "Time Series Forecasting", type: "Data & Analytics" },
-    { name: "Data Visualization", type: "Data & Analytics" },
-    { name: "K-Means Clustering & PCA", type: "Data & Analytics" },
-    { name: "ARIMA / Prophet / Holt-Winters", type: "Data & Analytics" },
-    // AI & Vision
-    { name: "Machine Learning", type: "AI & Vision" },
-    { name: "Deep Learning (LSTM, XGBoost)", type: "AI & Vision" },
-    { name: "Computer Vision (YOLO, OpenCV, MediaPipe)", type: "AI & Vision" },
-    { name: "In-Browser Inference (ONNX Runtime Web)", type: "AI & Vision" },
-    { name: "Face & Gesture Recognition", type: "AI & Vision" },
-    { name: "RAG / LLM / Semantic Search", type: "AI & Vision" },
-    // Tools & Software
-    { name: "Power BI", type: "Tools & Software" },
-    { name: "SAP S/4HANA", type: "Tools & Software" },
-    { name: "Google Cloud Platform", type: "Tools & Software" },
-    { name: "Excel", type: "Tools & Software" },
-    { name: "PowerPoint", type: "Tools & Software" },
-    { name: "Odoo", type: "Tools & Software" },
-    { name: "Git / GitHub", type: "Tools & Software" },
-    { name: "Jupyter Notebook", type: "Tools & Software" },
-    { name: "Docker", type: "Tools & Software" },
-    // Management & Systems
-    { name: "Agile Scrum / Kanban", type: "Management & Systems" },
-    { name: "Risk Management (FMEA, ISO 31000)", type: "Management & Systems" },
-    { name: "IS/IT Strategic Planning", type: "Management & Systems" },
-    { name: "BPMN", type: "Management & Systems" },
-    // Web & Programming
-    { name: "JavaScript", type: "Web & Programming" },
-    { name: "HTML / CSS", type: "Web & Programming" },
-    { name: "Laravel", type: "Web & Programming" },
-    { name: "Streamlit", type: "Web & Programming" },
-    { name: "React / Vite", type: "Web & Programming" },
-];
-

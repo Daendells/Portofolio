@@ -8,7 +8,8 @@ import Particle from "../Particle";
 import Home2 from "./Home2";
 import Type from "./Type";
 
-import { USERS } from "../../Constants";
+import { PROJECTS, USERS } from "../../Constants";
+import { ACTIVITIES, CERTIFICATES } from "../../data/credentials";
 import {
   AiFillGithub,
   AiOutlineTwitter,
@@ -19,10 +20,10 @@ import {
 import { FaLinkedinIn } from "react-icons/fa";
 
 const HIGHLIGHT_STATS = [
-  { value: "18", label: "Selected projects" },
-  { value: "92.17%", label: "Best model test accuracy" },
-  { value: "28", label: "Credentials & activities" },
+  { value: PROJECTS.length, label: "Projects with evidence" },
+  { value: CERTIFICATES.length + ACTIVITIES.length, label: "Certifications & activities" },
   { value: "3.64", label: "GPA at ITS" },
+  { value: "Aug 2027", label: "Expected graduation" },
 ];
 
 function Home() {
@@ -33,16 +34,12 @@ function Home() {
         <Container className="home-content">
           <Row>
             <Col md={7} className="home-header">
-              <h1 style={{ paddingBottom: 15 }} className="heading">
-                Hi There!{" "}
-                <span className="wave" role="img" aria-labelledby="wave">
-                  👋🏻
-                </span>
-              </h1>
+              <p style={{ paddingBottom: 15 }} className="heading">
+                Hi, I'm
+              </p>
 
               <h1 className="heading-name">
-                I'M
-                <strong className="main-name"> {USERS.name}</strong>
+                <strong className="main-name">{USERS.name}</strong>
               </h1>
 
               <div style={{ padding: 50, textAlign: "left" }}>
@@ -97,9 +94,9 @@ function Home() {
       <Container>
         <Row style={{ paddingTop: "50px", paddingBottom: "80px" }}>
           <Col md={12} className="home-about-social">
-            <h1>Find Me On</h1>
+            <h2>Get in Touch</h2>
             <p>
-              Feel free to <span className="purple">connect </span>with me
+              Open to <span className="purple">internship and graduate roles</span> in AI, data, and software engineering.
             </p>
             <ul className="home-about-social-links">
               {USERS.social.github && (

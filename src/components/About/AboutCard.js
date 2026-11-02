@@ -1,7 +1,6 @@
 import React from "react";
 import Card from "react-bootstrap/Card";
 import { ImPointRight } from "react-icons/im";
-
 import { USERS } from "../../Constants";
 
 function AboutCard() {
@@ -9,31 +8,21 @@ function AboutCard() {
     <Card className="quote-card-view">
       <Card.Body>
         <blockquote className="blockquote mb-0">
-          <p style={{ textAlign: "justify" }}>
-            Hi Everyone, I am <span className="purple">{USERS.name}</span>.
-            <br />
+          <p style={{ textAlign: "left" }}>
             {USERS.description}
-            <br />
-            <br />
-            Apart from coding and data visualization, some other activities that I love to do!
           </p>
-
+          <p style={{ textAlign: "left" }}>What I focus on:</p>
           <ul>
             <li className="about-activity">
-              <ImPointRight /> Analyzing Trends
+              <ImPointRight aria-hidden="true" /> Machine learning with honest evaluation, from data cleaning to a live demo
             </li>
             <li className="about-activity">
-              <ImPointRight /> Reading Tech Articles
+              <ImPointRight aria-hidden="true" /> Internal tools that save people repetitive work
             </li>
             <li className="about-activity">
-              <ImPointRight /> Exploring New Tools
+              <ImPointRight aria-hidden="true" /> Data analysis and dashboards that answer a clear business question
             </li>
           </ul>
-
-          <p style={{ color: "rgb(155 126 172)" }}>
-            "Data is not just numbers, it's a story waiting to be told!"{" "}
-          </p>
-          <footer className="blockquote-footer">Davin</footer>
         </blockquote>
       </Card.Body>
     </Card>

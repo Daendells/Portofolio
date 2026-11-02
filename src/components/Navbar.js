@@ -10,7 +10,6 @@ import {
 } from "react-icons/ai";
 import { BsAward } from "react-icons/bs";
 import { CgFileDocument } from "react-icons/cg";
-import logo from "../Assets/logo.png";
 
 function NavBar() {
   const [expanded, setExpanded] = useState(false);
@@ -34,7 +33,7 @@ function NavBar() {
     >
       <Container>
         <Navbar.Brand as={Link} to="/" className="d-flex" onClick={closeMenu}>
-          <img src={logo} className="img-fluid logo" alt="Davin portfolio" />
+          <span className="logo-text" aria-label="Davin Jonathan Tanus, home">DJT<span className="purple">.</span></span>
         </Navbar.Brand>
         <Navbar.Toggle
           aria-controls="responsive-navbar-nav"

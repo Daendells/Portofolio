@@ -11,31 +11,29 @@ function Home2() {
       <Container>
         <Row>
           <Col md={8} className="home-about-description">
-            <h1 style={{ fontSize: "2.6em" }}>
-              LET ME <span className="purple"> INTRODUCE </span> MYSELF
-            </h1>
+            <h2 style={{ fontSize: "2.6em" }}>
+              About <span className="purple">Me</span>
+            </h2>
             <p className="home-about-body">
-              I'm an <b className="purple">Information Systems</b> student at
-              ITS and currently an{" "}
-              <b className="purple">AI Engineer Intern at PT SPIL.</b>
+              I study <b className="purple">Information Systems</b> at ITS
+              (expected graduation August 2027) and work as an{" "}
+              <b className="purple">AI Engineer Intern at PT SPIL</b>, where I
+              build internal tools for document verification, CV screening,
+              and candidate assessment analytics.
               <br />
               <br />
-              I build practical systems across{" "}
-              <b className="purple">
-                document intelligence, machine learning, data analytics,
-              </b>{" "}
-              and full-stack engineering. My internship work is presented only
-              at a high level to protect company information.
+              Outside work I take machine-learning projects from raw data to a
+              working product: an{" "}
+              <b className="purple">in-browser sign-language recognizer</b>, a{" "}
+              <b className="purple">RAG assistant for campus regulations</b>,
+              and Indonesian sentiment analysis. I check results carefully; in
+              the sign-language project I found and fixed data leakage in the
+              public dataset before reporting accuracy.
               <br />
               <br />
-              My recent machine-learning work includes{" "}
-              <b className="purple">
-                in-browser sign-language recognition, image classification,
-                Indonesian sentiment analysis, RAG,
-              </b>{" "}
-              and time-series forecasting. I enjoy turning experiments into
-              maintainable products with clear evaluation and thoughtful user
-              experiences.
+              My undergraduate thesis classifies{" "}
+              <b className="purple">bacterial and viral pneumonia</b> in
+              pediatric chest X-rays with RDNet-Tiny.
               <br />
               <br />
             </p>

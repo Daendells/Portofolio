@@ -12,8 +12,6 @@ const CATEGORY_FILTERS = [
   "AI Applications",
   "Software Engineering",
   "Cloud & DevOps",
-  "Data & Analytics",
-  "Info Systems",
 ];
 
 function matchesQuery(project, query) {
@@ -41,11 +39,17 @@ function Projects() {
     []
   );
 
+  const courseworkItems = useMemo(
+    () => PROJECTS.filter((project) => project.category === "Coursework"),
+    []
+  );
+
   const selectedItems = useMemo(
     () =>
       PROJECTS.filter(
         (project) =>
           project.category !== "Internship Work" &&
+          project.category !== "Coursework" &&
           (activeCategory === "All" || project.category === activeCategory) &&
           matchesQuery(project, query)
       ),
@@ -98,7 +102,7 @@ function Projects() {
             <p className="section-kicker">{selectedItems.length} selected projects</p>
             <h2 className="project-heading">Selected Projects</h2>
             <p className="section-description">
-              Machine learning, data, cloud, analytics, software engineering, and information-systems work in one collection.
+              Machine learning, AI applications, forecasting, cloud, and software engineering work, each with code, a demo, or a report.
             </p>
           </div>
 
@@ -152,6 +156,32 @@ function Projects() {
               No projects match this filter yet. Try a different category or search term.
             </p>
           )}
+        </section>
+
+        <section className="project-section-block" aria-label="Coursework">
+          <div className="section-heading-wrap">
+            <p className="section-kicker">{courseworkItems.length} course projects</p>
+            <h2 className="project-heading">Coursework</h2>
+            <p className="section-description">
+              Information-systems, data, and security projects from ITS courses, documented in their final reports.
+            </p>
+          </div>
+          <Row className="project-grid">
+            {courseworkItems.map((project) => (
+              <Col
+                lg={4}
+                md={6}
+                className="project-card"
+                key={project.title}
+              >
+                <ProjectCard
+                  {...project}
+                  imgPath={project.image}
+                  onPreview={setPreview}
+                />
+              </Col>
+            ))}
+          </Row>
         </section>
 
         <MediaPreviewModal
