@@ -62,11 +62,10 @@ test("opens image previews and keeps the retired GCP project GitHub-only", () =>
 test("filters selected projects by category and search query", () => {
   render(<Projects />);
 
-  fireEvent.click(screen.getByRole("button", { name: "Time Series" }));
+  fireEvent.click(screen.getByRole("button", { name: "Machine Learning" }));
 
-  expect(
-    screen.getByText(/Stock Price Forecasting — Classical ML/i)
-  ).toBeInTheDocument();
+  expect(screen.getByText(/BISINDO Fingerspelling/i)).toBeInTheDocument();
+  expect(screen.queryByText(/Stock Price Forecasting/i)).not.toBeInTheDocument();
   expect(
     screen.queryByText(/RAG Academic Assistant/i)
   ).not.toBeInTheDocument();
@@ -146,6 +145,13 @@ test("lists coursework in its own section, outside the filtered selection", () =
   expect(within(selected).queryByText(/Risk Management Study/)).not.toBeInTheDocument();
   expect(screen.queryByRole("button", { name: "Info Systems" })).not.toBeInTheDocument();
 
-  fireEvent.click(screen.getByRole("button", { name: "Time Series" }));
+  fireEvent.click(screen.getByRole("button", { name: "Machine Learning" }));
   expect(within(coursework).getByText(/Risk Management Study/)).toBeInTheDocument();
+});
+
+test("leaves out the forecasting study until it is re-run without the one-day offset", () => {
+  render(<Projects />);
+
+  expect(screen.queryByText(/Stock Price Forecasting/i)).not.toBeInTheDocument();
+  expect(screen.queryByRole("button", { name: "Time Series" })).not.toBeInTheDocument();
 });

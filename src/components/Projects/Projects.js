@@ -8,7 +8,6 @@ import ProjectCard from "./ProjectCards";
 const CATEGORY_FILTERS = [
   "All",
   "Machine Learning",
-  "Time Series",
   "AI Applications",
   "Software Engineering",
   "Cloud & DevOps",
@@ -102,7 +101,7 @@ function Projects() {
             <p className="section-kicker">{selectedItems.length} selected projects</p>
             <h2 className="project-heading">Selected Projects</h2>
             <p className="section-description">
-              Machine learning, AI applications, forecasting, cloud, and software engineering work, each with code, a demo, or a report.
+              Machine learning, AI applications, data, cloud, and software engineering work, each with code, a demo, or a report.
             </p>
           </div>
 

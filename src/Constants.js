@@ -102,42 +102,6 @@ export const PROJECTS = [
         demoLink: null
     },
     {
-        title: "Stock Price Forecasting — Classical ML & Deep Learning",
-        eyebrow: "Time Series · Applied Research",
-        category: "Time Series",
-        description: "A forecasting study on 10 years of daily UNTR.JK (United Tractors) stock prices comparing a 30-day moving average, ARIMA(5,1,0), Prophet, XGBoost, and a two-layer LSTM. Every model is evaluated the same way: one-step-ahead rolling walk-forward validation, plus residual diagnostics (Ljung-Box) and learning curves. The LSTM had the lowest error of the five models (MAPE 1.04%, MAE 254.56), against 12.77% MAPE for the moving-average baseline.",
-        image: "/assets/portfolio/time_series/v1_forecasting_klasik.png",
-        files: [
-            { name: "PDF Report", link: "time_series/laporan_v1_forecasting_klasik.pdf", type: "pdf" }
-        ],
-        isPdf: false,
-        metrics: [
-            { value: "1.04%", label: "LSTM MAPE" },
-            { value: "10 yrs", label: "UNTR.JK history" }
-        ],
-        tags: ["Time Series", "LSTM", "XGBoost", "ARIMA", "Prophet"],
-        ghLink: null,
-        demoLink: "https://colab.research.google.com/drive/1PmCxi3E9srX3Hpct5Hvo2gbp_3hQb60a?usp=sharing"
-    },
-    {
-        title: "Stock Price Forecasting — Amazon Chronos-2 Foundation Model",
-        eyebrow: "Time Series · Foundation Models",
-        category: "Time Series",
-        description: "Zero-shot forecasting of UNTR.JK with Amazon's Chronos-2 foundation model (120M parameters), run in the same one-step-ahead walk-forward loop as the classical study and compared with its custom-trained models. Its residuals showed no remaining autocorrelation (Ljung-Box p = 0.915), but it predicted the direction of the next day's price move only 48.28% of the time, which shows the limits of zero-shot forecasting on day-to-day price changes.",
-        image: "/assets/portfolio/time_series/v2_chronos_foundation.png",
-        files: [
-            { name: "PDF Report", link: "time_series/laporan_v2_chronos_foundation.pdf", type: "pdf" }
-        ],
-        isPdf: false,
-        metrics: [
-            { value: "120M", label: "Chronos-2 parameters" },
-            { value: "48.28%", label: "Next-day direction correct" }
-        ],
-        tags: ["Foundation Model", "Zero-Shot", "Walk-Forward", "GPU"],
-        ghLink: null,
-        demoLink: "https://colab.research.google.com/drive/1U83z42kPZF3e1ZWpM43Nh6pjnQ4mMeW8?usp=sharing"
-    },
-    {
         title: "RAG Academic Assistant — Campus Regulation Chatbot",
         eyebrow: "Generative AI · Deployed App",
         category: "AI Applications",
