@@ -141,12 +141,12 @@ export const PROJECTS = [
         title: "RAG Academic Assistant — Campus Regulation Chatbot",
         eyebrow: "Generative AI · Deployed App",
         category: "AI Applications",
-        description: "An intelligent AI-powered academic assistant built with Retrieval-Augmented Generation (RAG) architecture. Leverages a vector knowledge base of 30+ indexed university regulation documents to answer student queries — covering SKS limits, thesis requirements, GPA policies, scholarships, graduation criteria, and more. Built with Python, Streamlit, sentence-transformers for semantic search, and OpenRouter LLM API, with pre-computed embeddings for efficient retrieval.",
+        description: "An intelligent AI-powered academic assistant built with Retrieval-Augmented Generation (RAG) architecture. Uses a knowledge base of 30 hand-written summaries of common academic regulations to answer student questions — covering SKS limits, thesis requirements, GPA policies, scholarships, graduation criteria, and more. Built with Python, Streamlit, sentence-transformers for semantic search, and OpenRouter LLM API, with pre-computed embeddings for efficient retrieval.",
         image: "/assets/portfolio/ragakademik/ragakademik-preview.png",
         files: [],
         isPdf: false,
         metrics: [
-            { value: "30+", label: "Indexed regulation docs" },
+            { value: "30", label: "Regulation summaries" },
             { value: "Live", label: "Deployed on Streamlit" }
         ],
         tags: ["RAG", "LLM", "Streamlit", "Semantic Search"],
@@ -169,7 +169,7 @@ export const PROJECTS = [
         title: "AssetHub — Web Asset Management System",
         eyebrow: "Full-Stack · Deployed",
         category: "Software Engineering",
-        description: "A full-featured web-based Asset Management System built with React and Supabase. Supports role-based access control (Admin, Manager, Staff), real-time asset tracking, maintenance scheduling, assignment management, audit logs, and analytics dashboard. Deployed and accessible live.",
+        description: "A full-featured web-based Asset Management System built with React and Supabase. Supports role-based access control (admin, staff, viewer), real-time asset tracking, maintenance scheduling, assignment management, audit logs, and analytics dashboard. Deployed and accessible live.",
         image: "/assets/portfolio/assethub/assethub-web.png",
         files: [],
         isPdf: false,
@@ -177,32 +177,32 @@ export const PROJECTS = [
             { value: "Live", label: "Deployed web app" }
         ],
         tags: ["React", "Supabase", "RBAC", "Analytics"],
-        ghLink: "https://github.com/Daendells/asset-hub-1",
+        ghLink: null,
         demoLink: "https://asset-hub-1.lovable.app"
     },
     {
         title: "AssetHub — Mobile Asset Management App",
-        eyebrow: "Mobile · Cross-Platform",
+        eyebrow: "Mobile · Native Android",
         category: "Software Engineering",
-        description: "A cross-platform mobile application for enterprise asset management, built with React Native / Expo. Features include asset registry with search & filter, lifecycle tracking (Active, Maintenance, Borrowed), role-based access (Admin, Code Admin), and audit logs. Available on GitHub.",
+        description: "A native Android prototype for company asset management, built with Kotlin, Jetpack Compose, and a local Room database. Features an asset register with search, lifecycle status (active, maintenance, borrowed, broken, retired) with a per-asset timeline, role-based access for admin, staff, and viewer, admin invitation codes with expiry and usage limits, an activity log, and a dashboard that adapts to phones and tablets. A demo APK is available in the repository.",
         image: "/assets/portfolio/assethub/assethub-mobile.png",
         files: [],
         isPdf: false,
-        tags: ["React Native", "Expo", "Mobile"],
+        tags: ["Kotlin", "Jetpack Compose", "Room", "Android"],
         ghLink: "https://github.com/Daendells/Mobile_APP",
         demoLink: null
     },
     {
-        title: "IT Risk Management",
+        title: "Risk Management Study — PT Semen Gresik Crusher Unit",
         eyebrow: "Coursework · Risk Analysis",
         category: "Coursework",
-        description: "Comprehensive risk management plan identifying potential IT threats, vulnerabilities, and mitigation strategies for organizational resilience.",
+        description: "An ISO 31000 risk management study of the crusher unit at PT Semen Gresik's Rembang plant, an area with frequent workplace accidents. The team interviewed a company contact, identified and scored work-safety risks with FMEA, built a risk register, and proposed mitigation for the highest-priority risks.",
         image: null,
         files: [
             { name: "Final Risk Assessment Report", link: "MRTI/MRTI_Project.pdf", type: "pdf" }
         ],
         isPdf: true,
-        tags: ["Risk Management", "ISO 31000"]
+        tags: ["ISO 31000", "FMEA", "Risk Register"]
     },
     {
         title: "Academic Data Warehouse & ETL Design",
@@ -221,13 +221,13 @@ export const PROJECTS = [
         title: "IS/IT Strategic Planning — ITS Technopreneurship Development Centre",
         eyebrow: "Coursework · IT Strategy",
         category: "Coursework",
-        description: "Strategic planning for Information Systems/Technology at TDC ITS, aligning IT initiatives with business goals.",
+        description: "A team strategic plan for ITS Technopreneurship Development Centre: SWOT analysis of the internal and external environment, business strategy, an IT Balanced Scorecard, a McFarlan application portfolio, and an IS/IT development roadmap.",
         image: null,
         files: [
             { name: "Final Project Report", link: "psti/Kelompok%202_Final%20Project%20PSTI.pdf", type: "pdf" }
         ],
         isPdf: true,
-        tags: ["IT Strategy", "Business Alignment"]
+        tags: ["SWOT", "IT Balanced Scorecard", "McFarlan", "Roadmap"]
     },
     {
         title: "Banana Quality Cluster Analysis (K-Means & PCA)",
@@ -271,24 +271,24 @@ export const PROJECTS = [
         title: "Web Security Assessment",
         eyebrow: "Coursework · Security",
         category: "Coursework",
-        description: "Security assessment and vulnerability analysis of web applications.",
+        description: "A security assessment of the Iptek ITS journal website (Open Journal Systems). The team fingerprinted the platform and its libraries with Nmap and manual source inspection, reviewed it against OWASP risks such as broken access control, XSS, SQL injection, and journal-hijacking SEO spam, and found outdated components with published critical vulnerabilities (PHP 5.3.3 at CVSS 10.0, jQuery 1.4.4 with known XSS issues), followed by remediation recommendations.",
         image: null,
         files: [
             { name: "Assessment Report", link: "pai/EAS_PAI_ClassC_Group12.pdf", type: "pdf" }
         ],
         isPdf: true,
-        tags: ["Web Security", "Vulnerability Analysis"]
+        tags: ["OWASP", "Nmap", "CVE Analysis"]
     },
     {
         title: "Computer Vision Simulation",
         eyebrow: "Coursework · Computer Vision",
         category: "Coursework",
-        description: "Simulation and analysis of computer vision algorithms, demonstrating object detection and recognition capabilities.",
+        description: "Face detection with a Haar cascade, hand-landmark tracking with MediaPipe, and face recognition with OpenCV's LBPH recognizer, then an improved recognizer based on MobileNetV2 that identified faces more accurately and consistently than LBPH in the team's tests.",
         image: null,
         files: [
             { name: "Simulation Report", link: "tekber/Laporan%20Simulasi%20Computer%20Vision_C_131_178_216%20(1).pdf", type: "pdf" }
         ],
         isPdf: true,
-        tags: ["Computer Vision", "Object Detection"]
+        tags: ["OpenCV", "MediaPipe", "MobileNetV2"]
     }
 ];

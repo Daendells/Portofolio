@@ -142,10 +142,10 @@ test("lists coursework in its own section, outside the filtered selection", () =
   const coursework = screen.getByRole("region", { name: "Coursework" });
   const selected = screen.getByRole("region", { name: "Selected projects" });
 
-  expect(within(coursework).getByText("IT Risk Management")).toBeInTheDocument();
-  expect(within(selected).queryByText("IT Risk Management")).not.toBeInTheDocument();
+  expect(within(coursework).getByText(/Risk Management Study/)).toBeInTheDocument();
+  expect(within(selected).queryByText(/Risk Management Study/)).not.toBeInTheDocument();
   expect(screen.queryByRole("button", { name: "Info Systems" })).not.toBeInTheDocument();
 
   fireEvent.click(screen.getByRole("button", { name: "Time Series" }));
-  expect(within(coursework).getByText("IT Risk Management")).toBeInTheDocument();
+  expect(within(coursework).getByText(/Risk Management Study/)).toBeInTheDocument();
 });
