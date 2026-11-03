@@ -3,67 +3,34 @@ import Container from "react-bootstrap/Container";
 import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
 import { Link } from "react-router-dom";
-import { BsMoon, BsSun } from "react-icons/bs";
 
 const LINKS = [
-  ["/", "Home"],
+  ["/project", "Work"],
   ["/about", "About"],
-  ["/project", "Projects"],
   ["/credentials", "Credentials"],
-  ["/resume", "Resume"],
+  ["/resume", "CV"],
 ];
-
-// Light is the default; a saved choice wins. Storage can be blocked, so reads and writes are guarded.
-function savedTheme() {
-  try {
-    return window.localStorage.getItem("theme") === "dark" ? "dark" : "light";
-  } catch {
-    return "light";
-  }
-}
 
 function NavBar() {
   const [expanded, setExpanded] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
-  const [theme, setTheme] = useState(savedTheme);
 
   useEffect(() => {
     const handleScroll = () => setIsScrolled(window.scrollY >= 20);
     handleScroll();
-    window.addEventListener("scroll", handleScroll);
+    window.addEventListener("scroll", handleScroll, { passive: true });
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  useEffect(() => {
-    document.documentElement.dataset.theme = theme;
-    try {
-      window.localStorage.setItem("theme", theme);
-    } catch {
-      // Private mode: the choice lasts for this visit only.
-    }
-  }, [theme]);
-
   const closeMenu = () => setExpanded(false);
-  const dark = theme === "dark";
 
   return (
-    <Navbar expanded={expanded} fixed="top" expand="lg" className={isScrolled ? "site-nav site-nav--scrolled" : "site-nav"}>
-      <Container>
+    <Navbar expanded={expanded} fixed="top" expand="md" className={isScrolled ? "site-nav site-nav--scrolled" : "site-nav"}>
+      <Container className="site-nav-inner">
         <Navbar.Brand as={Link} to="/" onClick={closeMenu} className="logo-text">
           Davin Jonathan Tanus
         </Navbar.Brand>
-        <div className="nav-actions">
-          <button
-            type="button"
-            className="theme-toggle"
-            aria-pressed={dark}
-            aria-label="Dark mode"
-            onClick={() => setTheme(dark ? "light" : "dark")}
-          >
-            {dark ? <BsSun aria-hidden="true" /> : <BsMoon aria-hidden="true" />}
-          </button>
-          <Navbar.Toggle aria-controls="responsive-navbar-nav" aria-label="Toggle navigation" onClick={() => setExpanded((open) => !open)} />
-        </div>
+        <Navbar.Toggle aria-controls="responsive-navbar-nav" aria-label="Toggle navigation" onClick={() => setExpanded((open) => !open)} />
         <Navbar.Collapse id="responsive-navbar-nav">
           <Nav className="ms-auto">
             {LINKS.map(([to, label]) => (

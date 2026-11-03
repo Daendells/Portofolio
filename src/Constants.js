@@ -4,7 +4,7 @@
 export const USERS = {
     name: "Davin Jonathan Tanus",
     email: "davinjtanus@gmail.com",
-    description: "I am an Information Systems student at ITS, expected to graduate in August 2027, and an AI Engineer Intern in the Performance Excellence division of PT Salam Pacific Indonesia Lines. At work I build internal tools for recruitment, assessment analytics, and document processing. In my own projects I take machine-learning work from raw data and careful evaluation to a working demo, such as Indonesian sign-language recognition that runs entirely in the browser. My undergraduate thesis classifies bacterial and viral pneumonia in children's chest X-rays with the RDNet-Tiny architecture.",
+    description: "I study Information Systems at ITS and graduate in August 2027. I am an AI Engineer Intern in the Performance Excellence division of PT Salam Pacific Indonesia Lines, where I build internal tools for fleet fuel analytics, recruitment, and document checks. In my own projects I take a model from raw data to a working demo and check the numbers before I publish them. My thesis classifies bacterial and viral pneumonia in children's chest X-rays with RDNet-Tiny.",
     social: {
         github: "https://github.com/Daendells", // Add if known, else blank
         linkedin: "https://www.linkedin.com/in/davin-jonathan-tanus-32a19b308/", // Add if known, else blank
@@ -19,10 +19,10 @@ export const RELATIVE_PATH_TO_PORTO = "/assets/portfolio";
 
 export const PROJECTS = [
     {
-        title: "Fuel Consumption Analytics (Bunker)",
-        eyebrow: "AI Engineering Internship · Confidential",
+        title: "Fleet fuel analytics",
+        eyebrow: "Internship at SPIL · private",
         category: "Internship Work",
-        description: "A team dashboard that turns vessels' daily noon reports into a clean voyage history, forecasts voyage duration and fuel use, and supports bunker purchasing. I am its largest contributor (108 of about 240 commits) and built the maritime analysis: fuel use per nautical mile and per day split by main and auxiliary engines, comparisons across routes, speeds, and reefer loads, data checks that flag missing or inconsistent reports, and background workers with a scheduler in Docker. Figures, vessels, and code stay private.",
+        description: "A dashboard the fleet team uses to see where fuel goes. It turns each vessel's daily noon reports into a voyage history and compares fuel per nautical mile and per day by route, speed, engine, and reefer load. I am the largest contributor (108 of about 240 commits): I built the analysis pages, the checks that flag missing or inconsistent reports, and the background workers. Data and code stay private.",
         image: null,
         files: [],
         isPdf: false,
@@ -32,10 +32,10 @@ export const PROJECTS = [
         demoLink: null
     },
     {
-        title: "Intelligent Document Verification Platform",
-        eyebrow: "AI Engineering Internship · Confidential",
+        title: "Route plan verification",
+        eyebrow: "Internship at SPIL · private",
         category: "Internship Work",
-        description: "An internal platform that transforms operational PDF documents into structured, searchable information and supports automated verification against scheduling records. My work covers document extraction, normalization and matching logic, dashboard and API integration, authentication, database persistence, testing, and containerized delivery. Implementation details, data, and source code are withheld to protect company confidentiality.",
+        description: "Reads the fleet's route-plan PDFs, turns them into structured records, and checks them against the voyage schedule automatically. I worked on the extraction and matching logic, the API and dashboard, sign-in, storage, and tests (Next.js, FastAPI, PostgreSQL, Docker). Details stay private.",
         image: null,
         files: [],
         isPdf: false,
@@ -45,10 +45,10 @@ export const PROJECTS = [
         demoLink: null
     },
     {
-        title: "Talent Development & Assessment Platform",
-        eyebrow: "AI Engineering Internship · Confidential",
+        title: "Recruitment and assessment platform",
+        eyebrow: "Internship at SPIL · private",
         category: "Internship Work",
-        description: "A private workforce-development and recruitment system for structured assessments, competency profiles, learning activities, and reporting. I rebuilt its LLM-based CV analysis module into two recruiter workflows: matching one CV against all roles (fit score, best-fit role, strengths, skill gaps, and on-demand interview questions) and ranking many CVs for a single role. I also built a DISC psychometric assessment analytics dashboard with CSV upload, deduplication, a role-fit matrix, and candidate comparison, integrated it with the company SSO (and added account management to the SSO portal), and contribute to training plans, recruitment reports, automated testing, and containerized deployment. The description intentionally remains high-level and no company data or internal artifacts are published.",
+        description: "An internal platform for assessments, competency profiles, and training plans. I rebuilt its CV analysis into two recruiter tools: one CV scored against every role, with skill gaps and interview questions, and many CVs ranked for one role. I also built the DISC assessment dashboard, connected the platform to the company SSO, and added account management to the SSO portal. Details stay private.",
         image: null,
         files: [],
         isPdf: false,
@@ -58,11 +58,11 @@ export const PROJECTS = [
         demoLink: null
     },
     {
-        title: "BISINDO Fingerspelling — In-Browser Sign Language Recognition",
-        summary: "Recognises the 26-letter Indonesian Sign Language alphabet from a webcam, entirely in the browser; found and fixed data leakage first.",
-        eyebrow: "Computer Vision · Live Web Demo",
+        title: "BISINDO fingerspelling",
+        summary: "Reads the 26-letter Indonesian Sign Language alphabet from a webcam, inside the browser.",
+        eyebrow: "Computer vision · live demo",
         category: "Machine Learning",
-        description: "A real-time recognizer for the 26 letters of the Indonesian Sign Language (BISINDO) alphabet that runs entirely in the browser: a 2.6M-parameter YOLO11n detector exported to ONNX and executed client-side with ONNX Runtime Web, with an 8-frame vote for stable live typing. An audit found that 63% of the public dataset's validation images were near-copies of training images, so the data was re-split by perceptual-hash groups. The model was chosen on validation, scored once on a held-out test set, and tested on an unseen signer against YOLOv8n, landmark-SVM, and DINOv2-SVM baselines.",
+        description: "Recognises the 26 letters of the BISINDO alphabet from a webcam, entirely in the browser. A 2.6M-parameter YOLO11n model runs through ONNX Runtime Web, and an 8-frame vote keeps typing stable. Before training I found that 63% of the public validation images were near-copies of training images, so I re-split the data by image similarity. The model was chosen on validation, scored once on a held-out test set, and tried on a signer it had never seen.",
         image: "/assets/portfolio/bisindo/bisindo-preview.png",
         files: [],
         isPdf: false,
@@ -75,10 +75,10 @@ export const PROJECTS = [
         demoLink: "https://daendells.github.io/bisindo/"
     },
     {
-        title: "Multi-Class Image Classification with Transfer Learning",
-        eyebrow: "Machine Learning · Dicoding",
+        title: "Image classification with transfer learning",
+        eyebrow: "Machine learning · Dicoding course",
         category: "Machine Learning",
-        description: "A reproducible image-classification pipeline trained on 13,394 Imagenette images across 10 classes. The project uses an 80/10/10 train-validation-test split, realistic augmentation, a MobileNetV2 transfer-learning backbone, staged fine-tuning, and callback-driven checkpointing. Evaluation includes learning curves, a confusion matrix, and per-class metrics, with 91.67% test accuracy. The trained model was exported to SavedModel, TensorFlow Lite, and TensorFlow.js formats.",
+        description: "A MobileNetV2 model fine-tuned on 13,394 Imagenette images in 10 classes, with an 80/10/10 split, augmentation, and staged fine-tuning. It reaches 91.67% test accuracy and is exported to SavedModel, TensorFlow Lite, and TensorFlow.js.",
         image: "/assets/portfolio/machine-learning/image-classification-training.png",
         files: [
             { name: "Training Notebook (.ipynb)", link: "machine-learning/image-classification-imagenette-notebook.ipynb", type: "notebook" }
@@ -93,11 +93,11 @@ export const PROJECTS = [
         demoLink: null
     },
     {
-        title: "Indonesian App Review Sentiment Analysis",
-        summary: "Positive vs. negative Indonesian app reviews at 91.8% accuracy, re-evaluated honestly after finding the original labels inflated the score.",
-        eyebrow: "Natural Language Processing · Rebuilt & Re-evaluated",
+        title: "Indonesian review sentiment",
+        summary: "Tells positive from negative Gojek reviews at 91.8% accuracy, after I found the original labels inflated the score.",
+        eyebrow: "NLP · rebuilt",
         category: "Machine Learning",
-        description: "Classifies 10,674 self-collected Indonesian Google Play reviews of Gojek, labelled by star rating only. Positive vs. negative reaches 91.8% accuracy (macro-F1 0.918) on 2,009 held-out reviews, against 52.9% for always predicting the larger class. Rebuilding the original course project showed its labels mixed star ratings with a word list from the same text and dropped every review where the two disagreed, which removed the hardest cases; the honest three-class result is 85.9% accuracy with macro-F1 0.60, because 3-star reviews cannot be separated. The repo reports per-class metrics, a majority baseline, confusion matrices, and error examples, and CI re-runs the evaluation.",
+        description: "Classifies 10,674 Indonesian Google Play reviews of Gojek, labelled by their star rating. Positive vs. negative reaches 91.8% accuracy on 2,009 held-out reviews, where always guessing the larger class gets 52.9%. It rebuilds a course project of mine: the original labels were partly taken from the review text, and reviews whose text and stars disagreed were dropped, which removed the hard cases. Three-star reviews still cannot be told apart (macro-F1 0.60 across three classes), and the repo says so.",
         image: "/assets/portfolio/machine-learning/sentiment-analysis-confusion-matrix.png",
         files: [],
         isPdf: false,
@@ -110,10 +110,11 @@ export const PROJECTS = [
         demoLink: null
     },
     {
-        title: "Stock Forecasting — Honest Walk-Forward Test (UNTR.JK)",
-        eyebrow: "Time Series · Rebuilt & Re-evaluated",
+        title: "Stock forecasting walk-forward test",
+        summary: "Tests whether ARIMA, XGBoost, or an LSTM beat 'same as today' over a year of stock prices. None did.",
+        eyebrow: "Time series · rebuilt",
         category: "Data & Analytics",
-        description: "Tests whether ARIMA, XGBoost, and an LSTM forecast United Tractors' next-day close better than 'tomorrow equals today', on a one-year walk-forward test (250 trading days) where each forecast only sees earlier prices. No model beat the naive forecast: naive MAPE 1.83%, the best learned model 1.87%, none significantly different by a Diebold-Mariano test, and direction accuracy 44–47%, no better than a coin flip. The study replaces an earlier one of mine whose 1.04% LSTM result came from a one-day misalignment between forecasts and prices; a test now asserts that no model sees the day it predicts.",
+        description: "Can ARIMA, XGBoost, or an LSTM predict United Tractors' next closing price better than 'same as today'? Over one year of walk-forward testing (250 trading days, each forecast made only from earlier prices), no model beat that naive forecast: 1.83% error against 1.87% for the best model, and none called the direction of the next move better than a coin flip. It replaces an earlier result of mine (1.04%) that came from comparing each forecast with the wrong day.",
         image: "/assets/portfolio/forecasting/walk-forward.png",
         files: [],
         isPdf: false,
@@ -126,11 +127,11 @@ export const PROJECTS = [
         demoLink: null
     },
     {
-        title: "RAG Academic Assistant — Cited Answers from the ITS Academic Regulation",
-        summary: "Answers questions from the official 57-page ITS academic regulation and cites the exact article and page; evaluated on 70 questions.",
-        eyebrow: "Generative AI · Deployed App · Evaluated",
+        title: "RAG assistant for ITS academic rules",
+        summary: "Answers questions about ITS academic rules and cites the article and page it used.",
+        eyebrow: "Generative AI · live demo",
         category: "AI Applications",
-        description: "Answers students' questions in Indonesian from the official text of Peraturan Rektor ITS No. 33/2025 (57 pages, 91 articles) and cites the exact Pasal, ayat, and page for every answer. The OCR'd PDF is split into one chunk per article, retrieved with BM25 and multilingual-e5 embeddings fused by reciprocal rank fusion, and answered by a free LLM whose citations the server checks before showing them. Measured on a frozen set of 70 questions: retrieval MRR 0.84 (keywords alone 0.80), and all 10 questions outside the regulation are refused instead of guessed. Runs without PyTorch (quantised ONNX, about 285 MB of RAM), with FastAPI, a plain HTML/JS page, Docker, pytest, and CI that fails if retrieval quality drops.",
+        description: "Answers students' questions in Indonesian from the official ITS academic regulation (57 pages, 91 articles) and cites the article, clause, and page. Search combines keywords and embeddings, and the server checks every citation before it is shown. On a fixed set of 70 questions it ranks the right article near the top (MRR 0.84) and declines all 10 questions the regulation does not cover. It runs in about 285 MB of memory, with FastAPI, Docker, tests, and CI.",
         image: "/assets/portfolio/ragakademik/ragakademik-preview.png",
         files: [],
         isPdf: false,
@@ -143,10 +144,11 @@ export const PROJECTS = [
         demoLink: "https://ragakademik.streamlit.app/"
     },
     {
-        title: "Conduit — Full CI/CD Pipeline on GCP",
-        eyebrow: "DevOps · Cloud Deployment",
+        title: "CI/CD pipeline on Google Cloud",
+        summary: "A Laravel app containerised and deployed to Cloud Run by GitHub Actions, with tests as the gate.",
+        eyebrow: "DevOps · course project",
         category: "Cloud & DevOps",
-        description: "End-to-end DevOps implementation of the Conduit blogging platform (Laravel/PHP) with a production-grade CI/CD pipeline. Built and containerized with Docker, automated via GitHub Actions with secrets management, and deployed to Google Cloud Run through Artifact Registry. Backend powered by MongoDB, quality-gated with PHPUnit test suites, and internally monitored with Grafana dashboards. Demonstrates real-world DevOps competencies: containerization, cloud deployment, automated testing, secret handling, and observability.",
+        description: "Containerised the Conduit blogging app (Laravel, MongoDB) with Docker and set up GitHub Actions to run PHPUnit tests and deploy to Google Cloud Run through Artifact Registry, with secrets kept out of the repository and Grafana for monitoring.",
         image: "/assets/portfolio/conduit/conduit-preview.png",
         files: [],
         isPdf: false,
@@ -155,10 +157,10 @@ export const PROJECTS = [
         demoLink: null
     },
     {
-        title: "Risk Management Study — PT Semen Gresik Crusher Unit",
-        eyebrow: "Coursework · Risk Analysis",
+        title: "Risk management study, PT Semen Gresik",
+        eyebrow: "Coursework · risk analysis",
         category: "Coursework",
-        description: "An ISO 31000 risk management study of the crusher unit at PT Semen Gresik's Rembang plant, an area with frequent workplace accidents. The team interviewed a company contact, identified and scored work-safety risks with FMEA, built a risk register, and proposed mitigation for the highest-priority risks.",
+        description: "An ISO 31000 study of the crusher unit at the Rembang plant, where workplace accidents were frequent. We interviewed a company contact, scored work-safety risks with FMEA, built a risk register, and proposed mitigation for the highest risks.",
         image: null,
         files: [
             { name: "Final Risk Assessment Report", link: "MRTI/MRTI_Project.pdf", type: "pdf" }
@@ -167,10 +169,10 @@ export const PROJECTS = [
         tags: ["ISO 31000", "FMEA", "Risk Register"]
     },
     {
-        title: "Academic Data Warehouse & ETL Design",
-        eyebrow: "Coursework · Data Engineering",
+        title: "Academic data warehouse and ETL",
+        eyebrow: "Coursework · data engineering",
         category: "Coursework",
-        description: "Data warehouse design for ITS academic processes (course registration and advisor approval of study plans): 5W1H business-process analysis, fact-table granularity, dimension tables with slowly changing dimensions, and documented ETL steps to clean and load the data.",
+        description: "A data warehouse for two ITS academic processes, course registration and advisor approval of study plans: 5W1H process analysis, fact-table grain, dimension tables with slowly changing dimensions, and the ETL steps to clean and load the data.",
         image: null,
         files: [
             { name: "ETL Process Report", link: "dlh/DLH-Davin%20Jonathan%20Tanus-5026231131-A-ETL%20(2).pdf", type: "pdf" },
@@ -180,10 +182,10 @@ export const PROJECTS = [
         tags: ["ETL", "Data Cleaning"]
     },
     {
-        title: "IS/IT Strategic Planning — ITS Technopreneurship Development Centre",
-        eyebrow: "Coursework · IT Strategy",
+        title: "IS/IT strategic plan, ITS Technopreneurship Development Centre",
+        eyebrow: "Coursework · IT strategy",
         category: "Coursework",
-        description: "A team strategic plan for ITS Technopreneurship Development Centre: SWOT analysis of the internal and external environment, business strategy, an IT Balanced Scorecard, a McFarlan application portfolio, and an IS/IT development roadmap.",
+        description: "A team strategic plan with a SWOT analysis, business strategy, an IT Balanced Scorecard, a McFarlan application portfolio, and an IS/IT roadmap.",
         image: null,
         files: [
             { name: "Final Project Report", link: "psti/Kelompok%202_Final%20Project%20PSTI.pdf", type: "pdf" }
@@ -192,10 +194,10 @@ export const PROJECTS = [
         tags: ["SWOT", "IT Balanced Scorecard", "McFarlan", "Roadmap"]
     },
     {
-        title: "Banana Quality Cluster Analysis (K-Means & PCA)",
-        eyebrow: "Coursework · Unsupervised Learning",
+        title: "Banana quality clustering",
+        eyebrow: "Coursework · unsupervised learning",
         category: "Coursework",
-        description: "A data science project applying unsupervised machine learning to the Banana Quality Dataset to uncover hidden patterns in physical and chemical numerical features. Implemented KNNImputer to handle missing values and preserve data integrity, followed by MinMaxScaler for feature standardization. Applied Principal Component Analysis (PCA) to reduce dimensionality and simplify feature complexity without significant variance loss. Executed K-Means Clustering optimized via the Elbow Method and Silhouette Coefficient, then validated segmentation consistency using V-Measure Score. Built with Python (Pandas, NumPy, Scikit-Learn, Matplotlib, Seaborn).",
+        description: "Clustered the Banana Quality dataset: filled missing values with KNN imputation, scaled the features, reduced them with PCA, and grouped them with K-Means, choosing the number of clusters by the elbow method and silhouette score (Python, scikit-learn).",
         image: null,
         files: [
             { name: "Final Analysis Report", link: "add/Cluster_Analysis_Report%20(1).pdf", type: "pdf" }
@@ -204,10 +206,10 @@ export const PROJECTS = [
         tags: ["K-Means", "PCA", "Scikit-Learn"]
     },
     {
-        title: "BCA Dashboard Project",
-        eyebrow: "Coursework · Business Intelligence",
+        title: "BCA KPI dashboards",
+        eyebrow: "Coursework · business intelligence",
         category: "Coursework",
-        description: "Interactive dashboard designed for Bank Central Asia (BCA) to visualize key performance indicators and operational metrics.",
+        description: "Power BI dashboards for Bank Central Asia's head office and branches that track key performance indicators (team project).",
         image: "/assets/portfolio/meoti/Screenshot 2026-01-02 172655.png",
         files: [
             { name: "Central Dashboard (ZIP)", link: "meoti/FINAL_Dashboard_Pusat_Bank%20Central%20Asia_Kelompok%205.zip", type: "archive" },
@@ -218,10 +220,10 @@ export const PROJECTS = [
         tags: ["Dashboard", "KPI", "Analytics"]
     },
     {
-        title: "Scrum Master — Agile Snacklicious",
-        eyebrow: "Leadership · Agile Delivery",
+        title: "Scrum Master, Snacklicious",
+        eyebrow: "Coursework · agile",
         category: "Coursework",
-        description: "Scrum Master and coordinator for a six-person team running the Snacklicious snack business over four Scrum sprints. Led sprint execution, daily scrums, and retrospectives, divided tasks across the team, and tracked income and expenses for the project budget and cash flow.",
+        description: "Scrum Master for a six-person team that ran a small snack business over four sprints. I ran the daily scrums and retrospectives, split the work, and tracked income and expenses.",
         image: null,
         files: [
             { name: "Final Agile Report", link: "mpt/MPT_Agile_Report.pdf", type: "pdf" }
@@ -230,10 +232,10 @@ export const PROJECTS = [
         tags: ["Agile", "Scrum", "Leadership"]
     },
     {
-        title: "Web Security Assessment",
-        eyebrow: "Coursework · Security",
+        title: "Web security assessment",
+        eyebrow: "Coursework · security",
         category: "Coursework",
-        description: "A security assessment of the Iptek ITS journal website (Open Journal Systems). The team fingerprinted the platform and its libraries with Nmap and manual source inspection, reviewed it against OWASP risks such as broken access control, XSS, SQL injection, and journal-hijacking SEO spam, and found outdated components with published critical vulnerabilities (PHP 5.3.3 at CVSS 10.0, jQuery 1.4.4 with known XSS issues), followed by remediation recommendations.",
+        description: "A security review of the Iptek ITS journal site (Open Journal Systems). We fingerprinted it with Nmap and the page source, checked it against OWASP risks, and found outdated components with known critical vulnerabilities (PHP 5.3.3 at CVSS 10.0, jQuery 1.4.4), then wrote fixes.",
         image: null,
         files: [
             { name: "Assessment Report", link: "pai/EAS_PAI_ClassC_Group12.pdf", type: "pdf" }
@@ -242,10 +244,10 @@ export const PROJECTS = [
         tags: ["OWASP", "Nmap", "CVE Analysis"]
     },
     {
-        title: "Computer Vision Simulation",
-        eyebrow: "Coursework · Computer Vision",
+        title: "Computer vision simulation",
+        eyebrow: "Coursework · computer vision",
         category: "Coursework",
-        description: "Face detection with a Haar cascade, hand-landmark tracking with MediaPipe, and face recognition with OpenCV's LBPH recognizer, then an improved recognizer based on MobileNetV2 that identified faces more accurately and consistently than LBPH in the team's tests.",
+        description: "Face detection with a Haar cascade, hand tracking with MediaPipe, and face recognition with OpenCV's LBPH, then a MobileNetV2 recognizer that identified faces more reliably than LBPH in our tests.",
         image: null,
         files: [
             { name: "Simulation Report", link: "tekber/Laporan%20Simulasi%20Computer%20Vision_C_131_178_216%20(1).pdf", type: "pdf" }

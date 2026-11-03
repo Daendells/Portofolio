@@ -13,6 +13,7 @@ import {
   Navigate
 } from "react-router-dom";
 import ScrollToTop from "./components/ScrollToTop";
+import { RevealOnScroll } from "./components/Motion";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./style.css";
 
@@ -27,6 +28,7 @@ function App() {
       <div className="App">
         <Navbar />
         <ScrollToTop />
+        <RevealOnScroll />
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/project" element={<Projects />} />

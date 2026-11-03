@@ -37,13 +37,12 @@ function Credentials() {
     <Container fluid className="project-section credentials-page">
       <Container>
         <header className="page-intro">
-          <p className="section-kicker">Continuous learning, documented</p>
+          <p className="section-kicker">Learning</p>
           <h1 className="project-heading">
             Credentials &amp; <strong className="purple">Activities</strong>
           </h1>
           <p className="section-description section-description--centered">
-            Course completions are separated from event participation so each
-            entry clearly represents what was achieved and what was explored.
+            Courses I completed, listed apart from the events I attended.
           </p>
         </header>
 

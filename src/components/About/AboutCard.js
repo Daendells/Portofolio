@@ -14,13 +14,13 @@ function AboutCard() {
           <p style={{ textAlign: "left" }}>What I focus on:</p>
           <ul>
             <li className="about-activity">
-              <ImPointRight aria-hidden="true" /> Machine learning with honest evaluation, from data cleaning to a live demo
+              <ImPointRight aria-hidden="true" /> Machine learning I can measure, from cleaning the data to a working demo
             </li>
             <li className="about-activity">
               <ImPointRight aria-hidden="true" /> Internal tools that save people repetitive work
             </li>
             <li className="about-activity">
-              <ImPointRight aria-hidden="true" /> Data analysis and dashboards that answer a clear business question
+              <ImPointRight aria-hidden="true" /> Analysis that answers one clear business question
             </li>
           </ul>
         </blockquote>

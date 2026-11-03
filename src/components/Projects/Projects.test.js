@@ -19,13 +19,13 @@ test("opens image previews and keeps the retired GCP project GitHub-only", () =>
   render(<Projects />);
 
   const privateCard = screen
-    .getByText("Intelligent Document Verification Platform")
+    .getByText("Route plan verification")
     .closest(".project-card-view");
   const conduitCard = screen
-    .getByText(/Conduit.*Full CI\/CD Pipeline on GCP/i)
+    .getByText(/CI\/CD pipeline on Google Cloud/i)
     .closest(".project-card-view");
   const ragCard = screen
-    .getByText(/RAG Academic Assistant/i)
+    .getByText(/RAG assistant for ITS/i)
     .closest(".project-card-view");
 
   expect(
@@ -43,14 +43,14 @@ test("opens image previews and keeps the retired GCP project GitHub-only", () =>
 
   fireEvent.click(
     screen.getByRole("button", {
-      name: "Preview Multi-Class Image Classification with Transfer Learning",
+      name: "Preview Image classification with transfer learning",
     })
   );
 
   expect(screen.getByRole("dialog")).toBeInTheDocument();
   expect(
     within(screen.getByRole("dialog")).getByAltText(
-      "Multi-Class Image Classification with Transfer Learning preview"
+      "Image classification with transfer learning preview"
     )
   ).toBeInTheDocument();
 });
@@ -60,14 +60,14 @@ test("filters selected projects by category and search query", () => {
 
   fireEvent.click(screen.getByRole("button", { name: "Machine Learning" }));
 
-  expect(screen.getByText(/BISINDO Fingerspelling/i)).toBeInTheDocument();
+  expect(screen.getByText(/BISINDO fingerspelling/i)).toBeInTheDocument();
   expect(screen.queryByText(/Stock Price Forecasting/i)).not.toBeInTheDocument();
   expect(
-    screen.queryByText(/RAG Academic Assistant/i)
+    screen.queryByText(/RAG assistant for ITS/i)
   ).not.toBeInTheDocument();
   // Internship work is never affected by the selected-projects filter.
   expect(
-    screen.getByText("Intelligent Document Verification Platform")
+    screen.getByText("Route plan verification")
   ).toBeInTheDocument();
 
   fireEvent.click(screen.getByRole("button", { name: "All" }));
@@ -77,11 +77,11 @@ test("filters selected projects by category and search query", () => {
   );
 
   expect(
-    screen.getByText("Indonesian App Review Sentiment Analysis")
+    screen.getByText("Indonesian review sentiment")
   ).toBeInTheDocument();
   expect(
     screen.queryByText(
-      "Multi-Class Image Classification with Transfer Learning"
+      "Image classification with transfer learning"
     )
   ).not.toBeInTheDocument();
 });
@@ -90,7 +90,7 @@ test("links the BISINDO project to its live demo and repository", () => {
   render(<Projects />);
 
   const card = screen
-    .getByText(/BISINDO Fingerspelling/i)
+    .getByText(/BISINDO fingerspelling/i)
     .closest(".project-card-view");
 
   expect(within(card).getByRole("button", { name: "Demo" })).toHaveAttribute(
@@ -107,10 +107,10 @@ test("links the rebuilt sentiment study to its repository instead of the old not
   render(<Projects />);
 
   const imageCard = screen
-    .getByText("Multi-Class Image Classification with Transfer Learning")
+    .getByText("Image classification with transfer learning")
     .closest(".project-card-view");
   const sentimentCard = screen
-    .getByText("Indonesian App Review Sentiment Analysis")
+    .getByText("Indonesian review sentiment")
     .closest(".project-card-view");
 
   expect(
@@ -133,12 +133,12 @@ test("lists coursework in its own section, outside the filtered selection", () =
   const coursework = screen.getByRole("region", { name: "Coursework" });
   const selected = screen.getByRole("region", { name: "Selected projects" });
 
-  expect(within(coursework).getByText(/Risk Management Study/)).toBeInTheDocument();
-  expect(within(selected).queryByText(/Risk Management Study/)).not.toBeInTheDocument();
+  expect(within(coursework).getByText(/Risk management study/)).toBeInTheDocument();
+  expect(within(selected).queryByText(/Risk management study/)).not.toBeInTheDocument();
   expect(screen.queryByRole("button", { name: "Info Systems" })).not.toBeInTheDocument();
 
   fireEvent.click(screen.getByRole("button", { name: "Machine Learning" }));
-  expect(within(coursework).getByText(/Risk Management Study/)).toBeInTheDocument();
+  expect(within(coursework).getByText(/Risk management study/)).toBeInTheDocument();
 });
 
 test("shows the walk-forward forecasting study and its naive-baseline finding", () => {
@@ -157,14 +157,14 @@ test("drops the AI-builder AssetHub prototypes and shows the rebuilt RAG assista
   render(<Projects />);
 
   expect(screen.queryByText(/AssetHub/i)).not.toBeInTheDocument();
-  const ragCard = screen.getByText(/RAG Academic Assistant/i).closest(".project-card-view");
-  expect(within(ragCard).getByText(/Peraturan Rektor ITS No\. 33\/2025/i)).toBeInTheDocument();
+  const ragCard = screen.getByText(/RAG assistant for ITS/i).closest(".project-card-view");
+  expect(within(ragCard).getByText(/official ITS academic regulation/i)).toBeInTheDocument();
 });
 
 test("lists the fuel consumption analytics work among the internship projects", () => {
   render(<Projects />);
 
   const internship = screen.getByRole("region", { name: "Internship work" });
-  expect(within(internship).getByText(/Fuel Consumption Analytics/i)).toBeInTheDocument();
+  expect(within(internship).getByText(/Fleet fuel analytics/i)).toBeInTheDocument();
   expect(within(internship).getAllByText(/SSO/).length).toBeGreaterThan(0);
 });

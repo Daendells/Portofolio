@@ -101,7 +101,7 @@ function ProjectCards(props) {
                 variant="primary"
                 type="button"
                 onClick={() =>
-                  openPreview(fileLink, `${props.title} — ${file.name}`, file.type)
+                  openPreview(fileLink, `${props.title}: ${file.name}`, file.type)
                 }
               >
                 {file.type === "pdf" ? <CgFileDocument /> : <BsEye />} {file.name}

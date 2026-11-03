@@ -2,28 +2,25 @@ import React from "react";
 import { Container } from "react-bootstrap";
 
 const FACTS = [
-  ["Now", "AI Engineer Intern, Performance Excellence division, PT Salam Pacific Indonesia Lines (Jul–Nov 2026)"],
-  ["Study", "Information Systems at Institut Teknologi Sepuluh Nopember, GPA 3.64, graduating August 2027"],
-  ["Thesis", "Bacterial vs. viral pneumonia classification on pediatric chest X-rays with RDNet-Tiny (in progress)"],
-  ["Stack", "Python, Go, TypeScript, FastAPI, Next.js, PyTorch, ONNX, PostgreSQL, Docker"],
+  ["Now", "AI Engineer Intern, Performance Excellence division, PT Salam Pacific Indonesia Lines (Jul to Nov 2026)"],
+  ["Study", "Information Systems, Institut Teknologi Sepuluh Nopember. GPA 3.64, graduating August 2027"],
+  ["Thesis", "Bacterial vs. viral pneumonia on children's chest X-rays with RDNet-Tiny (in progress)"],
+  ["Tools", "Python, Go, TypeScript, FastAPI, Next.js, Laravel, PyTorch, ONNX, PostgreSQL, Docker"],
 ];
 
 function Home2() {
   return (
     <section className="home-about-section" id="about">
       <Container>
+        <p className="kicker reveal">02 · About</p>
         <div className="about-grid">
-          <div>
-            <h2 className="project-heading">About</h2>
-            <p className="home-about-body">
-              At work I build internal tools: fuel-consumption analytics for the fleet team, LLM-based CV screening for
-              recruiters, a DISC assessment analytics dashboard, and a document-verification engine. In my own projects I take machine learning from raw
-              data to a working demo, and I check the numbers before I report them. In the sign-language project
-              I found that 63% of the public validation set were near-copies of training images, and re-split the
-              data before measuring accuracy.
-            </p>
-          </div>
-          <dl className="fact-list">
+          <p className="about-statement reveal">
+            At work I build internal tools: fuel analytics for the fleet team, LLM-based CV screening for recruiters,
+            and a document-verification engine. In my own projects I check the numbers before I publish them. That
+            habit showed me that <em>63%</em> of a public sign-language dataset's validation images were near-copies of
+            training images, and that one of my own forecasting results came from a one-day leak.
+          </p>
+          <dl className="fact-list reveal">
             {FACTS.map(([term, detail]) => (
               <div key={term}>
                 <dt>{term}</dt>

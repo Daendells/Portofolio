@@ -57,13 +57,12 @@ function Projects() {
     <Container fluid className="project-section">
       <Container>
         <header className="page-intro">
-          <p className="section-kicker">Applied engineering &amp; research</p>
+          <p className="section-kicker">Work</p>
           <h1 className="project-heading">
-            Selected <strong className="purple">Projects</strong>
+            All <strong className="purple">projects</strong>
           </h1>
           <p className="section-description section-description--centered">
-            Work across AI engineering, machine learning, data, cloud, and
-            product development.
+            Internship systems, my own projects, and coursework. Each one links to code, a demo, or a report.
           </p>
         </header>
 
@@ -72,7 +71,7 @@ function Projects() {
             <p className="section-kicker">{internshipItems.length} selected projects</p>
             <h2 className="project-heading">Internship Work</h2>
             <p className="section-description">
-              Selected systems from my AI Engineering internship in the Performance Excellence division of PT Salam Pacific Indonesia Lines. Descriptions are intentionally general and no internal assets are published.
+              Built during my internship in the Performance Excellence division of PT Salam Pacific Indonesia Lines. Company data and code are private, so these stay at a high level.
             </p>
           </div>
           <Row className="project-grid">
@@ -98,7 +97,7 @@ function Projects() {
             <p className="section-kicker">{selectedItems.length} selected projects</p>
             <h2 className="project-heading">Selected Projects</h2>
             <p className="section-description">
-              Machine learning, AI applications, data, cloud, and software engineering work, each with code, a demo, or a report.
+              My own projects. Each has code, a demo, or a write-up with its evaluation.
             </p>
           </div>
 
@@ -123,7 +122,7 @@ function Projects() {
             <input
               className="project-search"
               type="search"
-              placeholder="Search projects, e.g. sentiment, LSTM, dashboard…"
+              placeholder="Search, for example sentiment or forecasting"
               aria-label="Search projects"
               value={query}
               onChange={(event) => setQuery(event.target.value)}

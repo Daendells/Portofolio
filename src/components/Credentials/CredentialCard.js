@@ -48,7 +48,7 @@ function CredentialCard({ credential, onPreview, type }) {
               : fileLabel;
             const previewTitle = isGenericCredential
               ? credential.title
-              : `${credential.title} — ${fileLabel}`;
+              : `${credential.title}: ${fileLabel}`;
 
             return (
               <Button

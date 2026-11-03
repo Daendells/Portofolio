@@ -22,7 +22,7 @@ export const CERTIFICATES = [
     ],
   },
   {
-    title: "AWS AI Academy — Basic & Beginner",
+    title: "AWS AI Academy: Basic & Beginner",
     issuer: "Dicoding × AWS Training and Certification",
     issued: "August 2026",
     description:
@@ -50,7 +50,7 @@ export const CERTIFICATES = [
     ],
   },
   {
-    title: "Introduction to LangGraph — Python",
+    title: "Introduction to LangGraph: Python",
     issuer: "LangChain Academy",
     issued: "August 2026",
     description:
@@ -64,7 +64,7 @@ export const CERTIFICATES = [
     ],
   },
   {
-    title: "Introduction to LangChain — Python",
+    title: "Introduction to LangChain: Python",
     issuer: "LangChain Academy",
     issued: "August 2026",
     description:
@@ -96,7 +96,7 @@ export const CERTIFICATES = [
     issuer: "Dicoding Indonesia",
     issued: "August 2026",
     description:
-      "End-to-end data science with Microsoft Fabric, from exploration and experiments to model deployment and monitoring.",
+      "Data science from preparation to deployment with Microsoft Fabric, from exploration and experiments to model deployment and monitoring.",
     skills: ["Data Science", "Microsoft Fabric", "MLOps"],
     files: [
       documentLink(
@@ -296,7 +296,7 @@ export const CERTIFICATES = [
     ],
   },
   {
-    title: "Programming Competition — 2nd Place",
+    title: "Programming Competition: 2nd Place",
     issuer: "Information Systems Competition, HMSI ITS",
     issued: "2024",
     description:
@@ -339,7 +339,7 @@ export const ACTIVITIES = [
     ],
   },
   {
-    title: "DevCoach 239 — Building a Hermes Agent",
+    title: "DevCoach 239: Building a Hermes Agent",
     issuer: "Dicoding Event",
     issued: "July 2026",
     description:
@@ -354,7 +354,7 @@ export const ACTIVITIES = [
     ],
   },
   {
-    title: "IDCamp Alumni Dialogue #5 — Beyond the Code",
+    title: "IDCamp Alumni Dialogue #5: Beyond the Code",
     issuer: "Indosat Ooredoo Hutchison Digital Camp",
     issued: "July 2026",
     description:
@@ -369,7 +369,7 @@ export const ACTIVITIES = [
     ],
   },
   {
-    title: "DevCoach 238 — RAG from Concept to Implementation",
+    title: "DevCoach 238: RAG from Concept to Implementation",
     issuer: "Dicoding Event",
     issued: "July 2026",
     description:

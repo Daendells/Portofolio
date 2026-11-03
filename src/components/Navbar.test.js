@@ -1,24 +1,16 @@
-import { fireEvent, render, screen } from "@testing-library/react";
+import { render, screen } from "@testing-library/react";
 import { MemoryRouter } from "react-router-dom";
 import NavBar from "./Navbar";
 
-beforeEach(() => {
-  window.localStorage.clear();
-  document.documentElement.removeAttribute("data-theme");
-});
-
-test("starts light and toggles dark mode, remembering the choice", () => {
+test("shows the name as the home link and the main sections", () => {
   render(
     <MemoryRouter>
       <NavBar />
     </MemoryRouter>
   );
-  const toggle = screen.getByRole("button", { name: /dark mode/i });
-  expect(document.documentElement.dataset.theme).toBe("light");
-  expect(toggle).toHaveAttribute("aria-pressed", "false");
-
-  fireEvent.click(toggle);
-  expect(document.documentElement.dataset.theme).toBe("dark");
-  expect(toggle).toHaveAttribute("aria-pressed", "true");
-  expect(window.localStorage.getItem("theme")).toBe("dark");
+  expect(screen.getByRole("link", { name: "Davin Jonathan Tanus" })).toHaveAttribute("href", "/");
+  for (const name of ["Work", "About", "Credentials", "CV"]) {
+    expect(screen.getByRole("link", { name })).toBeInTheDocument();
+  }
+  expect(screen.queryByRole("button", { name: /dark mode/i })).not.toBeInTheDocument();
 });
