@@ -14,7 +14,7 @@ const STATS = [
   { value: "2027", label: "graduating in August" },
 ];
 
-const SELECTED = ["RAG assistant", "BISINDO", "Indonesian review sentiment", "Stock forecasting", "CI/CD pipeline"].map(
+const SELECTED = ["RAG assistant", "BISINDO", "LLM extraction", "Indonesian review sentiment", "Stock forecasting"].map(
   (prefix) => PROJECTS.find((project) => project.title.startsWith(prefix))
 );
 

@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Davin Jonathan Tanus — Portfolio (Selected Work 2024–2026)</title>
+    <title>Davin Jonathan Tanus, Portfolio (Selected Work 2024–2026)</title>
     <style>
       :root {
         --ink: #172033;
@@ -320,7 +320,7 @@
         <div class="cover">
           <p class="cover-kicker">Portfolio · Selected Work 2024–2026</p>
           <h1>Davin Jonathan Tanus</h1>
-          <p class="cover-headline">AI Engineer — Information Systems, ITS</p>
+          <p class="cover-headline">AI Engineer, Information Systems, ITS</p>
           <p class="cover-summary">
             I build AI products end to end and measure them: a RAG assistant that cites the exact article of
             the ITS academic regulation, an in-browser sign-language recognizer, and evaluated NLP and vision
@@ -369,11 +369,11 @@
             <ul>
               <li>Thesis (in progress): bacterial vs. viral pneumonia classification on pediatric chest X-rays with RDNet-Tiny, compared against DenseNet121 and ConvNeXt-Tiny.</li>
               <li>Relevant areas: software engineering, data analytics, machine learning, IS/IT strategy, IT risk and service management.</li>
-              <li>2nd Place — Information Systems Programming Competition (HMSI ITS, 2024).</li>
+              <li>2nd Place, Information Systems Programming Competition (HMSI ITS, 2024).</li>
             </ul>
           </div>
           <div class="entry">
-            <h3>AI Engineer Intern — PT Salam Pacific Indonesia Lines</h3>
+            <h3>AI Engineer Intern, PT Salam Pacific Indonesia Lines</h3>
             <p class="entry-meta">Performance Excellence Division · Applied AI &amp; Full-Stack Engineering · Jul 2026 – Nov 2026</p>
             <ul>
               <li>Largest contributor to a fleet fuel (bunker) dashboard: analysis of vessel noon reports by route, speed, engine, and reefer load, with data checks for missing or inconsistent reports.</li>
@@ -393,18 +393,18 @@
         <section>
           <h2>Leadership &amp; Achievements</h2>
           <div class="entry">
-            <h3>Scrum Master — Agile Snacklicious</h3>
+            <h3>Scrum Master, Agile Snacklicious</h3>
             <p class="entry-meta">Scrum delivery · Six-person team · Four sprints</p>
             <ul>
               <li>Led sprint execution, daily scrums, and retrospectives, divided tasks, and tracked income and expenses.</li>
             </ul>
           </div>
           <div class="entry">
-            <h3>Intern Staff — HMSI ITS (Information Systems Student Association)</h3>
+            <h3>Intern Staff, HMSI ITS (Information Systems Student Association)</h3>
             <p class="entry-meta">Sep 2024 – Dec 2024</p>
           </div>
           <div class="entry">
-            <h3><a href="https://davintanus.vercel.app/assets/credentials/certificates/hmsi-its-is-competition-programming-runner-up.pdf">2nd Place — IS Programming Competition</a></h3>
+            <h3><a href="https://davintanus.vercel.app/assets/credentials/certificates/hmsi-its-is-competition-programming-runner-up.pdf">2nd Place, IS Programming Competition</a></h3>
             <p class="entry-meta">HMSI ITS · 2024</p>
           </div>
         </section>
@@ -418,7 +418,7 @@
         </div>
 
         <section>
-          <h2>Featured Projects — AI Products</h2>
+          <h2>Featured Projects: AI Products</h2>
 
           <div class="entry">
             <h3>
@@ -439,7 +439,7 @@
 
           <div class="entry">
             <h3>
-              BISINDO Fingerspelling — In-Browser Sign Language Recognition
+              BISINDO Fingerspelling, In-Browser Sign Language Recognition
               <span class="project-links">
                 <a href="https://daendells.github.io/bisindo/">Live demo</a>
                 <a href="https://github.com/Daendells/bisindo">GitHub</a>
@@ -454,7 +454,21 @@
             <ul class="stack"><li>YOLO11</li><li>PyTorch</li><li>ONNX Runtime Web</li><li>Data Leakage Audit</li></ul>
           </div>
 
-
+          <div class="entry">
+            <h3>
+              LLM Extraction from SEC 10-K Filings, Scored Against XBRL
+              <span class="project-links">
+                <a href="https://github.com/Daendells/sec-10k-extraction">GitHub</a>
+              </span>
+            </h3>
+            <p class="entry-meta">Role: AI engineer · personal project · 39 filings, 220 values</p>
+            <ul>
+              <li><strong>Problem:</strong> LLMs are often used to pull numbers out of financial reports, but they are rarely checked against a trusted answer.</li>
+              <li><strong>Approach:</strong> BM25 retrieval picks the statement pages; the LLM returns each figure as printed, its unit, and a quote; the code converts units and checks that the quote is in the filing. The answer key is the company's own XBRL fact for that exact filing.</li>
+              <li><strong>Outcome:</strong> 211 of 220 values correct (95.9%) with 16 excerpts, 84.5% with 8, and no thousand or million mix-ups. Four of the nine misses were revenue lines that mean something different from the XBRL figure.</li>
+            </ul>
+            <ul class="stack"><li>LLM</li><li>Information Extraction</li><li>BM25</li><li>SEC EDGAR</li><li>XBRL</li></ul>
+          </div>
 
         </section>
       </article>
@@ -467,7 +481,7 @@
         </div>
 
         <section>
-          <h2>Featured Projects — Machine Learning</h2>
+          <h2>Featured Projects: Machine Learning</h2>
 
           <div class="entry">
             <h3>
@@ -487,7 +501,7 @@
 
           <div class="entry">
             <h3>
-              Stock Forecasting — Honest Walk-Forward Test (UNTR.JK)
+              Stock Forecasting: Honest Walk-Forward Test (UNTR.JK)
               <span class="project-links">
                 <a href="https://github.com/Daendells/idx-stock-forecasting">GitHub</a>
               </span>
@@ -511,7 +525,7 @@
             </h3>
             <p class="entry-meta">Role: ML engineer · Dicoding deep-learning project</p>
             <ul>
-              <li><strong>Problem:</strong> accurate image recognition that can run beyond the lab — server, mobile, and browser.</li>
+              <li><strong>Problem:</strong> accurate image recognition that can run beyond the lab: server, mobile, and browser.</li>
               <li><strong>Approach:</strong> MobileNetV2 transfer learning on 13,394 Imagenette images (10 classes, 80/10/10 split), augmentation, staged fine-tuning, checkpointing; evaluated with learning curves, confusion matrix, per-class metrics.</li>
               <li><strong>Outcome:</strong> 91.67% test accuracy; model exported to SavedModel, TensorFlow Lite (mobile), and TensorFlow.js (browser).</li>
             </ul>
@@ -534,19 +548,19 @@
         <section>
           <h2>Selected Certifications</h2>
           <div class="entry">
-            <h3>Belajar Fundamental Deep Learning — Dicoding Indonesia (Sep 2026)</h3>
+            <h3>Belajar Fundamental Deep Learning, Dicoding Indonesia (Sep 2026)</h3>
             <p class="entry-meta">Computer vision, NLP, evaluation, deployment workflows</p>
           </div>
           <div class="entry">
-            <h3>Cisco DevNet Associate — Cisco Networking Academy × ITS (Jul 2026)</h3>
+            <h3>Cisco DevNet Associate, Cisco Networking Academy × ITS (Jul 2026)</h3>
             <p class="entry-meta">APIs, automation, application security, testing, cloud deployment</p>
           </div>
           <div class="entry">
-            <h3>AWS AI Academy — Basic &amp; Beginner — Dicoding × AWS (Aug 2026)</h3>
+            <h3>AWS AI Academy, Basic &amp; Beginner, Dicoding × AWS (Aug 2026)</h3>
             <p class="entry-meta">AI foundations on cloud infrastructure</p>
           </div>
           <div class="entry">
-            <h3>LangChain Academy Foundations — LangChain, LangGraph, LangSmith (Aug 2026)</h3>
+            <h3>LangChain Academy Foundations, LangChain, LangGraph, LangSmith (Aug 2026)</h3>
             <p class="entry-meta">LLM applications, agentic workflows, deployment operations</p>
           </div>
           <p class="role-line">
@@ -560,14 +574,14 @@
           <p class="role-line">
             Conduit CI/CD on Google Cloud (Docker, GitHub Actions, Cloud Run), Academic Data Warehouse &amp; ETL, BCA KPI dashboards,
             Banana-Quality clustering (K-Means + PCA), ISO 31000 risk management, IS/IT strategic planning,
-            and computer-vision simulation — all documented with reports and previews at
+            and computer-vision simulation, all documented with reports and previews at
             <a href="https://davintanus.vercel.app/project">davintanus.vercel.app/project</a>.
           </p>
         </section>
 
         <div class="closing">
           <strong>Let's build something people love to use.</strong><br />
-          I learn fast, collaborate in Agile teams, and finish what I start — from model notebook to
+          I learn fast, collaborate in Agile teams, and finish what I start, from model notebook to
           deployed product. Reach me at
           <a href="mailto:davinjtanus@gmail.com">davinjtanus@gmail.com</a> or
           <a href="https://www.linkedin.com/in/davin-jonathan-tanus-32a19b308/">LinkedIn</a>.

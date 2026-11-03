@@ -127,6 +127,23 @@ export const PROJECTS = [
         demoLink: null
     },
     {
+        title: "LLM extraction from SEC 10-K filings",
+        summary: "Reads six figures from 39 US annual reports and checks every one against the company's own XBRL data.",
+        eyebrow: "Generative AI · evaluation",
+        category: "AI Applications",
+        description: "An LLM reads revenue, net income, diluted EPS, total assets, cash, and equity from 39 SEC 10-K filings. Every answer is compared with the figure the company tagged in XBRL. With 16 retrieved excerpts per filing, 211 of 220 values were correct, with no thousand or million scale mix-ups. Four of the nine misses were revenue lines that mean something different from the XBRL figure, and the evidence check caught one misread row.",
+        image: "/assets/portfolio/sec-extraction/accuracy_by_field.png",
+        files: [],
+        isPdf: false,
+        metrics: [
+            { value: "95.9%", label: "Of 220 values correct" },
+            { value: "0", label: "Scale errors" }
+        ],
+        tags: ["LLM", "Information Extraction", "BM25", "SEC EDGAR", "XBRL"],
+        ghLink: "https://github.com/Daendells/sec-10k-extraction",
+        demoLink: null
+    },
+    {
         title: "RAG assistant for ITS academic rules",
         summary: "Answers questions about ITS academic rules and cites the article and page it used.",
         eyebrow: "Generative AI · live demo",
