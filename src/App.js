@@ -13,7 +13,7 @@ import {
   Navigate
 } from "react-router-dom";
 import ScrollToTop from "./components/ScrollToTop";
-import { RevealOnScroll } from "./components/Motion";
+import { PageTransition, RevealOnScroll } from "./components/Motion";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./style.css";
 
@@ -26,9 +26,11 @@ function App() {
       }}
     >
       <div className="App">
+        <div className="scroll-progress" aria-hidden="true" />
         <Navbar />
         <ScrollToTop />
         <RevealOnScroll />
+        <PageTransition>
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/project" element={<Projects />} />
@@ -37,6 +39,7 @@ function App() {
           <Route path="/resume" element={<Resume />} />
           <Route path="*" element={<Navigate to="/"/>} />
         </Routes>
+        </PageTransition>
         <Footer />
       </div>
     </Router>

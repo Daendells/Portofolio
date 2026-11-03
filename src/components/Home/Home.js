@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 import cvPdf from "../../Assets/CV_Davin_Jonathan_Tanus_EN_New.pdf";
 import { PROJECTS, USERS } from "../../Constants";
 import ContourField from "../ContourField";
-import { CountUp, RevealCard, tilt } from "../Motion";
+import { CountUp, RevealCard, tilt, Words } from "../Motion";
 import Home2 from "./Home2";
 
 const STATS = [
@@ -56,10 +56,10 @@ function Home() {
         <ContourField />
         <Container className="hero-content">
           <p className="kicker reveal">AI engineer · Information Systems at ITS</p>
-          <h1 className="hero-title reveal">
-            I build AI systems
+          <h1 className="hero-title reveal reveal-words">
+            <Words text="I build AI systems" />
             <br />
-            and <em>measure</em> them.
+            <Words text="and" start={4} /> <em><Words text="measure" start={5} /></em> <Words text="them." start={6} />
           </h1>
           <p className="hero-lead reveal">
             AI Engineer Intern at PT Salam Pacific Indonesia Lines. On this page: a RAG assistant that cites its
@@ -108,8 +108,8 @@ function Home() {
       <section className="contact-section">
         <Container>
           <p className="kicker reveal">03 · Contact</p>
-          <h2 className="contact-title reveal">
-            Looking for an AI or data role from <em>2027</em>.
+          <h2 className="contact-title reveal reveal-words">
+            <Words text="Looking for an AI or data role from" /> <em><Words text="2027." start={8} /></em>
           </h2>
           <div className="contact-links reveal">
             <a href={`mailto:${USERS.email}`}>{USERS.email}</a>

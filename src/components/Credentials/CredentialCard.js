@@ -1,6 +1,7 @@
 import React from "react";
 import Card from "react-bootstrap/Card";
 import Button from "react-bootstrap/Button";
+import { tilt } from "../Motion";
 
 const getPreviewType = (link) =>
   link.toLowerCase().endsWith(".pdf") ? "pdf" : "image";
@@ -9,7 +10,7 @@ function CredentialCard({ credential, onPreview, type }) {
   const isActivity = type === "activity";
 
   return (
-    <Card className="credential-card-view">
+    <Card className="credential-card-view tilt" {...tilt}>
       <div className={`credential-card-accent credential-card-accent--${type}`} />
       <Card.Body className="credential-card-body">
 

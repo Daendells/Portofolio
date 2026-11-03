@@ -4,11 +4,27 @@ import { useLocation } from "react-router-dom";
 const reducedMotion = () => window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 const canObserve = () => typeof window !== "undefined" && "IntersectionObserver" in window && !reducedMotion();
 
+// Page parts that reveal on every page without each component opting in. Siblings are staggered.
+const AUTO_REVEAL = [
+  ".page-intro > *",
+  ".section-heading-wrap > *",
+  ".project-filters",
+  ".quote-card-view",
+  ".stack-list > div",
+  ".resume-section > .row:first-child",
+];
+
 // Elements with class "reveal" fade and rise into place the first time they scroll into view.
 // Without IntersectionObserver, or with reduced motion, everything is shown at once.
 export function RevealOnScroll() {
   const { pathname } = useLocation();
   useEffect(() => {
+    document.querySelectorAll(AUTO_REVEAL.join(",")).forEach((el) => {
+      if (el.classList.contains("reveal")) return;
+      el.classList.add("reveal");
+      const position = Array.prototype.indexOf.call(el.parentElement.children, el);
+      el.style.transitionDelay = `${Math.min(position, 6) * 70}ms`;
+    });
     const items = document.querySelectorAll(".reveal:not(.is-in)");
     if (!canObserve()) {
       items.forEach((el) => el.classList.add("is-in"));
@@ -19,6 +35,8 @@ export function RevealOnScroll() {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
             entry.target.classList.add("is-in");
+            // drop the stagger once shown, so later hover transitions start at once
+            entry.target.addEventListener("transitionend", () => (entry.target.style.transitionDelay = ""), { once: true });
             observer.unobserve(entry.target);
           }
         });
@@ -29,6 +47,30 @@ export function RevealOnScroll() {
     return () => observer.disconnect();
   }, [pathname]);
   return null;
+}
+
+// A heading whose words rise one after another from behind a line. Use inside an element with
+// class "reveal": the words move when that element is revealed. `start` continues the count
+// when one heading is built from several pieces.
+export function Words({ text, start = 0 }) {
+  return text.split(" ").map((word, i) => (
+    <React.Fragment key={i}>
+      {i > 0 && " "}
+      <span className="word">
+        <span style={{ "--i": start + i }}>{word}</span>
+      </span>
+    </React.Fragment>
+  ));
+}
+
+// Each route fades in when you arrive on it.
+export function PageTransition({ children }) {
+  const { pathname } = useLocation();
+  return (
+    <div className="page-enter" key={pathname}>
+      {children}
+    </div>
+  );
 }
 
 // A card that rises into place when it scrolls into view. It observes itself, so cards that appear

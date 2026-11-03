@@ -3,7 +3,7 @@ import { Col, Container, Row } from "react-bootstrap";
 import { PROJECTS } from "../../Constants";
 import MediaPreviewModal from "../MediaPreviewModal";
 import ProjectCard from "./ProjectCards";
-import { RevealCard } from "../Motion";
+import { RevealCard, Words } from "../Motion";
 
 const CATEGORY_FILTERS = [
   "All",
@@ -59,8 +59,8 @@ function Projects() {
       <Container>
         <header className="page-intro">
           <p className="section-kicker">Work</p>
-          <h1 className="project-heading">
-            All <strong className="purple">projects</strong>
+          <h1 className="project-heading reveal reveal-words">
+            <Words text="All" /> <strong className="purple"><Words text="projects" start={1} /></strong>
           </h1>
           <p className="section-description section-description--centered">
             Internship systems, my own projects, and coursework. Each one links to code, a demo, or a report.

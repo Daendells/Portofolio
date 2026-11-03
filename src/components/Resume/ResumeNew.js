@@ -4,6 +4,7 @@ import Button from "react-bootstrap/Button";
 import pdf from "../../Assets/CV_Davin_Jonathan_Tanus_EN_New.pdf";
 import portfolioPdf from "../../Assets/Portfolio_Davin_Jonathan_Tanus.pdf";
 import { Document, Page, pdfjs } from "react-pdf";
+import { RevealCard } from "../Motion";
 import "react-pdf/dist/esm/Page/AnnotationLayer.css";
 pdfjs.GlobalWorkerOptions.workerSrc = `//cdnjs.cloudflare.com/ajax/libs/pdf.js/${pdfjs.version}/pdf.worker.min.js`;
 
@@ -48,19 +49,20 @@ function ResumeNew() {
             onLoadSuccess={onDocumentLoadSuccess}
           >
             {Array.from(new Array(numPages), (el, index) => (
-              <div
-                key={`page_${index + 1}`}
-                style={{
-                  marginBottom: index < numPages - 1 ? "20px" : "0",
-                  boxShadow: "var(--shadow)",
-                  borderRadius: "2px",
-                }}
-              >
-                <Page
-                  pageNumber={index + 1}
-                  scale={width > 786 ? 1.7 : 0.6}
-                />
-              </div>
+              <RevealCard key={`page_${index + 1}`}>
+                <div
+                  style={{
+                    marginBottom: index < numPages - 1 ? "20px" : "0",
+                    boxShadow: "var(--shadow)",
+                    borderRadius: "2px",
+                  }}
+                >
+                  <Page
+                    pageNumber={index + 1}
+                    scale={width > 786 ? 1.7 : 0.6}
+                  />
+                </div>
+              </RevealCard>
             ))}
           </Document>
         </Row>

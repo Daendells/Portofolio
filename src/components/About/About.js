@@ -1,39 +1,32 @@
 import React from "react";
-import { Container, Row, Col } from "react-bootstrap";
+import { Container } from "react-bootstrap";
 import Techstack from "./Techstack";
-
 import Aboutcard from "./AboutCard";
+import { Words } from "../Motion";
 
 function About() {
   return (
-    <>
-      {" "}
-      <Container fluid className="about-section">
-        <Container>
-          <Row style={{ justifyContent: "center", padding: "10px" }}>
-            <Col
-              md={10}
-              style={{
-                justifyContent: "center",
-                paddingTop: "30px",
-                paddingBottom: "50px",
-              }}
-            >
-              <h1 style={{ fontSize: "2.1em", paddingBottom: "20px" }}>
-                About <strong className="purple">Me</strong>
-              </h1>
-              <Aboutcard />
-            </Col>
-          </Row>
-          <h2 className="project-heading">
-            Tech <strong className="purple">Stack</strong>
-          </h2>
+    <Container fluid className="project-section about-page">
+      <Container>
+        <header className="page-intro">
+          <p className="section-kicker">About</p>
+          <h1 className="project-heading reveal reveal-words">
+            <Words text="About" /> <strong className="purple"><Words text="me" start={1} /></strong>
+          </h1>
+        </header>
+        <Aboutcard />
 
+        <section className="project-section-block" aria-label="Tech stack">
+          <div className="section-heading-wrap">
+            <p className="section-kicker">Tools</p>
+            <h2 className="project-heading">
+              Tech <strong className="purple">stack</strong>
+            </h2>
+          </div>
           <Techstack />
-
-        </Container>
+        </section>
       </Container>
-    </>
+    </Container>
   );
 }
 

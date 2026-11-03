@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { Col, Container, Row } from "react-bootstrap";
 import MediaPreviewModal from "../MediaPreviewModal";
 import CredentialCard from "./CredentialCard";
+import { RevealCard, Words } from "../Motion";
 import { ACTIVITIES, CERTIFICATES } from "../../data/credentials";
 
 function CredentialSection({ description, items, onPreview, title, type }) {
@@ -16,13 +17,15 @@ function CredentialSection({ description, items, onPreview, title, type }) {
       </div>
 
       <Row className="credential-grid">
-        {items.map((item) => (
+        {items.map((item, index) => (
           <Col lg={4} md={6} className="credential-card" key={item.title}>
-            <CredentialCard
-              credential={item}
-              type={type}
-              onPreview={onPreview}
-            />
+            <RevealCard index={index}>
+              <CredentialCard
+                credential={item}
+                type={type}
+                onPreview={onPreview}
+              />
+            </RevealCard>
           </Col>
         ))}
       </Row>
@@ -38,8 +41,8 @@ function Credentials() {
       <Container>
         <header className="page-intro">
           <p className="section-kicker">Learning</p>
-          <h1 className="project-heading">
-            Credentials &amp; <strong className="purple">Activities</strong>
+          <h1 className="project-heading reveal reveal-words">
+            <Words text="Credentials &" /> <strong className="purple"><Words text="Activities" start={2} /></strong>
           </h1>
           <p className="section-description section-description--centered">
             Courses I completed, listed apart from the events I attended.
