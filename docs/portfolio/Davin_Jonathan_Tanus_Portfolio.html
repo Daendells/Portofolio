@@ -472,17 +472,32 @@
             <h3>
               Indonesian App Review Sentiment Analysis
               <span class="project-links">
-                <a href="https://davintanus.vercel.app/assets/portfolio/machine-learning/sentiment-analysis-gojek-training.ipynb">Training notebook</a>
-                <a href="https://davintanus.vercel.app/project">Case study</a>
+                <a href="https://github.com/Daendells/indonesian-review-sentiment">GitHub</a>
               </span>
             </h3>
-            <p class="entry-meta">Role: ML engineer · Dicoding NLP project · 16,000+ self-scraped reviews</p>
+            <p class="entry-meta">Role: ML engineer · rebuilt from a Dicoding project · 16,000 self-collected reviews</p>
             <ul>
-              <li><strong>Problem:</strong> distill thousands of Indonesian app reviews into product signal (positive / neutral / negative).</li>
-              <li><strong>Approach:</strong> slang normalization, sentiment-aware preprocessing, deduplication, class balancing; benchmarked LinearSVC, logistic regression, and a PyTorch BiLSTM with per-class and confusion-matrix analysis.</li>
-              <li><strong>Outcome:</strong> 92.17% test accuracy with a repeatable inference module.</li>
+              <li><strong>Problem:</strong> tell positive from negative Indonesian app reviews, and know how far the score can be trusted.</li>
+              <li><strong>Approach:</strong> labels from star ratings only, slang normalisation, de-duplication; TF-IDF word + character features with LinearSVC against logistic regression and a majority baseline; per-class metrics and error analysis.</li>
+              <li><strong>Outcome:</strong> 91.8% accuracy (macro-F1 0.918) on 2,009 held-out reviews. The original 92% three-class figure came from labels built partly from the text and from dropping hard cases; honest three-class macro-F1 is 0.60.</li>
             </ul>
-            <ul class="stack"><li>NLP</li><li>Scikit-Learn</li><li>PyTorch BiLSTM</li><li>Text Classification</li></ul>
+            <ul class="stack"><li>NLP</li><li>scikit-learn</li><li>Evaluation</li><li>Label Quality</li></ul>
+          </div>
+
+          <div class="entry">
+            <h3>
+              Stock Forecasting — Honest Walk-Forward Test (UNTR.JK)
+              <span class="project-links">
+                <a href="https://github.com/Daendells/idx-stock-forecasting">GitHub</a>
+              </span>
+            </h3>
+            <p class="entry-meta">Role: ML engineer · personal project · 250 walk-forward test days</p>
+            <ul>
+              <li><strong>Problem:</strong> can ARIMA, XGBoost, or an LSTM forecast tomorrow's close better than "tomorrow equals today"?</li>
+              <li><strong>Approach:</strong> one-step walk-forward over a year where each forecast sees only earlier prices (asserted by a test), refits on a schedule, MAPE, direction accuracy, and Diebold-Mariano tests against the naive forecast.</li>
+              <li><strong>Outcome:</strong> no model beat naive (1.83% MAPE); direction 44–47%. This replaced an earlier result of mine (1.04%) that came from a one-day misalignment.</li>
+            </ul>
+            <ul class="stack"><li>Time Series</li><li>Walk-Forward</li><li>ARIMA</li><li>XGBoost</li><li>LSTM</li></ul>
           </div>
 
           <div class="entry">

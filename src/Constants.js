@@ -81,21 +81,35 @@ export const PROJECTS = [
     },
     {
         title: "Indonesian App Review Sentiment Analysis",
-        summary: "Three-class sentiment model on 16,000+ self-collected Indonesian app reviews, comparing classical models with a BiLSTM.",
-        eyebrow: "Natural Language Processing · Dicoding",
+        summary: "Positive vs. negative Indonesian app reviews at 91.8% accuracy, re-evaluated honestly after finding the original labels inflated the score.",
+        eyebrow: "Natural Language Processing · Rebuilt & Re-evaluated",
         category: "Machine Learning",
-        description: "An end-to-end three-class sentiment-analysis project built from more than 16,000 independently collected Indonesian app reviews. The pipeline handles text cleaning, slang normalization, sentiment-aware preprocessing, deduplication, class balancing, feature extraction, and repeatable inference. Three approaches—LinearSVC, logistic regression, and a PyTorch BiLSTM—were compared; the strongest evaluated model achieved 92.17% test accuracy, supported by per-class reporting and confusion-matrix analysis.",
+        description: "Classifies 10,674 self-collected Indonesian Google Play reviews of Gojek, labelled by star rating only. Positive vs. negative reaches 91.8% accuracy (macro-F1 0.918) on 2,009 held-out reviews, against 52.9% for always predicting the larger class. Rebuilding the original course project showed its labels mixed star ratings with a word list from the same text and dropped every review where the two disagreed, which removed the hardest cases; the honest three-class result is 85.9% accuracy with macro-F1 0.60, because 3-star reviews cannot be separated. The repo reports per-class metrics, a majority baseline, confusion matrices, and error examples, and CI re-runs the evaluation.",
         image: "/assets/portfolio/machine-learning/sentiment-analysis-confusion-matrix.png",
-        files: [
-            { name: "Training Notebook (.ipynb)", link: "machine-learning/sentiment-analysis-gojek-training.ipynb", type: "notebook" }
-        ],
+        files: [],
         isPdf: false,
         metrics: [
-            { value: "92.17%", label: "Test accuracy" },
-            { value: "16,000+", label: "Independently scraped reviews" }
+            { value: "91.8%", label: "Positive vs. negative, macro-F1 0.918" },
+            { value: "52.9%", label: "Majority-class baseline" }
         ],
-        tags: ["NLP", "Scikit-Learn", "PyTorch", "BiLSTM", "Text Classification"],
-        ghLink: null,
+        tags: ["NLP", "scikit-learn", "Evaluation", "Label Quality"],
+        ghLink: "https://github.com/Daendells/indonesian-review-sentiment",
+        demoLink: null
+    },
+    {
+        title: "Stock Forecasting — Honest Walk-Forward Test (UNTR.JK)",
+        eyebrow: "Time Series · Rebuilt & Re-evaluated",
+        category: "Data & Analytics",
+        description: "Tests whether ARIMA, XGBoost, and an LSTM forecast United Tractors' next-day close better than 'tomorrow equals today', on a one-year walk-forward test (250 trading days) where each forecast only sees earlier prices. No model beat the naive forecast: naive MAPE 1.83%, the best learned model 1.87%, none significantly different by a Diebold-Mariano test, and direction accuracy 44–47%, no better than a coin flip. The study replaces an earlier one of mine whose 1.04% LSTM result came from a one-day misalignment between forecasts and prices; a test now asserts that no model sees the day it predicts.",
+        image: "/assets/portfolio/forecasting/walk-forward.png",
+        files: [],
+        isPdf: false,
+        metrics: [
+            { value: "1.83%", label: "Naive MAPE, best of all models" },
+            { value: "250", label: "Walk-forward test days" }
+        ],
+        tags: ["Time Series", "Walk-Forward", "ARIMA", "XGBoost", "LSTM"],
+        ghLink: "https://github.com/Daendells/idx-stock-forecasting",
         demoLink: null
     },
     {

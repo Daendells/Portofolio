@@ -338,19 +338,17 @@
             <h3>
               Indonesian App Review Sentiment Analysis
               <span class="project-links">
-                <a href="https://davintanus.vercel.app/project">Project details</a>
-                <a href="https://davintanus.vercel.app/assets/portfolio/machine-learning/sentiment-analysis-gojek-training.ipynb">Training notebook (.ipynb)</a>
-                <a href="https://davintanus.vercel.app/assets/portfolio/machine-learning/sentiment-analysis-confusion-matrix.png">Evaluation preview</a>
+                <a href="https://github.com/Daendells/indonesian-review-sentiment">GitHub</a>
               </span>
             </h3>
             <ul>
               <li>
-                Built a three-class Indonesian sentiment pipeline from 16,000+ independently collected app
-                reviews, including cleaning, slang normalization, deduplication, and class balancing.
+                Classifies 10,674 self-collected Gojek reviews labelled by stars: 91.8% accuracy (macro-F1 0.918)
+                for positive vs. negative on 2,009 held-out reviews, against a 52.9% majority baseline.
               </li>
               <li>
-                Benchmarked LinearSVC, logistic regression, and a PyTorch BiLSTM; the strongest evaluated
-                model achieved 92.17% test accuracy with per-class and confusion-matrix analysis.
+                Re-evaluated my own course project and found its labels used the review text and dropped hard cases;
+                published the honest per-class results, error analysis, and a CI-checked evaluation.
               </li>
             </ul>
           </div>

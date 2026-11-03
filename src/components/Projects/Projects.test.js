@@ -103,7 +103,7 @@ test("links the BISINDO project to its live demo and repository", () => {
   );
 });
 
-test("exposes the Dicoding training notebooks on the ML project cards", () => {
+test("links the rebuilt sentiment study to its repository instead of the old notebook", () => {
   render(<Projects />);
 
   const imageCard = screen
@@ -114,21 +114,17 @@ test("exposes the Dicoding training notebooks on the ML project cards", () => {
     .closest(".project-card-view");
 
   expect(
-    within(imageCard).getByRole("button", {
-      name: "Training Notebook (.ipynb)",
-    })
+    within(imageCard).getByRole("button", { name: "Training Notebook (.ipynb)" })
   ).toHaveAttribute(
     "href",
     "/assets/portfolio/machine-learning/image-classification-imagenette-notebook.ipynb"
   );
-  expect(
-    within(sentimentCard).getByRole("button", {
-      name: "Training Notebook (.ipynb)",
-    })
-  ).toHaveAttribute(
+  expect(within(sentimentCard).getByRole("button", { name: "GitHub" })).toHaveAttribute(
     "href",
-    "/assets/portfolio/machine-learning/sentiment-analysis-gojek-training.ipynb"
+    "https://github.com/Daendells/indonesian-review-sentiment"
   );
+  expect(within(sentimentCard).queryByRole("button", { name: /Notebook/ })).not.toBeInTheDocument();
+  expect(within(sentimentCard).getAllByText(/macro-F1/i).length).toBeGreaterThan(0);
 });
 
 test("lists coursework in its own section, outside the filtered selection", () => {
@@ -145,10 +141,15 @@ test("lists coursework in its own section, outside the filtered selection", () =
   expect(within(coursework).getByText(/Risk Management Study/)).toBeInTheDocument();
 });
 
-test("leaves out the forecasting study until it is re-run without the one-day offset", () => {
+test("shows the walk-forward forecasting study and its naive-baseline finding", () => {
   render(<Projects />);
 
-  expect(screen.queryByText(/Stock Price Forecasting/i)).not.toBeInTheDocument();
+  const card = screen.getByText(/Stock Forecasting.*Walk-Forward/i).closest(".project-card-view");
+  expect(within(card).getByText(/no model beat/i)).toBeInTheDocument();
+  expect(within(card).getByRole("button", { name: "GitHub" })).toHaveAttribute(
+    "href",
+    "https://github.com/Daendells/idx-stock-forecasting"
+  );
   expect(screen.queryByRole("button", { name: "Time Series" })).not.toBeInTheDocument();
 });
 
