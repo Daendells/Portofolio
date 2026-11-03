@@ -31,6 +31,61 @@ export function RevealOnScroll() {
   return null;
 }
 
+// A card that rises into place when it scrolls into view. It observes itself, so cards that appear
+// later (after a filter change) still animate. `index` staggers cards in the same row.
+export function RevealCard({ index = 0, className = "", children }) {
+  const ref = useRef(null);
+  const [shown, setShown] = useState(() => !canObserve());
+
+  useEffect(() => {
+    if (shown || !ref.current) return undefined;
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setShown(true);
+          observer.disconnect();
+        }
+      },
+      { rootMargin: "0px 0px -6% 0px" }
+    );
+    observer.observe(ref.current);
+    return () => observer.disconnect();
+  }, [shown]);
+
+  return (
+    <div
+      ref={ref}
+      className={`reveal-card ${shown ? "is-in" : ""} ${className}`}
+      style={{ transitionDelay: `${(index % 3) * 90}ms` }}
+    >
+      {children}
+    </div>
+  );
+}
+
+// Pointer handlers for a card that leans a few degrees toward the mouse while a soft light follows it.
+// Touch and reduced motion get a still card.
+export const tilt = {
+  onPointerMove(event) {
+    if (event.pointerType !== "mouse" || reducedMotion()) return;
+    const el = event.currentTarget;
+    const rect = el.getBoundingClientRect();
+    const x = (event.clientX - rect.left) / rect.width;
+    const y = (event.clientY - rect.top) / rect.height;
+    el.style.setProperty("--mx", `${x * 100}%`);
+    el.style.setProperty("--my", `${y * 100}%`);
+    el.style.setProperty("--rx", `${(0.5 - y) * 5}deg`);
+    el.style.setProperty("--ry", `${(x - 0.5) * 5}deg`);
+    el.classList.add("is-tilting");
+  },
+  onPointerLeave(event) {
+    const el = event.currentTarget;
+    el.style.setProperty("--rx", "0deg");
+    el.style.setProperty("--ry", "0deg");
+    el.classList.remove("is-tilting");
+  },
+};
+
 // A number such as "0.84", "98.5%" or "250" that counts up once when it comes into view.
 export function CountUp({ value }) {
   const ref = useRef(null);

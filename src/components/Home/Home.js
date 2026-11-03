@@ -1,10 +1,10 @@
-import React, { useRef, useState } from "react";
+import React from "react";
 import { Container } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import cvPdf from "../../Assets/CV_Davin_Jonathan_Tanus_EN_New.pdf";
 import { PROJECTS, USERS } from "../../Constants";
 import ContourField from "../ContourField";
-import { CountUp } from "../Motion";
+import { CountUp, RevealCard, tilt } from "../Motion";
 import Home2 from "./Home2";
 
 const STATS = [
@@ -18,47 +18,38 @@ const SELECTED = ["RAG assistant", "BISINDO", "Indonesian review sentiment", "St
   (prefix) => PROJECTS.find((project) => project.title.startsWith(prefix))
 );
 
-function WorkRow({ project, index, onHover }) {
+function WorkCard({ project, index }) {
   return (
-    <article
-      className="work-row reveal"
-      onMouseEnter={() => onHover(project)}
-      onMouseLeave={() => onHover(null)}
-      style={{ transitionDelay: `${index * 60}ms` }}
-    >
-      <span className="work-index">{String(index + 1).padStart(2, "0")}</span>
-      <div className="work-main">
-        <h3 className="work-title">{project.title}</h3>
-        <p className="work-summary">{project.summary}</p>
-      </div>
-      <span className="work-meta">{project.eyebrow}</span>
-      <div className="work-links">
-        {project.demoLink && (
-          <a href={project.demoLink} target="_blank" rel="noreferrer" aria-label={`${project.title} live demo`}>
-            Demo
-          </a>
-        )}
-        {project.ghLink && (
-          <a href={project.ghLink} target="_blank" rel="noreferrer" aria-label={`${project.title} source code`}>
-            Code
-          </a>
-        )}
-      </div>
-    </article>
+    <RevealCard index={index < 2 ? index : index - 2} className={index < 2 ? "work-cell work-cell-wide" : "work-cell"}>
+      <article className="work-card tilt" {...tilt}>
+        <div className="work-card-image">
+          <img src={project.image} alt={`${project.title} preview`} loading="lazy" />
+        </div>
+        <div className="work-card-body">
+          <p className="work-meta">
+            <span>{String(index + 1).padStart(2, "0")}</span> {project.eyebrow}
+          </p>
+          <h3 className="work-title">{project.title}</h3>
+          <p className="work-summary">{project.summary}</p>
+          <div className="work-links">
+            {project.demoLink && (
+              <a href={project.demoLink} target="_blank" rel="noreferrer" aria-label={`${project.title} live demo`}>
+                Demo
+              </a>
+            )}
+            {project.ghLink && (
+              <a href={project.ghLink} target="_blank" rel="noreferrer" aria-label={`${project.title} source code`}>
+                Code
+              </a>
+            )}
+          </div>
+        </div>
+      </article>
+    </RevealCard>
   );
 }
 
 function Home() {
-  const [hovered, setHovered] = useState(null);
-  const previewRef = useRef(null);
-
-  // The preview image follows the cursor through a transform, so moving it never re-renders the list.
-  const movePreview = (event) => {
-    if (previewRef.current) {
-      previewRef.current.style.transform = `translate3d(${event.clientX + 24}px, ${event.clientY - 90}px, 0)`;
-    }
-  };
-
   return (
     <main className="home">
       <section className="hero">
@@ -96,7 +87,7 @@ function Home() {
         </Container>
       </section>
 
-      <section className="work-section" aria-label="Selected work" onMouseMove={movePreview}>
+      <section className="work-section" aria-label="Selected work">
         <Container>
           <div className="section-head reveal">
             <p className="kicker">01 · Selected work</p>
@@ -104,15 +95,12 @@ function Home() {
               All projects
             </Link>
           </div>
-          <div className="work-list">
+          <div className="work-grid">
             {SELECTED.map((project, index) => (
-              <WorkRow project={project} index={index} onHover={setHovered} key={project.title} />
+              <WorkCard project={project} index={index} key={project.title} />
             ))}
           </div>
         </Container>
-        <div ref={previewRef} className={hovered && hovered.image ? "work-preview is-visible" : "work-preview"} aria-hidden="true">
-          {hovered && hovered.image && <img src={hovered.image} alt="" />}
-        </div>
       </section>
 
       <Home2 />

@@ -2,6 +2,7 @@ import React from "react";
 import Button from "react-bootstrap/Button";
 import Card from "react-bootstrap/Card";
 import { RELATIVE_PATH_TO_PORTO } from "../../Constants";
+import { tilt } from "../Motion";
 
 function ProjectCards(props) {
   const openPreview = (src, title, type) => {
@@ -9,7 +10,7 @@ function ProjectCards(props) {
   };
 
   return (
-    <Card className="project-card-view">
+    <Card className="project-card-view tilt" {...tilt}>
       {props.imgPath ? (
         <button
           type="button"

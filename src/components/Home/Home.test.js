@@ -18,7 +18,7 @@ test("leads with the role and shows the measured results as final numbers", () =
   expect(within(stats).getByText("98.5%")).toBeInTheDocument();
 });
 
-test("lists selected work as rows with their live demos and code", () => {
+test("lists selected work as cards with their live demos and code", () => {
   renderHome();
   const work = screen.getByRole("region", { name: "Selected work" });
   expect(within(work).getAllByRole("article").length).toBeGreaterThanOrEqual(5);

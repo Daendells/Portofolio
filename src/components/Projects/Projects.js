@@ -3,6 +3,7 @@ import { Col, Container, Row } from "react-bootstrap";
 import { PROJECTS } from "../../Constants";
 import MediaPreviewModal from "../MediaPreviewModal";
 import ProjectCard from "./ProjectCards";
+import { RevealCard } from "../Motion";
 
 const CATEGORY_FILTERS = [
   "All",
@@ -75,18 +76,20 @@ function Projects() {
             </p>
           </div>
           <Row className="project-grid">
-            {internshipItems.map((project) => (
+            {internshipItems.map((project, index) => (
               <Col
                 lg={6}
                 md={6}
                 className="project-card"
                 key={project.title}
               >
-                <ProjectCard
-                  {...project}
-                  imgPath={project.image}
-                  onPreview={setPreview}
-                />
+                <RevealCard index={index}>
+                  <ProjectCard
+                    {...project}
+                    imgPath={project.image}
+                    onPreview={setPreview}
+                  />
+                </RevealCard>
               </Col>
             ))}
           </Row>
@@ -131,18 +134,20 @@ function Projects() {
 
           {selectedItems.length > 0 ? (
             <Row className="project-grid">
-              {selectedItems.map((project) => (
+              {selectedItems.map((project, index) => (
                 <Col
                   lg={4}
                   md={6}
                   className="project-card"
                   key={project.title}
                 >
-                  <ProjectCard
-                    {...project}
-                    imgPath={project.image}
-                    onPreview={setPreview}
-                  />
+                  <RevealCard index={index}>
+                    <ProjectCard
+                      {...project}
+                      imgPath={project.image}
+                      onPreview={setPreview}
+                    />
+                  </RevealCard>
                 </Col>
               ))}
             </Row>
@@ -162,18 +167,20 @@ function Projects() {
             </p>
           </div>
           <Row className="project-grid">
-            {courseworkItems.map((project) => (
+            {courseworkItems.map((project, index) => (
               <Col
                 lg={4}
                 md={6}
                 className="project-card"
                 key={project.title}
               >
-                <ProjectCard
-                  {...project}
-                  imgPath={project.image}
-                  onPreview={setPreview}
-                />
+                <RevealCard index={index}>
+                  <ProjectCard
+                    {...project}
+                    imgPath={project.image}
+                    onPreview={setPreview}
+                  />
+                </RevealCard>
               </Col>
             ))}
           </Row>
