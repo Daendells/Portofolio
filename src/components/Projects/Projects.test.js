@@ -160,3 +160,11 @@ test("drops the AI-builder AssetHub prototypes and shows the rebuilt RAG assista
   const ragCard = screen.getByText(/RAG Academic Assistant/i).closest(".project-card-view");
   expect(within(ragCard).getByText(/Peraturan Rektor ITS No\. 33\/2025/i)).toBeInTheDocument();
 });
+
+test("lists the fuel consumption analytics work among the internship projects", () => {
+  render(<Projects />);
+
+  const internship = screen.getByRole("region", { name: "Internship work" });
+  expect(within(internship).getByText(/Fuel Consumption Analytics/i)).toBeInTheDocument();
+  expect(within(internship).getAllByText(/SSO/).length).toBeGreaterThan(0);
+});

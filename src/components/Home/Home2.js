@@ -16,8 +16,8 @@ function Home2() {
           <div>
             <h2 className="project-heading">About</h2>
             <p className="home-about-body">
-              At work I build internal tools: LLM-based CV screening for recruiters, a DISC assessment analytics
-              dashboard, and a document-intelligence platform. In my own projects I take machine learning from raw
+              At work I build internal tools: fuel-consumption analytics for the fleet team, LLM-based CV screening for
+              recruiters, a DISC assessment analytics dashboard, and a document-verification engine. In my own projects I take machine learning from raw
               data to a working demo, and I check the numbers before I report them. In the sign-language project
               I found that 63% of the public validation set were near-copies of training images, and re-split the
               data before measuring accuracy.

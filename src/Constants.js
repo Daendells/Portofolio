@@ -19,6 +19,19 @@ export const RELATIVE_PATH_TO_PORTO = "/assets/portfolio";
 
 export const PROJECTS = [
     {
+        title: "Fuel Consumption Analytics (Bunker)",
+        eyebrow: "AI Engineering Internship · Confidential",
+        category: "Internship Work",
+        description: "A team dashboard that turns vessels' daily noon reports into a clean voyage history, forecasts voyage duration and fuel use, and supports bunker purchasing. I am its largest contributor (108 of about 240 commits) and built the maritime analysis: fuel use per nautical mile and per day split by main and auxiliary engines, comparisons across routes, speeds, and reefer loads, data checks that flag missing or inconsistent reports, and background workers with a scheduler in Docker. Figures, vessels, and code stay private.",
+        image: null,
+        files: [],
+        isPdf: false,
+        confidential: true,
+        tags: ["Laravel", "Data Analysis", "Data Quality", "Docker"],
+        ghLink: null,
+        demoLink: null
+    },
+    {
         title: "Intelligent Document Verification Platform",
         eyebrow: "AI Engineering Internship · Confidential",
         category: "Internship Work",
@@ -35,7 +48,7 @@ export const PROJECTS = [
         title: "Talent Development & Assessment Platform",
         eyebrow: "AI Engineering Internship · Confidential",
         category: "Internship Work",
-        description: "A private workforce-development and recruitment system for structured assessments, competency profiles, learning activities, and reporting. I rebuilt its LLM-based CV analysis module into two recruiter workflows: matching one CV against all roles (fit score, best-fit role, strengths, skill gaps, and on-demand interview questions) and ranking many CVs for a single role. I also built a DISC psychometric assessment analytics dashboard with CSV upload, deduplication, a role-fit matrix, and candidate comparison, and contribute to secure access flows, training plans, recruitment reports, automated testing, and containerized deployment. The description intentionally remains high-level and no company data or internal artifacts are published.",
+        description: "A private workforce-development and recruitment system for structured assessments, competency profiles, learning activities, and reporting. I rebuilt its LLM-based CV analysis module into two recruiter workflows: matching one CV against all roles (fit score, best-fit role, strengths, skill gaps, and on-demand interview questions) and ranking many CVs for a single role. I also built a DISC psychometric assessment analytics dashboard with CSV upload, deduplication, a role-fit matrix, and candidate comparison, integrated it with the company SSO (and added account management to the SSO portal), and contribute to training plans, recruitment reports, automated testing, and containerized deployment. The description intentionally remains high-level and no company data or internal artifacts are published.",
         image: null,
         files: [],
         isPdf: false,
