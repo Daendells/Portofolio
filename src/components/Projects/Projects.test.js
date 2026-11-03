@@ -1,10 +1,6 @@
 import { fireEvent, render, screen, within } from "@testing-library/react";
 import Projects from "./Projects";
 
-jest.mock("../Particle", () => function ParticleMock() {
-  return <div data-testid="particle-background" />;
-});
-
 test("combines machine-learning work with the selected projects collection", () => {
   render(<Projects />);
 

@@ -16,10 +16,10 @@ function Footer() {
     <Container fluid className="footer">
       <Row>
         <Col md="4" className="footer-copywright">
-          <h3>Designed and Developed by {USERS.copyrightName}</h3>
+          <p>Designed and built by {USERS.copyrightName}</p>
         </Col>
         <Col md="4" className="footer-copywright">
-          <h3>Copyright © {year} {USERS.copyrightName}</h3>
+          <p>© {year} {USERS.copyrightName}</p>
         </Col>
         <Col md="4" className="footer-body">
           <ul className="footer-icons">
@@ -27,7 +27,6 @@ function Footer() {
               <li className="social-icons">
                 <a
                   href={USERS.social.github}
-                  style={{ color: "white" }}
                   target="_blank"
                   rel="noopener noreferrer"
                 >
@@ -39,7 +38,6 @@ function Footer() {
               <li className="social-icons">
                 <a
                   href={USERS.social.twitter}
-                  style={{ color: "white" }}
                   target="_blank"
                   rel="noopener noreferrer"
                 >
@@ -51,7 +49,6 @@ function Footer() {
               <li className="social-icons">
                 <a
                   href={USERS.social.linkedin}
-                  style={{ color: "white" }}
                   target="_blank"
                   rel="noopener noreferrer"
                 >
@@ -63,7 +60,6 @@ function Footer() {
               <li className="social-icons">
                 <a
                   href={USERS.social.instagram}
-                  style={{ color: "white" }}
                   target="_blank"
                   rel="noopener noreferrer"
                 >

@@ -1,9 +1,5 @@
-import { render, screen } from "@testing-library/react";
+import { render, screen, within } from "@testing-library/react";
 import App from "./App";
-
-jest.mock("./components/Particle", () => function ParticleMock() {
-  return <div data-testid="particle-background" />;
-});
 
 jest.mock("./components/ScrollToTop", () => function ScrollToTopMock() {
   return null;
@@ -11,6 +7,7 @@ jest.mock("./components/ScrollToTop", () => function ScrollToTopMock() {
 
 test("renders Davin's portfolio navigation", () => {
   render(<App />);
-  expect(screen.getByRole("link", { name: /projects/i })).toBeInTheDocument();
-  expect(screen.getByRole("link", { name: /credentials/i })).toBeInTheDocument();
+  const nav = within(screen.getByRole("navigation"));
+  expect(nav.getByRole("link", { name: "Projects" })).toBeInTheDocument();
+  expect(nav.getByRole("link", { name: "Credentials" })).toBeInTheDocument();
 });

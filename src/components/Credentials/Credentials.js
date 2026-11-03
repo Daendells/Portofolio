@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import { Col, Container, Row } from "react-bootstrap";
 import MediaPreviewModal from "../MediaPreviewModal";
-import Particle from "../Particle";
 import CredentialCard from "./CredentialCard";
 import { ACTIVITIES, CERTIFICATES } from "../../data/credentials";
 
@@ -36,7 +35,6 @@ function Credentials() {
 
   return (
     <Container fluid className="project-section credentials-page">
-      <Particle />
       <Container>
         <header className="page-intro">
           <p className="section-kicker">Continuous learning, documented</p>

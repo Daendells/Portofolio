@@ -2,7 +2,6 @@ import React, { useMemo, useState } from "react";
 import { Col, Container, Row } from "react-bootstrap";
 import { PROJECTS } from "../../Constants";
 import MediaPreviewModal from "../MediaPreviewModal";
-import Particle from "../Particle";
 import ProjectCard from "./ProjectCards";
 
 const CATEGORY_FILTERS = [
@@ -56,7 +55,6 @@ function Projects() {
 
   return (
     <Container fluid className="project-section">
-      <Particle />
       <Container>
         <header className="page-intro">
           <p className="section-kicker">Applied engineering &amp; research</p>

@@ -3,12 +3,7 @@
 
 export const USERS = {
     name: "Davin Jonathan Tanus",
-    titles: [
-        "AI Engineer Intern @ SPIL",
-        "Machine Learning & Computer Vision",
-        "Data Analytics",
-        "Full-Stack Development"
-    ],
+    email: "davinjtanus@gmail.com",
     description: "I am an Information Systems student at ITS, expected to graduate in August 2027, and an AI Engineer Intern in the Performance Excellence division of PT Salam Pacific Indonesia Lines. At work I build internal tools for recruitment, assessment analytics, and document processing. In my own projects I take machine-learning work from raw data and careful evaluation to a working demo, such as Indonesian sign-language recognition that runs entirely in the browser. My undergraduate thesis classifies bacterial and viral pneumonia in children's chest X-rays with the RDNet-Tiny architecture.",
     social: {
         github: "https://github.com/Daendells", // Add if known, else blank
@@ -51,6 +46,7 @@ export const PROJECTS = [
     },
     {
         title: "BISINDO Fingerspelling — In-Browser Sign Language Recognition",
+        summary: "Recognises the 26-letter Indonesian Sign Language alphabet from a webcam, entirely in the browser; found and fixed data leakage first.",
         eyebrow: "Computer Vision · Live Web Demo",
         category: "Machine Learning",
         description: "A real-time recognizer for the 26 letters of the Indonesian Sign Language (BISINDO) alphabet that runs entirely in the browser: a 2.6M-parameter YOLO11n detector exported to ONNX and executed client-side with ONNX Runtime Web, with an 8-frame vote for stable live typing. An audit found that 63% of the public dataset's validation images were near-copies of training images, so the data was re-split by perceptual-hash groups. The model was chosen on validation, scored once on a held-out test set, and tested on an unseen signer against YOLOv8n, landmark-SVM, and DINOv2-SVM baselines.",
@@ -85,6 +81,7 @@ export const PROJECTS = [
     },
     {
         title: "Indonesian App Review Sentiment Analysis",
+        summary: "Three-class sentiment model on 16,000+ self-collected Indonesian app reviews, comparing classical models with a BiLSTM.",
         eyebrow: "Natural Language Processing · Dicoding",
         category: "Machine Learning",
         description: "An end-to-end three-class sentiment-analysis project built from more than 16,000 independently collected Indonesian app reviews. The pipeline handles text cleaning, slang normalization, sentiment-aware preprocessing, deduplication, class balancing, feature extraction, and repeatable inference. Three approaches—LinearSVC, logistic regression, and a PyTorch BiLSTM—were compared; the strongest evaluated model achieved 92.17% test accuracy, supported by per-class reporting and confusion-matrix analysis.",
@@ -103,6 +100,7 @@ export const PROJECTS = [
     },
     {
         title: "RAG Academic Assistant — Cited Answers from the ITS Academic Regulation",
+        summary: "Answers questions from the official 57-page ITS academic regulation and cites the exact article and page; evaluated on 70 questions.",
         eyebrow: "Generative AI · Deployed App · Evaluated",
         category: "AI Applications",
         description: "Answers students' questions in Indonesian from the official text of Peraturan Rektor ITS No. 33/2025 (57 pages, 91 articles) and cites the exact Pasal, ayat, and page for every answer. The OCR'd PDF is split into one chunk per article, retrieved with BM25 and multilingual-e5 embeddings fused by reciprocal rank fusion, and answered by a free LLM whose citations the server checks before showing them. Measured on a frozen set of 70 questions: retrieval MRR 0.84 (keywords alone 0.80), and all 10 questions outside the regulation are refused instead of guessed. Runs without PyTorch (quantised ONNX, about 285 MB of RAM), with FastAPI, a plain HTML/JS page, Docker, pytest, and CI that fails if retrieval quality drops.",

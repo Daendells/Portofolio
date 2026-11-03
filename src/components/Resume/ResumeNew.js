@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { Container, Row } from "react-bootstrap";
 import Button from "react-bootstrap/Button";
-import Particle from "../Particle";
 import pdf from "../../Assets/CV_Davin_Jonathan_Tanus_EN_New.pdf";
 import portfolioPdf from "../../Assets/Portfolio_Davin_Jonathan_Tanus.pdf";
 import { AiOutlineDownload, AiOutlineFundProjectionScreen } from "react-icons/ai";
@@ -24,7 +23,6 @@ function ResumeNew() {
   return (
     <div>
       <Container fluid className="resume-section">
-        <Particle />
         <Row style={{ justifyContent: "center", position: "relative", gap: "12px" }}>
           <Button
             variant="primary"
@@ -36,7 +34,7 @@ function ResumeNew() {
             &nbsp;Download CV
           </Button>
           <Button
-            variant="outline-light"
+            variant="outline-primary"
             href={portfolioPdf}
             download="Davin_Jonathan_Tanus_Portfolio.pdf"
             style={{ maxWidth: "250px" }}
@@ -57,7 +55,7 @@ function ResumeNew() {
                 key={`page_${index + 1}`}
                 style={{
                   marginBottom: index < numPages - 1 ? "20px" : "0",
-                  boxShadow: "0 4px 12px rgba(0,0,0,0.4)",
+                  boxShadow: "var(--shadow)",
                   borderRadius: "2px",
                 }}
               >
@@ -81,7 +79,7 @@ function ResumeNew() {
             &nbsp;Download CV
           </Button>
           <Button
-            variant="outline-light"
+            variant="outline-primary"
             href={portfolioPdf}
             download="Davin_Jonathan_Tanus_Portfolio.pdf"
             style={{ maxWidth: "250px" }}

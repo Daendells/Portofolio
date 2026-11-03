@@ -5,11 +5,18 @@
   <meta charset="utf-8" />
   <link rel="icon" href="%PUBLIC_URL%/favicon.png" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="theme-color" content="#000000" />
+  <meta name="theme-color" content="#f8fafc" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <script>
+    // Apply the saved theme before React renders, so dark mode never flashes white.
+    try { document.documentElement.dataset.theme = localStorage.getItem("theme") === "dark" ? "dark" : "light"; } catch (e) {}
+  </script>
   <meta name="description" content="Portfolio of Davin Jonathan Tanus — AI Engineer Intern, machine learning practitioner, and Information Systems student at ITS." />
   <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
   <link rel="canonical" href="https://davintanus.vercel.app/" />
-  <title>Davin | Portfolio</title>
+  <title>Davin Jonathan Tanus · AI Engineer</title>
   <!-- Google / Search Engine Tags -->
   <meta itemprop="name" content="Davin | Portfolio">
   <meta itemprop="description" content="AI engineering, machine learning, data, and software projects by Davin Jonathan Tanus.">
