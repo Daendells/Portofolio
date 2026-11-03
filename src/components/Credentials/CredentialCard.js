@@ -1,7 +1,6 @@
 import React from "react";
 import Card from "react-bootstrap/Card";
 import Button from "react-bootstrap/Button";
-import { BsAward, BsCalendar3, BsEye, BsPeople } from "react-icons/bs";
 
 const getPreviewType = (link) =>
   link.toLowerCase().endsWith(".pdf") ? "pdf" : "image";
@@ -13,9 +12,6 @@ function CredentialCard({ credential, onPreview, type }) {
     <Card className="credential-card-view">
       <div className={`credential-card-accent credential-card-accent--${type}`} />
       <Card.Body className="credential-card-body">
-        <div className={`credential-icon credential-icon--${type}`}>
-          {isActivity ? <BsPeople /> : <BsAward />}
-        </div>
 
         <p className="credential-kind">
           {isActivity ? "Learning Activity" : "Certificate"}
@@ -23,7 +19,7 @@ function CredentialCard({ credential, onPreview, type }) {
         <Card.Title className="credential-title">{credential.title}</Card.Title>
         <p className="credential-issuer">{credential.issuer}</p>
         <p className="credential-date">
-          <BsCalendar3 aria-hidden="true" /> {credential.issued}
+          {credential.issued}
         </p>
         <Card.Text className="credential-description">
           {credential.description}
@@ -63,7 +59,7 @@ function CredentialCard({ credential, onPreview, type }) {
                   })
                 }
               >
-                <BsEye aria-hidden="true" /> Preview {buttonLabel}
+                Preview {buttonLabel}
               </Button>
             );
           })}

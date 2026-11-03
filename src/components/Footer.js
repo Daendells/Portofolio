@@ -1,11 +1,5 @@
 import React from "react";
 import { Container, Row, Col } from "react-bootstrap";
-import {
-  AiFillGithub,
-  AiOutlineTwitter,
-  AiFillInstagram,
-} from "react-icons/ai";
-import { FaLinkedinIn } from "react-icons/fa";
 
 import { USERS } from "../Constants";
 
@@ -30,7 +24,7 @@ function Footer() {
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  <AiFillGithub />
+                  GitHub
                 </a>
               </li>
             )}
@@ -41,7 +35,7 @@ function Footer() {
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  <AiOutlineTwitter />
+                  Twitter
                 </a>
               </li>
             )}
@@ -52,7 +46,7 @@ function Footer() {
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  <FaLinkedinIn />
+                  LinkedIn
                 </a>
               </li>
             )}
@@ -63,7 +57,7 @@ function Footer() {
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  <AiFillInstagram />
+                  Instagram
                 </a>
               </li>
             )}

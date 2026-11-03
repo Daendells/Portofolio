@@ -1,14 +1,6 @@
 import React from "react";
 import Button from "react-bootstrap/Button";
 import Card from "react-bootstrap/Card";
-import {
-  BsCodeSlash,
-  BsDownload,
-  BsEye,
-  BsGithub,
-  BsShieldLock,
-} from "react-icons/bs";
-import { CgFileDocument, CgWebsite } from "react-icons/cg";
 import { RELATIVE_PATH_TO_PORTO } from "../../Constants";
 
 function ProjectCards(props) {
@@ -31,18 +23,11 @@ function ProjectCards(props) {
             alt={`${props.title} preview`}
           />
           <span className="project-image-preview-label">
-            <BsEye aria-hidden="true" /> Preview image
+            Preview image
           </span>
         </button>
       ) : (
         <div className="project-card-placeholder" aria-hidden="true">
-          {props.confidential ? (
-            <BsShieldLock />
-          ) : props.isPdf ? (
-            <CgFileDocument />
-          ) : (
-            <BsCodeSlash />
-          )}
           <span>
             {props.confidential
               ? "Private work"
@@ -90,7 +75,7 @@ function ProjectCards(props) {
                   href={fileLink}
                   download
                 >
-                  <BsCodeSlash /> {file.name}
+                  {file.name}
                 </Button>
               );
             }
@@ -104,7 +89,7 @@ function ProjectCards(props) {
                   openPreview(fileLink, `${props.title}: ${file.name}`, file.type)
                 }
               >
-                {file.type === "pdf" ? <CgFileDocument /> : <BsEye />} {file.name}
+                {file.name}
               </Button>
             ) : (
               <Button
@@ -113,20 +98,20 @@ function ProjectCards(props) {
                 href={fileLink}
                 download
               >
-                <BsDownload /> {file.name}
+                {file.name}
               </Button>
             );
           })}
 
           {props.ghLink && (
             <Button variant="primary" href={props.ghLink} target="_blank" rel="noreferrer">
-              <BsGithub /> GitHub
+              GitHub
             </Button>
           )}
 
           {props.demoLink && (
             <Button variant="primary" href={props.demoLink} target="_blank" rel="noreferrer">
-              <CgWebsite /> {props.demoLink.includes("colab.research.google.com") ? "Google Colab" : "Demo"}
+              {props.demoLink.includes("colab.research.google.com") ? "Google Colab" : "Demo"}
             </Button>
           )}
         </div>

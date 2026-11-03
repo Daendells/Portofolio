@@ -1,7 +1,6 @@
 import React, { useRef, useState } from "react";
 import { Container } from "react-bootstrap";
 import { Link } from "react-router-dom";
-import { BsArrowUpRight } from "react-icons/bs";
 import cvPdf from "../../Assets/CV_Davin_Jonathan_Tanus_EN_New.pdf";
 import { PROJECTS, USERS } from "../../Constants";
 import ContourField from "../ContourField";
@@ -36,12 +35,12 @@ function WorkRow({ project, index, onHover }) {
       <div className="work-links">
         {project.demoLink && (
           <a href={project.demoLink} target="_blank" rel="noreferrer" aria-label={`${project.title} live demo`}>
-            Demo <BsArrowUpRight aria-hidden="true" />
+            Demo
           </a>
         )}
         {project.ghLink && (
           <a href={project.ghLink} target="_blank" rel="noreferrer" aria-label={`${project.title} source code`}>
-            Code <BsArrowUpRight aria-hidden="true" />
+            Code
           </a>
         )}
       </div>
@@ -102,7 +101,7 @@ function Home() {
           <div className="section-head reveal">
             <p className="kicker">01 · Selected work</p>
             <Link to="/project" className="text-link">
-              All projects <BsArrowUpRight aria-hidden="true" />
+              All projects
             </Link>
           </div>
           <div className="work-list">
@@ -127,10 +126,10 @@ function Home() {
           <div className="contact-links reveal">
             <a href={`mailto:${USERS.email}`}>{USERS.email}</a>
             <a href={USERS.social.linkedin} target="_blank" rel="noreferrer">
-              LinkedIn <BsArrowUpRight aria-hidden="true" />
+              LinkedIn
             </a>
             <a href={USERS.social.github} target="_blank" rel="noreferrer">
-              GitHub <BsArrowUpRight aria-hidden="true" />
+              GitHub
             </a>
           </div>
         </Container>

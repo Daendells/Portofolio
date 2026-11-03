@@ -1,6 +1,5 @@
 import React from "react";
 import Card from "react-bootstrap/Card";
-import { ImPointRight } from "react-icons/im";
 import { USERS } from "../../Constants";
 
 function AboutCard() {
@@ -14,13 +13,13 @@ function AboutCard() {
           <p style={{ textAlign: "left" }}>What I focus on:</p>
           <ul>
             <li className="about-activity">
-              <ImPointRight aria-hidden="true" /> Machine learning I can measure, from cleaning the data to a working demo
+              Machine learning I can measure, from cleaning the data to a working demo
             </li>
             <li className="about-activity">
-              <ImPointRight aria-hidden="true" /> Internal tools that save people repetitive work
+              Internal tools that save people repetitive work
             </li>
             <li className="about-activity">
-              <ImPointRight aria-hidden="true" /> Analysis that answers one clear business question
+              Analysis that answers one clear business question
             </li>
           </ul>
         </blockquote>

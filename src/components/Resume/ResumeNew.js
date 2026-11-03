@@ -3,7 +3,6 @@ import { Container, Row } from "react-bootstrap";
 import Button from "react-bootstrap/Button";
 import pdf from "../../Assets/CV_Davin_Jonathan_Tanus_EN_New.pdf";
 import portfolioPdf from "../../Assets/Portfolio_Davin_Jonathan_Tanus.pdf";
-import { AiOutlineDownload, AiOutlineFundProjectionScreen } from "react-icons/ai";
 import { Document, Page, pdfjs } from "react-pdf";
 import "react-pdf/dist/esm/Page/AnnotationLayer.css";
 pdfjs.GlobalWorkerOptions.workerSrc = `//cdnjs.cloudflare.com/ajax/libs/pdf.js/${pdfjs.version}/pdf.worker.min.js`;
@@ -30,8 +29,7 @@ function ResumeNew() {
             download="Davin_Jonathan_Tanus_CV.pdf"
             style={{ maxWidth: "250px" }}
           >
-            <AiOutlineDownload />
-            &nbsp;Download CV
+                        &nbsp;Download CV
           </Button>
           <Button
             variant="outline-primary"
@@ -39,8 +37,7 @@ function ResumeNew() {
             download="Davin_Jonathan_Tanus_Portfolio.pdf"
             style={{ maxWidth: "250px" }}
           >
-            <AiOutlineFundProjectionScreen />
-            &nbsp;Download Portfolio
+                        &nbsp;Download Portfolio
           </Button>
         </Row>
 
@@ -75,8 +72,7 @@ function ResumeNew() {
             download="Davin_Jonathan_Tanus_CV.pdf"
             style={{ maxWidth: "250px" }}
           >
-            <AiOutlineDownload />
-            &nbsp;Download CV
+                        &nbsp;Download CV
           </Button>
           <Button
             variant="outline-primary"
@@ -84,8 +80,7 @@ function ResumeNew() {
             download="Davin_Jonathan_Tanus_Portfolio.pdf"
             style={{ maxWidth: "250px" }}
           >
-            <AiOutlineFundProjectionScreen />
-            &nbsp;Download Portfolio
+                        &nbsp;Download Portfolio
           </Button>
         </Row>
       </Container>

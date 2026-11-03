@@ -42,7 +42,7 @@ function field(x, y, t, pointer) {
 const SEGMENTS = [[], [[3, 2]], [[2, 1]], [[3, 1]], [[0, 1]], [[3, 0], [2, 1]], [[0, 2]], [[3, 0]],
   [[3, 0]], [[0, 2]], [[3, 2], [0, 1]], [[0, 1]], [[3, 1]], [[2, 1]], [[3, 2]], []];
 
-function draw(ctx, width, height, t, pointer) {
+function draw(ctx, width, height, t, pointer, colors) {
   const cols = Math.ceil(width / CELL) + 1;
   const rows = Math.ceil(height / CELL) + 1;
   const scale = 1 / 170; // px to noise units
@@ -82,7 +82,7 @@ function draw(ctx, width, height, t, pointer) {
       }
     }
     const accent = level === ACCENT_LEVEL;
-    ctx.strokeStyle = accent ? "rgba(226, 104, 60, 0.75)" : `rgba(236, 232, 225, ${0.05 + level * 0.008})`;
+    ctx.strokeStyle = accent ? colors.accent : colors.line;
     ctx.lineWidth = accent ? 1.2 : 1;
     ctx.stroke();
   }
@@ -98,6 +98,9 @@ function ContourField() {
 
     const reduce = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
     const pointer = { x: 0, y: 0, strength: 0, target: 0 };
+    // Line colours come from the stylesheet, so the drawing follows the theme.
+    const css = getComputedStyle(document.documentElement);
+    const colors = { line: css.getPropertyValue("--contour").trim() || "rgba(26,25,22,0.13)", accent: css.getPropertyValue("--accent").trim() || "#b8461b" };
     let width = 0;
     let height = 0;
     let frame = 0;
@@ -113,7 +116,7 @@ function ContourField() {
       canvas.width = Math.round(width * ratio);
       canvas.height = Math.round(height * ratio);
       ctx.setTransform(ratio, 0, 0, ratio, 0, 0);
-      draw(ctx, width, height, 20, pointer);
+      draw(ctx, width, height, 20, pointer, colors);
     };
 
     const tick = (now) => {
@@ -121,7 +124,7 @@ function ContourField() {
       if (!visible || document.hidden || now - last < 33) return; // about 30 fps is plenty for slow drift
       last = now;
       pointer.strength += (pointer.target - pointer.strength) * 0.06;
-      draw(ctx, width, height, 20 + (now - start) / 1000, pointer);
+      draw(ctx, width, height, 20 + (now - start) / 1000, pointer, colors);
     };
 
     const onMove = (event) => {

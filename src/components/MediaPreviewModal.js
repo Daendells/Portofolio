@@ -1,7 +1,6 @@
 import React from "react";
 import Button from "react-bootstrap/Button";
 import Modal from "react-bootstrap/Modal";
-import { BsBoxArrowUpRight } from "react-icons/bs";
 
 function MediaPreviewModal({ onHide, preview }) {
   if (!preview) {
@@ -44,7 +43,7 @@ function MediaPreviewModal({ onHide, preview }) {
           target="_blank"
           rel="noreferrer"
         >
-          <BsBoxArrowUpRight aria-hidden="true" /> Open full file
+          Open full file
         </Button>
       </Modal.Footer>
     </Modal>
