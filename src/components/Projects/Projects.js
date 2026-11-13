@@ -10,6 +10,7 @@ const CATEGORY_FILTERS = [
   "Machine Learning",
   "AI Applications",
   "Cloud & DevOps",
+  "Software",
 ];
 
 function matchesQuery(project, query) {

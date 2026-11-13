@@ -33,7 +33,7 @@ portfolio Resume page at `src/Assets/CV_Davin_Jonathan_Tanus_EN_New.pdf`.
 
 ## Portfolio document source
 
-The standalone application portfolio (selected work, English, 5× A4) source is
+The standalone application portfolio (selected work, English, 6× A4) source is
 stored at `docs/portfolio/Davin_Jonathan_Tanus_Portfolio.html`. Its generated
 PDF is downloadable from the Resume page at
 `src/Assets/Portfolio_Davin_Jonathan_Tanus.pdf`. Regenerate either PDF with
