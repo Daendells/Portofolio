@@ -470,6 +470,22 @@
             <ul class="stack"><li>LLM</li><li>Information Extraction</li><li>BM25</li><li>SEC EDGAR</li><li>XBRL</li></ul>
           </div>
 
+          <div class="entry">
+            <h3>
+              Peekguard, Privacy Curtain for WhatsApp Web
+              <span class="project-links">
+                <a href="https://github.com/Daendells/Peekguard">GitHub</a>
+              </span>
+            </h3>
+            <p class="entry-meta">Role: developer · personal project · Chrome and Edge extension</p>
+            <ul>
+              <li><strong>Problem:</strong> WhatsApp Web shows every chat on screen, which is a risk in a café, an office or a meeting.</li>
+              <li><strong>Approach:</strong> draws a frosted overlay in its own shadow DOM instead of restyling WhatsApp's changing class names; a reading lamp opens around the row or message under the cursor. Sensitive numbers are painted over without changing the page. No network requests.</li>
+              <li><strong>Outcome:</strong> on a blind set of 200 synthetic messages the number detector found 147 of 149 sensitive items with no false masks. The data is synthetic, so real chats will do worse.</li>
+            </ul>
+            <ul class="stack"><li>Chrome Extension</li><li>Manifest V3</li><li>JavaScript</li><li>Shadow DOM</li><li>Privacy</li></ul>
+          </div>
+
         </section>
       </article>
 
@@ -533,6 +549,27 @@
           </div>
 
 
+
+
+        </section>
+        <section>
+          <h2>Featured Projects: Software Products</h2>
+
+          <div class="entry">
+            <h3>
+              Encore, Time-Synced Lyrics Strip for Windows
+              <span class="project-links">
+                <a href="https://github.com/Daendells/Encore">GitHub</a>
+              </span>
+            </h3>
+            <p class="entry-meta">Role: developer · personal project · Windows tray app</p>
+            <ul>
+              <li><strong>Problem:</strong> reading lyrics usually means leaving your work for the player window.</li>
+              <li><strong>Approach:</strong> reads the song and position from Windows media controls (no login) and asks LRCLIB for time-synced lyrics. A match needs similar title and artist and a duration within 2 seconds, or the song counts as not found. Tauri 2, Rust, WebView2.</li>
+              <li><strong>Outcome:</strong> a line appears 10.9 ms on average (17 ms at p95) after its LRC time, measured against the player's reported position. 64 MiB RAM, 0.10% CPU, 1.75 MiB installer. Blind test of 50 real songs: no wrong lyrics and none missed, after I checked 6 flagged rows by their lyric text.</li>
+            </ul>
+            <ul class="stack"><li>Tauri</li><li>Rust</li><li>WebView2</li><li>Windows SMTC</li><li>Performance</li></ul>
+          </div>
 
 
         </section>
